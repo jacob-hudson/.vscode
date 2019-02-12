@@ -1,0 +1,27 @@
+{
+	"name": "vscode-perfect-dark-color-theme",
+	"displayName": "vscode-perfect-dark-color-theme",
+	"description": "perfect dark color theme",
+	"version": "0.0.1",
+	"publisher": "richardmarks",
+	"engines": {
+		"vscode": "^1.18.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Perfect Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Perfect Dark-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "90477a7e-0181-4e20-a5e0-0227ec49ee50",
+		"publisherId": "acda02fe-ea90-4d7f-a9a7-f6065502a70c",
+		"publisherDisplayName": "Richard Marks"
+	}
+}
