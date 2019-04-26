@@ -1,0 +1,4054 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "cm_device": {
+      "arguments": [
+        {
+          "word": "configsync_ip",
+          "kind": "String(R)",
+          "info": "IP address used for config sync",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "mirror_ip",
+          "kind": "String(O)",
+          "info": "IP address used for state mirroring",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mirror_secondary_ip",
+          "kind": "String(O)",
+          "info": "Secondary IP address used for state mirroring",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Address of the Device which needs to be Deviceensed",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cm_devicegroup": {
+      "arguments": [
+        {
+          "word": "auto_sync",
+          "kind": "String(O)",
+          "info": "Specifies if the device-group will automatically sync configuration data to its members",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of Device group",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "device",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "set_sync_leader",
+              "kind": "Bool(O)",
+              "info": "Name of origin",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "full_load_on_sync",
+          "kind": "String(O)",
+          "info": "Specifies if the device-group will perform a full-load upon sync",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "incremental_config",
+          "kind": "Int(O)",
+          "info": "Specifies the maximum size (in KB) to devote to incremental config sync cached transactions. The default is 1024 KB.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "Name of the Device group",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network_failover",
+          "kind": "String(O)",
+          "info": "Specifies if the device-group will use a network connection for failover",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "partition",
+          "kind": "String(O)",
+          "info": "Device administrative partition",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "save_on_auto_sync",
+          "kind": "String(O)",
+          "info": "Specifies whether the configuration should be saved upon auto-sync.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "info": "Specifies if the device-group will be used for failover or resource syncing",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_datagroup": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the Data Group List",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "record",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "data",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "The Data Group type (string, ip, integer)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_irule": {
+      "arguments": [
+        {
+          "word": "irule",
+          "kind": "String(R)",
+          "info": "The iRule body",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the iRule",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_monitor": {
+      "arguments": [
+        {
+          "word": "defaults_from",
+          "kind": "String(O)",
+          "info": "Existing monitor to inherit from. Must be one of /Common/http, /Common/https, /Common/icmp or /Common/gateway-icmp.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination",
+          "kind": "String(O)",
+          "info": "Alias for the destination",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "interval",
+          "kind": "Int(O)",
+          "info": "Check interval in seconds",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_dscp",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "manual_resume",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the monitor",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "parent",
+          "kind": "String(R)",
+          "info": "Existing monitor to inherit from. Must be one of /Common/http, /Common/https, /Common/icmp or /Common/gateway-icmp.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "receive",
+          "kind": "String(O)",
+          "info": "Expected response string.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "receive_disable",
+          "kind": "String(O)",
+          "info": "Expected response string.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "reverse",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "send",
+          "kind": "String(O)",
+          "info": "Request string to send.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_until_up",
+          "kind": "Int(O)",
+          "info": "Time in seconds",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "info": "Timeout in seconds",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "transparent",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_node": {
+      "arguments": [
+        {
+          "word": "address",
+          "kind": "String(R)",
+          "info": "Address of the node",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "connection_limit",
+          "kind": "Int(O)",
+          "info": "Specifies the maximum number of connections allowed for the node or node address.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dynamic_ratio",
+          "kind": "Int(O)",
+          "info": "Sets the dynamic ratio number for the node. Used for dynamic ratio load balancing. ",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fqdn",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "address_family",
+              "kind": "String(O)",
+              "info": "Specifies the node's address family. The default is 'unspecified', or IP-agnostic",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "Specifies the fully qualified domain name of the node.",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "monitor",
+          "kind": "String(O)",
+          "info": "Specifies the name of the monitor or monitor rule that you want to associate with the node.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the node",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rate_limit",
+          "kind": "String(O)",
+          "info": "Specifies the maximum number of connections per second allowed for a node or node address. The default value is 'disabled'.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "state",
+          "kind": "String(O)",
+          "info": "Marks the node up or down. The default value is user-up.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_persistence_profile_cookie": {
+      "arguments": [
+        {
+          "word": "always_send",
+          "kind": "String(O)",
+          "info": "To enable _ disable always sending cookies",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "app_service",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cookie_encryption",
+          "kind": "String(O)",
+          "info": "To required, preferred, or disabled policy for cookie encryption",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cookie_encryption_passphrase",
+          "kind": "String(O)",
+          "info": "Passphrase for encrypted cookies",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cookie_name",
+          "kind": "String(O)",
+          "info": "Name of the cookie to track persistence",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(R)",
+          "info": "Inherit defaults from parent profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "expiration",
+          "kind": "String(O)",
+          "info": "Expiration TTL for cookie specified in D:H:M:S or in seconds",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hash_length",
+          "kind": "Int(O)",
+          "info": "Length of hash to apply to cookie",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hash_offset",
+          "kind": "Int(O)",
+          "info": "Number of characters to skip in the cookie for the hash",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "httponly",
+          "kind": "String(O)",
+          "info": "To enable _ disable sending only over http",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_pools",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across pools with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_services",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across services with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_virtuals",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across virtual servers with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mirror",
+          "kind": "String(O)",
+          "info": "To enable _ disable",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the persistence profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "override_conn_limit",
+          "kind": "String(O)",
+          "info": "To enable _ disable that pool member connection limits are overridden for persisted clients. Per-virtual connection limits remain hard limits and are not overridden.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "info": "Timeout for persistence of the session",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_persistence_profile_dstaddr": {
+      "arguments": [
+        {
+          "word": "app_service",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(R)",
+          "info": "Inherit defaults from parent profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "hash_algorithm",
+          "kind": "String(O)",
+          "info": "Specify the hash algorithm",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mask",
+          "kind": "String(O)",
+          "info": "Identify a range of source IP addresses to manage together as a single source address affinity persistent connection when connecting to the pool. Must be a valid IPv4 or IPv6 mask.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_pools",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across pools with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_services",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across services with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_virtuals",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across services with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mirror",
+          "kind": "String(O)",
+          "info": "To enable _ disable",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the persistence profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "override_conn_limit",
+          "kind": "String(O)",
+          "info": "To enable _ disable that pool member connection limits are overridden for persisted clients. Per-virtual connection limits remain hard limits and are not overridden.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "info": "Timeout for persistence of the session",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_persistence_profile_srcaddr": {
+      "arguments": [
+        {
+          "word": "app_service",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(R)",
+          "info": "Inherit defaults from parent profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "hash_algorithm",
+          "kind": "String(O)",
+          "info": "Specify the hash algorithm",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "map_proxies",
+          "kind": "String(O)",
+          "info": "To enable _ disable directs all to the same single pool member",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mask",
+          "kind": "String(O)",
+          "info": "Identify a range of source IP addresses to manage together as a single source address affinity persistent connection when connecting to the pool. Must be a valid IPv4 or IPv6 mask.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_pools",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across pools with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_services",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across services with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_virtuals",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across services with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mirror",
+          "kind": "String(O)",
+          "info": "To enable _ disable",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the persistence profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "override_conn_limit",
+          "kind": "String(O)",
+          "info": "To enable _ disable that pool member connection limits are overridden for persisted clients. Per-virtual connection limits remain hard limits and are not overridden.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "info": "Timeout for persistence of the session",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_persistence_profile_ssl": {
+      "arguments": [
+        {
+          "word": "app_service",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(R)",
+          "info": "Inherit defaults from parent profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "match_across_pools",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across pools with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_services",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across services with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_across_virtuals",
+          "kind": "String(O)",
+          "info": "To enable _ disable match across services with given persistence record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mirror",
+          "kind": "String(O)",
+          "info": "To enable _ disable",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the persistence profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "override_conn_limit",
+          "kind": "String(O)",
+          "info": "To enable _ disable that pool member connection limits are overridden for persisted clients. Per-virtual connection limits remain hard limits and are not overridden.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "info": "Timeout for persistence of the session",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_policy": {
+      "arguments": [
+        {
+          "word": "controls",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the Policy",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "published_copy",
+          "kind": "String(O)",
+          "info": "Publish the Policy",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "requires",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rule",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "app_service",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "application",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "asm",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "avr",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cache",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "carp",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "category",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "classify",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "clone_pool",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "code",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "compress",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "content",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cookie_hash",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cookie_insert",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cookie_passive",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cookie_rewrite",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "decompress",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "defer",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "destination_address",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "disable",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "domain",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "enable",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "expiry",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "expiry_secs",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "expression",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "extension",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "facility",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "forward",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "from_profile",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "hash",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "host",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_basic_auth",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_cookie",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_header",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_host",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_referer",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_reply",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_set_cookie",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_uri",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ifile",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "insert",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "internal_virtual",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ip_address",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "key",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "l7dos",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "length",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "location",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "log",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ltm_policy",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "member",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "message",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "netmask",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "nexthop",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "node",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "offset",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "path",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "pem",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "persist",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "pin",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "policy",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "pool",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "priority",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "profile",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "protocol",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "query_string",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "rateclass",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "redirect",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "remove",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "replace",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "request",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "request_adapt",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "reset",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "response",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "response_adapt",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "scheme",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "script",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "select",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "server_ssl",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "set_variable",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "snat",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "snatpool",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "source_address",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_client_hello",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_server_handshake",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_server_hello",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_session_id",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "status",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tcl",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tcp_nagle",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "text",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "timeout",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tm_name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "uie",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "universal",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "value",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "virtual",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vlan",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vlan_id",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "wam",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "write",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "condition",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "all",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "app_service",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "browser_type",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "browser_version",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "case_insensitive",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "case_sensitive",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cipher",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cipher_bits",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "client_ssl",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "code",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "common_name",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "contains",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "continent",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "country_code",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "country_name",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cpu_usage",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "device_make",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "device_model",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "domain",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ends_with",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "equals",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "expiry",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "extension",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "external",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "geoip",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "greater",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "greater_or_equal",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "host",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_basic_auth",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_cookie",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_header",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_host",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_method",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_referer",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_set_cookie",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_status",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_uri",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_user_agent",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "http_version",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "index",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "internal",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "isp",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "last_15secs",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "last_1min",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "last_5mins",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "less",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "less_or_equal",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "local",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "major",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "matches",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "minor",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "missing",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "mss",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "not",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "org",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "password",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "path",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "path_segment",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "port",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "present",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "protocol",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "query_parameter",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "query_string",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "region_code",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "region_name",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "remote",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "request",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "response",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "route_domain",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "rtt",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "scheme",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "server_name",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_cert",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_client_hello",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_extension",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_server_handshake",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ssl_server_hello",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "starts_with",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tcp",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "text",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tm_name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "unnamed_query_parameter",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "user_agent_token",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "username",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "value",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "values",
+                  "kind": "List(O)",
+                  "type": "list",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "version",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vlan",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vlan_id",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Rule name",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "strategy",
+          "kind": "String(O)",
+          "info": "Policy Strategy (i.e. /Common/first-match)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_pool": {
+      "arguments": [
+        {
+          "word": "allow_nat",
+          "kind": "String(O)",
+          "info": "Allow NAT",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "allow_snat",
+          "kind": "String(O)",
+          "info": "Allow SNAT",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "load_balancing_mode",
+          "kind": "String(O)",
+          "info": "Possible values: round-robin, ...",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "monitors",
+          "kind": "Set(O)",
+          "info": "Assign monitors to a pool.",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the pool",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "reselect_tries",
+          "kind": "Int(O)",
+          "info": "Number of times the system tries to select a new pool member after a failure.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service_down_action",
+          "kind": "String(O)",
+          "info": "Possible values: none, reset, reselect, drop",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "slow_ramp_time",
+          "kind": "Int(O)",
+          "info": "Slow ramp time for pool members",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_pool_attachment": {
+      "arguments": [
+        {
+          "word": "node",
+          "kind": "String(R)",
+          "info": "Node to add/remove to/from the pool. Format /partition/node_name:port. e.g. /Common/node01:443",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "pool",
+          "kind": "String(R)",
+          "info": "Name of the pool",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_profile_fasthttp": {
+      "arguments": [
+        {
+          "word": "connpool_maxreuse",
+          "kind": "Int(O)",
+          "info": "connpool_maxreuse timer",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connpool_maxsize",
+          "kind": "Int(O)",
+          "info": "timer integer",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connpool_minsize",
+          "kind": "Int(O)",
+          "info": "Pool min size",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connpool_replenish",
+          "kind": "String(O)",
+          "info": "enabled or disabled",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connpool_step",
+          "kind": "Int(O)",
+          "info": "integer value",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connpoolidle_timeoutoverride",
+          "kind": "Int(O)",
+          "info": "idle_timeout can be given value",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(O)",
+          "info": "Use the parent Fasthttp profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "forcehttp_10response",
+          "kind": "String(O)",
+          "info": "disabled or enabled ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "idle_timeout",
+          "kind": "Int(O)",
+          "info": "integer value",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "maxheader_size",
+          "kind": "Int(O)",
+          "info": "integer value",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the Fasthttp Profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_profile_fastl4": {
+      "arguments": [
+        {
+          "word": "client_timeout",
+          "kind": "Int(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "explicitflow_migration",
+          "kind": "String(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hardware_syncookie",
+          "kind": "String(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "idle_timeout",
+          "kind": "String(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "iptos_toclient",
+          "kind": "String(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "iptos_toserver",
+          "kind": "String(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "keepalive_interval",
+          "kind": "String(O)",
+          "info": "Use the parent Fastl4 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the Fastl4 Profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "partition",
+          "kind": "String(O)",
+          "info": "name of partition",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_profile_http2": {
+      "arguments": [
+        {
+          "word": "activation_modes",
+          "kind": "Set(O)",
+          "info": "Servers Address",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "concurrent_streams_per_connection",
+          "kind": "Int(O)",
+          "info": "Use the parent Http2 profile",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connection_idle_timeout",
+          "kind": "Int(O)",
+          "info": "Use the parent Http2 profile",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(O)",
+          "info": "Use the parent Http2 profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "header_table_size",
+          "kind": "Int(O)",
+          "info": "Use the parent Http2 profile",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the Http2 Profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_profile_httpcompress": {
+      "arguments": [
+        {
+          "word": "defaults_from",
+          "kind": "String(O)",
+          "info": "Use the parent Httpcompress profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the Httpcompress Profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "uri_exclude",
+          "kind": "Set(O)",
+          "info": "Servers Address",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "uri_include",
+          "kind": "Set(O)",
+          "info": "Servers Address",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_profile_oneconnect": {
+      "arguments": [
+        {
+          "word": "defaults_from",
+          "kind": "String(O)",
+          "info": "Use the parent oneconnect profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "idle_timeout_override",
+          "kind": "String(O)",
+          "info": "idleTimeoutOverride can be enabled or disabled",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_age",
+          "kind": "Int(O)",
+          "info": "max_age has integer value typical 3600 sec",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_reuse",
+          "kind": "Int(O)",
+          "info": "max_reuse has integer value typical 1000 sec",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_size",
+          "kind": "Int(O)",
+          "info": "max_size has integer value typical 1000 sec",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the Oneconnect Profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "partition",
+          "kind": "String(O)",
+          "info": "name of partition",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "share_pools",
+          "kind": "String(O)",
+          "info": "sharePools can be enabled or disabled",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_mask",
+          "kind": "String(O)",
+          "info": "source_mask can be 255.255.255.255",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_profile_tcp": {
+      "arguments": [
+        {
+          "word": "close_wait_timeout",
+          "kind": "Int(O)",
+          "info": "close wait timer integer",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "defaults_from",
+          "kind": "String(O)",
+          "info": "Use the parent tcp profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "deferred_accept",
+          "kind": "String(O)",
+          "info": "Defferred accept",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fast_open",
+          "kind": "String(O)",
+          "info": "fast_open value ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "finwait_2timeout",
+          "kind": "Int(O)",
+          "info": "timer integer",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "finwait_timeout",
+          "kind": "Int(O)",
+          "info": "fin wait timer integer",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "idle_timeout",
+          "kind": "Int(O)",
+          "info": "idle_timeout can be given value",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "keepalive_interval",
+          "kind": "Int(O)",
+          "info": "keepalive_interval timer integer",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the TCP Profile",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "partition",
+          "kind": "String(O)",
+          "info": "name of partition",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_snat": {
+      "arguments": [
+        {
+          "word": "autolasthop",
+          "kind": "String(O)",
+          "info": "Specifies whether to automatically map last hop for pools or not. The default is to use next level's defaul",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "full_path",
+          "kind": "String(O)",
+          "info": "Fullpath ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mirror",
+          "kind": "String(O)",
+          "info": "Enables or disables mirroring of SNAT connections.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Snat list Name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "origins",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "app_service",
+              "kind": "String(O)",
+              "info": "app service",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "partition",
+          "kind": "String(O)",
+          "info": "Which partition on BIG-IP",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "snatpool",
+          "kind": "String(O)",
+          "info": "Specifies the name of a SNAT pool. You can only use this option when automap and translation are not used",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sourceport",
+          "kind": "String(O)",
+          "info": "Specifies whether the system preserves the source port of the connection. ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "translation",
+          "kind": "String(O)",
+          "info": "Specifies the name of a translated IP address.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vlansdisabled",
+          "kind": "Bool(O)",
+          "info": "Disables the SNAT on all VLANs.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_snatpool": {
+      "arguments": [
+        {
+          "word": "members",
+          "kind": "Set(R)",
+          "info": "Specifies a translation address to add to or delete from a SNAT pool, at least one address is required.",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "SNAT Pool list Name, format /partition/name. e.g. /Common/snat_pool",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_virtual_address": {
+      "arguments": [
+        {
+          "word": "advertize_route",
+          "kind": "Bool(O)",
+          "info": "Enabled dynamic routing of the address",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "arp",
+          "kind": "Bool(O)",
+          "info": "Enable or disable ARP for the virtual address",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "auto_delete",
+          "kind": "Bool(O)",
+          "info": "Automatically delete the virtual address with the virtual server",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "conn_limit",
+          "kind": "Int(O)",
+          "info": "Max number of connections for virtual address",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "info": "Enable or disable the virtual address",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icmp_echo",
+          "kind": "Bool(O)",
+          "info": "Enable/Disable ICMP response to the virtual address",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the virtual address",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "traffic_group",
+          "kind": "String(O)",
+          "info": "Specify the partition and traffic group",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ltm_virtual_server": {
+      "arguments": [
+        {
+          "word": "client_profiles",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "fallback_persistence_profile",
+          "kind": "String(O)",
+          "info": "Fallback persistence profile",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_protocol",
+          "kind": "String(O)",
+          "info": "all, tcp, udp",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "irules",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mask",
+          "kind": "String(O)",
+          "info": "Mask can either be in CIDR notation or decimal, i.e.: \"24\" or \"255.255.255.0\". A CIDR mask of \"0\" is the same as \"0.0.0.0\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the virtual server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "persistence_profiles",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "policies",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "pool",
+          "kind": "String(O)",
+          "info": "Default pool for this virtual server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "port",
+          "kind": "Int(R)",
+          "info": "Listen port for the virtual server",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "profiles",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_profiles",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "snatpool",
+          "kind": "String(O)",
+          "info": "Name of the snatpool to use. Requires source_address_translation to be set to 'snat'.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source",
+          "kind": "String(O)",
+          "info": "Source IP and mask for the virtual server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_address_translation",
+          "kind": "String(O)",
+          "info": "none, automap, snat",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "translate_address",
+          "kind": "String(O)",
+          "info": "To enable _ disable Address translation",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "translate_port",
+          "kind": "String(O)",
+          "info": "To enable _ disable port translation",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vlans",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vlans_enabled",
+          "kind": "Bool(O)",
+          "info": "Enables the virtual server on the VLANs specified by the VLANs option.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "client_profiles",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "fallback_persistence_profile",
+          "kind": "String",
+          "info": "Fallback persistence profile",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_protocol",
+          "kind": "String",
+          "info": "all, tcp, udp",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "persistence_profiles",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "profiles",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "server_profiles",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "snatpool",
+          "kind": "String",
+          "info": "Name of the snatpool to use. Requires source_address_translation to be set to 'snat'.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "source_address_translation",
+          "kind": "String",
+          "info": "none, automap, snat",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "translate_address",
+          "kind": "String",
+          "info": "To enable _ disable Address translation",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "translate_port",
+          "kind": "String",
+          "info": "To enable _ disable port translation",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "vlans_enabled",
+          "kind": "Bool",
+          "info": "Enables the virtual server on the VLANs specified by the VLANs option.",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "net_route": {
+      "arguments": [
+        {
+          "word": "gw",
+          "kind": "String(O)",
+          "info": "Gateway address",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the route",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network",
+          "kind": "String(R)",
+          "info": "Destination network",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "net_selfip": {
+      "arguments": [
+        {
+          "word": "ip",
+          "kind": "String(R)",
+          "info": "SelfIP IP address",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the SelfIP",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "traffic_group",
+          "kind": "String(O)",
+          "info": "Name of the traffic group, defaults to traffic-group-local-only if not specified",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vlan",
+          "kind": "String(R)",
+          "info": "Name of the vlan",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "net_vlan": {
+      "arguments": [
+        {
+          "word": "interfaces",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "tagged",
+              "kind": "Bool(O)",
+              "info": "Interface tagged",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "vlanport",
+              "kind": "String(O)",
+              "info": "Vlan name",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the vlan",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tag",
+          "kind": "Int(O)",
+          "info": "Tagged number",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sys_bigiplicense": {
+      "arguments": [
+        {
+          "word": "command",
+          "kind": "String(R)",
+          "info": "Tmsh command to execute tmsh commands like install",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "registration_key",
+          "kind": "String(R)",
+          "info": "A unique Key F5 provides for Licensing BIG-IP",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sys_dns": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "info": "Name of the Dns Servers",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name_servers",
+          "kind": "Set(O)",
+          "info": "Servers Address",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "number_of_dots",
+          "kind": "Int(O)",
+          "info": "how many DNS Servers",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "search",
+          "kind": "Set(O)",
+          "info": "Servers search domain",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sys_iapp": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Address of the Iapp which needs to be Iappensed",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "devicegroup",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "execute_action",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "inherited_devicegroup",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "inherited_traffic_group",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "jsonfile",
+          "kind": "String(O)",
+          "info": "Address of the Iapp which needs to be Iappensed",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "lists",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "encrypted",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "metadata",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "persists",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "Address of the Iapp which needs to be Iappensed",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "partition",
+          "kind": "String(O)",
+          "info": "Address of the Iapp which needs to be Iappensed",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "strict_updates",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tables",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "column_names",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "encrypted_columns",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "rows",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "row",
+                  "kind": "List(O)",
+                  "type": "list",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "template",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template_modified",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template_prerequisite_errors",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "traffic_group",
+          "kind": "String(O)",
+          "info": "BIG-IP password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "variables",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "encrypted",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "String(O)",
+              "info": "Name of origin",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sys_ntp": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "info": "Name of the ntp Servers",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "servers",
+          "kind": "Set(O)",
+          "info": "Servers Address",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timezone",
+          "kind": "String(O)",
+          "info": "Servers timezone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sys_provision": {
+      "arguments": [
+        {
+          "word": "cpu_ratio",
+          "kind": "Int(O)",
+          "info": "cpu Ratio",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disk_ratio",
+          "kind": "Int(O)",
+          "info": "disk Ratio",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "full_path",
+          "kind": "String(O)",
+          "info": "path",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "level",
+          "kind": "String(O)",
+          "info": "what level nominal or dedicated",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "memory_ratio",
+          "kind": "Int(O)",
+          "info": "memory Ratio",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the module to be provisioned",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sys_snmp": {
+      "arguments": [
+        {
+          "word": "allowedaddresses",
+          "kind": "Set(O)",
+          "info": "List of SNMP addresses",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sys_contact",
+          "kind": "String(O)",
+          "info": "Contact Person email",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sys_location",
+          "kind": "String(O)",
+          "info": "Location of the F5 ",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sys_snmp_traps": {
+      "arguments": [
+        {
+          "word": "auth_passwordencrypted",
+          "kind": "String(O)",
+          "info": "Encrypted password ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "auth_protocol",
+          "kind": "String(O)",
+          "info": "Specifies the protocol used to authenticate the user.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "community",
+          "kind": "String(O)",
+          "info": "Specifies the community string used for this trap. ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "User defined description.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "engine_id",
+          "kind": "String(O)",
+          "info": "Specifies the authoritative security engine for SNMPv3.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "host",
+          "kind": "String(O)",
+          "info": "The host the trap will be sent to.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "Name",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "info": "The port that the trap will be sent to.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "privacy_password",
+          "kind": "String(O)",
+          "info": "Specifies the clear text password used to encrypt traffic. This field will not be displayed. ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "privacy_password_encrypted",
+          "kind": "String(O)",
+          "info": "Specifies the encrypted password used to encrypt traffic. ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "privacy_protocol",
+          "kind": "String(O)",
+          "info": "Specifies the protocol used to encrypt traffic. ",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_level",
+          "kind": "String(O)",
+          "info": "Specifies whether or not traffic is encrypted and whether or not authentication is required.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_name",
+          "kind": "String(O)",
+          "info": "Security name used in conjunction with SNMPv3.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "version",
+          "kind": "String(O)",
+          "info": "SNMP version used for sending the trap. ",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

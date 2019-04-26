@@ -1,0 +1,2310 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "application_container": {
+      "arguments": [
+        {
+          "word": "archive_url",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "auth_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "deployment",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "environment",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "instances",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "java_system_properties",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "memory",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "notes",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "secure_environment",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "services",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "identifier",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "password",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "type",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "username",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "deployment_file",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "git_password",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "git_repository",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "git_username",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "manifest",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "clustered",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "command",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "health_check_endpoint",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "home",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mode",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "notes",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "release",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "build",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "commit",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "version",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "runtime",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "major_version",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "shutdown_time",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "startup_time",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "manifest_file",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notes",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notification_email",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "runtime",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subscription_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "app_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "web_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "database_access_rule": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "destination",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ports",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "service_instance_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "database_service_instance": {
+      "arguments": [
+        {
+          "word": "availability_domain",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backups",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_storage_container",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cloud_storage_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_storage_username",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_if_missing",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "bring_your_own_license",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "database_configuration",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "admin_password",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "backup_destination",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "character_set",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "db_demo",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disaster_recovery",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "failover_database",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "golden_gate",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "is_rac",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "national_character_set",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "pdb_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sid",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "snapshot_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source_service_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "timezone",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "usable_storage",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "default_access_rules",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "enable_db_console",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_db_express",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_db_listener",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_em_console",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_http",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_http_ssl",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_rac_db_listener",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_rac_ons",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_scan_listener",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enable_ssh",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "desired_state",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "edition",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "high_performance_storage",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hybrid_disaster_recovery",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_storage_container",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cloud_storage_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_storage_username",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "instantiate_from_backup",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_storage_container",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cloud_storage_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_storage_username",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "database_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "decryption_key",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "on_premise",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wallet_file_content",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "ip_network",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_reservations",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "level",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notification_email",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "region",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shape",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ssh_public_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "standby",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "availability_domain",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "subnet",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "subnet",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subscription_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "version",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cloud_storage_container",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "compute_site_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dbaas_monitor_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "default_access_rules",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "enable_db_console",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_db_express",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_db_listener",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_em_console",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_http",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_http_ssl",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_rac_db_listener",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_rac_ons",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_scan_listener",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_ssh",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "em_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "glassfish_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "identity_domain",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "region",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "java_access_rule": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "destination",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ports",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service_instance_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "java_service_instance": {
+      "arguments": [
+        {
+          "word": "assign_public_ip",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "availability_domain",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backup_destination",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backups",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "auto_generate",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_storage_container",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cloud_storage_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_storage_username",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "bring_your_own_license",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "desired_state",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "edition",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "enable_admin_console",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "force_delete",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_network",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "level",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metering_frequency",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notification_email",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "oracle_traffic_director",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "admin",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "password",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "username",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "high_availability",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ip_reservations",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "listener",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "privileged_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "privileged_secured_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "secured_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "load_balancing_policy",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "shape",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "region",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service_version",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "snapshot_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_service_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_public_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subnet",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_identity_service",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "weblogic_server",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "admin",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "password",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "secured_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "username",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "application_database",
+              "kind": "Set(O)(B)",
+              "subblock": [
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "password",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "pdb_name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "username",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "backup_volume_size",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cluster",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "path_prefixes",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "server_count",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "servers_per_node",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "shape",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "type",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "cluster_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "connect_string",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "database",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "password",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "pdb_name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "username",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "domain",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "mode",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "partition_count",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "volume_size",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "ip_reservations",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "managed_servers",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "initial_heap_size",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "initial_permanent_generation",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "jvm_args",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "max_heap_size",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "max_permanent_generation",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "overwrite_jvm_args",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "server_count",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "middleware_volume_size",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node_manager",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "password",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "username",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "ports",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "content_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "deployment_channel_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "privileged_content_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "privileged_secured_content_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "shape",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "upper_stack_product_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "region",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "mysql_access_rule": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ports",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service_instance_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "mysql_service_instance": {
+      "arguments": [
+        {
+          "word": "availability_domain",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backup_destination",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backups",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_storage_container",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cloud_storage_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_storage_username",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_if_missing",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_network",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metering_frequency",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mysql_configuration",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "db_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "db_storage",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "enterprise_monitor_configuration",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "em_agent_password",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "em_agent_username",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "em_password",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "em_port",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "em_username",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "mysql_charset",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mysql_collation",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mysql_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mysql_port",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mysql_username",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "snapshot_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source_service_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notification_email",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "region",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shape",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ssh_public_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subnet",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vm_user",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "base_release_version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "em_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "region",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "release_version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "service_version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "database_service_instance": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "apex_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "availability_domain",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "backup_destination",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "bring_your_own_license",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "character_set",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cloud_storage_container",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "compute_site_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "edition",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "enterprise_manager_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "failover_database",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "glassfish_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "high_performance_storage",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "hybrid_disaster_recovery_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "identity_domain",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_reservations",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "level",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "listener_port",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "monitor_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "national_character_set",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "pluggable_database_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "region",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "shape",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

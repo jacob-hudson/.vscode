@@ -1,0 +1,1984 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "certificate": {
+      "arguments": [
+        {
+          "word": "certificate_chain",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "domains",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "leaf_certificate",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_key",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "not_after",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "sha1_fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "domain": {
+      "arguments": [
+        {
+          "word": "ip_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "droplet": {
+      "arguments": [
+        {
+          "word": "backups",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ipv6",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "monitoring",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_networking",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "region",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resize_disk",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "size",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ssh_keys",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_data",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "volume_ids",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "disk",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "ipv4_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv4_address_private",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_address_private",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "memory",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "price_hourly",
+          "kind": "Float",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "price_monthly",
+          "kind": "Float",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "vcpus",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "volume_ids",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "firewall": {
+      "arguments": [
+        {
+          "word": "droplet_ids",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "inbound_rule",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "port_range",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_addresses",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source_droplet_ids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source_load_balancer_uids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source_tags",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "outbound_rule",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "destination_addresses",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination_droplet_ids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination_load_balancer_uids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination_tags",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port_range",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "pending_changes",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "droplet_id",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "removing",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "status",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "floating_ip": {
+      "arguments": [
+        {
+          "word": "droplet_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "region",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ip_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "floating_ip_assignment": {
+      "arguments": [
+        {
+          "word": "droplet_id",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip_address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "loadbalancer": {
+      "arguments": [
+        {
+          "word": "algorithm",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "droplet_ids",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "droplet_tag",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "forwarding_rule",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "certificate_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "entry_port",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "entry_protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "target_port",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "target_protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tls_passthrough",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "healthcheck",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "check_interval_seconds",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "healthy_threshold",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "path",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "response_timeout_seconds",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "unhealthy_threshold",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "redirect_http_to_https",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "region",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "sticky_sessions",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cookie_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cookie_ttl_seconds",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "droplet_ids",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "healthcheck",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "check_interval_seconds",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "healthy_threshold",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "path",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "port",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "response_timeout_seconds",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "unhealthy_threshold",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "sticky_sessions",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "cookie_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cookie_ttl_seconds",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "record": {
+      "arguments": [
+        {
+          "word": "domain",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "flags",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "priority",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "value",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "weight",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fqdn",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "tag": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "filesystem_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "initial_filesystem_label",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "initial_filesystem_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "region",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "snapshot_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "droplet_ids",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "filesystem_label",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "filesystem_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_attachment": {
+      "arguments": [
+        {
+          "word": "droplet_id",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "volume_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_snapshot": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "volume_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "min_disk_size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "regions",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Float",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "certificate": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the certificate",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "domains",
+          "kind": "Set",
+          "info": "domains for which the certificate was issued",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "not_after",
+          "kind": "String",
+          "info": "expiration date and time of the certificate",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "sha1_fingerprint",
+          "kind": "String",
+          "info": "SHA1 fingerprint of the certificate",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "info": "current state of the certificate",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "info": "type of the certificate",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "domain": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the domain",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ttl",
+          "kind": "Int",
+          "info": "ttl of the domain",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "zone_file",
+          "kind": "String",
+          "info": "zone file of the domain",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "droplet": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the droplet",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "backups",
+          "kind": "Bool",
+          "info": "whether the droplet has backups enabled",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "disk",
+          "kind": "Int",
+          "info": "the size of the droplets disk in gigabytes",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "image",
+          "kind": "String",
+          "info": "the image id or slug of the Droplet",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv4_address",
+          "kind": "String",
+          "info": "the droplets public ipv4 address",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv4_address_private",
+          "kind": "String",
+          "info": "the droplets private ipv4 address",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6",
+          "kind": "Bool",
+          "info": "whether the droplet has ipv6 enabled",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "ipv6_address",
+          "kind": "String",
+          "info": "the droplets public ipv6 address",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_address_private",
+          "kind": "String",
+          "info": "the droplets private ipv4 address",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool",
+          "info": "whether the droplet has been locked",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "memory",
+          "kind": "Int",
+          "info": "memory of the droplet in megabytes",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "monitoring",
+          "kind": "Bool",
+          "info": "whether the droplet has monitoring enabled",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "price_hourly",
+          "kind": "Float",
+          "info": "the droplets hourly price",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "price_monthly",
+          "kind": "Float",
+          "info": "the droplets monthly price",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "private_networking",
+          "kind": "Bool",
+          "info": "whether the droplet has private networking enabled",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "region",
+          "kind": "String",
+          "info": "the region that the droplet instance is deployed in",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "String",
+          "info": "the current size of the Droplet",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "info": "state of the droplet instance",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "vcpus",
+          "kind": "Int",
+          "info": "the number of virtual cpus",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "volume_ids",
+          "kind": "Set",
+          "info": "list of volumes attached to the droplet",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "floating_ip": {
+      "arguments": [
+        {
+          "word": "ip_address",
+          "kind": "String(R)",
+          "info": "floating ip address",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "droplet_id",
+          "kind": "Int",
+          "info": "the droplet id that the floating ip has been assigned to.",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "region",
+          "kind": "String",
+          "info": "the region that the floating ip is reserved to",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "image": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "name of the image",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "slug",
+          "kind": "String(O)",
+          "info": "slug of the image",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "distribution",
+          "kind": "String",
+          "info": "distribution of the OS of the image",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "image",
+          "kind": "String",
+          "info": "slug or id of the image",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "min_disk_size",
+          "kind": "Int",
+          "info": "minimum disk size required by the image",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "private",
+          "kind": "Bool",
+          "info": "Is the image private or non-private",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "regions",
+          "kind": "Set",
+          "info": "list of the regions that the image is available in",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "info": "type of the image",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "loadbalancer": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the load balancer",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "algorithm",
+          "kind": "String",
+          "info": "algorithm used to determine which backend Droplet will be selected by a client",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "droplet_ids",
+          "kind": "Set",
+          "info": "ids of the droplets assigned to the load balancer",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "droplet_tag",
+          "kind": "String",
+          "info": "the name of a tag corresponding to droplets assigned to the load balancer",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "forwarding_rule",
+          "kind": "List(B)",
+          "info": "list of forwarding rules of the load balancer",
+          "subblock": [
+            {
+              "word": "certificate_id",
+              "kind": "String",
+              "info": "the id of the tls certificate used for ssl termination if enabled",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "entry_port",
+              "kind": "Int",
+              "info": "the port on which the load balancer instance will listen",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "entry_protocol",
+              "kind": "String",
+              "info": "the protocol used for traffic to the load balancer",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "target_port",
+              "kind": "Int",
+              "info": "the port on the backend Droplets to which the load balancer will send traffic",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "target_protocol",
+              "kind": "String",
+              "info": "the protocol used for traffic to the backend droplets",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tls_passthrough",
+              "kind": "Bool",
+              "info": "whether ssl encrypted traffic will be passed through to the backend droplets",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "healthcheck",
+          "kind": "List(B)",
+          "info": "health check settings for the load balancer",
+          "subblock": [
+            {
+              "word": "check_interval_seconds",
+              "kind": "Int",
+              "info": "the number of seconds between between two consecutive health checks",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "healthy_threshold",
+              "kind": "Int",
+              "info": "the number of times a health check must pass for a backend droplet to be marked 'healthy' and be re-added to the pool",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "path",
+              "kind": "String",
+              "info": "the path on the backend Droplets to which the Load Balancer will send a request",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "port",
+              "kind": "Int",
+              "info": "the port on the backend droplets on which the health check will attempt a connection",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String",
+              "info": "the protocol used for health checks sent to the backend droplets",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "response_timeout_seconds",
+              "kind": "Int",
+              "info": "the number of seconds to wait for a response until marking a health check as failed",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "unhealthy_threshold",
+              "kind": "Int",
+              "info": "The number of times a health check must fail for a backend droplet to be marked 'unhealthy' and be removed from the pool",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "ip",
+          "kind": "String",
+          "info": "public-facing IP address of the load balancer",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "redirect_http_to_https",
+          "kind": "Bool",
+          "info": "whether http requests will be redirected to https",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "region",
+          "kind": "String",
+          "info": "the region that the load blanacer is deployed in",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "info": "current state of the Load Balancer",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "sticky_sessions",
+          "kind": "List(B)",
+          "info": "sticky sessions settings for the load balancer",
+          "subblock": [
+            {
+              "word": "cookie_name",
+              "kind": "String",
+              "info": "the name of the cookie sent to the client",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cookie_ttl_seconds",
+              "kind": "Int",
+              "info": "the number of seconds until the cookie set by the Load Balancer expires",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "info": "how and if requests from a client will be persistently served by the same backend droplet",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "record": {
+      "arguments": [
+        {
+          "word": "domain",
+          "kind": "String(R)",
+          "info": "domain of the name record",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the record",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "data",
+          "kind": "String",
+          "info": "name record data",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "flags",
+          "kind": "Int",
+          "info": "flags of the name record",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "port",
+          "kind": "Int",
+          "info": "port of the name record",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "priority",
+          "kind": "Int",
+          "info": "priority of the name record",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "tag",
+          "kind": "String",
+          "info": "tag of the name record",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int",
+          "info": "ttl of the name record",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "info": "type of the name record",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "weight",
+          "kind": "Int",
+          "info": "weight of the name record",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the ssh key",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "info": "fingerprint of the ssh key",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String",
+          "info": "public key part of the ssh key",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "tag": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the tag",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "volume description",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the volume",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "region",
+          "kind": "String(O)",
+          "info": "the region that the volume is provisioned in",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "droplet_ids",
+          "kind": "Set",
+          "info": "list of droplet ids the volume is attached to",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "filesystem_label",
+          "kind": "String",
+          "info": "the label currently applied to the filesystem",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "filesystem_type",
+          "kind": "String",
+          "info": "the type of filesystem currently in-use on the volume",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "info": "the size of the volume in gigabytes",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_snapshot": {
+      "arguments": [
+        {
+          "word": "most_recent",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name_regex",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "region",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "min_disk_size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "regions",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Float",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "volume_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

@@ -1,0 +1,462 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "domain_zone_record": {
+      "arguments": [
+        {
+          "word": "fieldtype",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subdomain",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "target",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "publiccloud_private_network": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "regions",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vlan_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "regions",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "regions_status",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "region",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "status",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "publiccloud_private_network_subnet": {
+      "arguments": [
+        {
+          "word": "dhcp",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "end",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "no_gateway",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "region",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "start",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cidr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "gateway_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_pools",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "dhcp",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "end",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "network",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "region",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "start",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "publiccloud_user": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "openstack_rc",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "creation_date",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "openstack_rc",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "password",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "username",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vrack_publiccloud_attachment": {
+      "arguments": [
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vrack_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "publiccloud_region": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "continentCode",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "continent_code",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "datacenterLocation",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "datacenter_location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "services",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "status",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "publiccloud_regions": {
+      "arguments": [
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "names",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

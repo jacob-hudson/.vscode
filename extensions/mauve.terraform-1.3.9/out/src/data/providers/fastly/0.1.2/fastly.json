@@ -1,0 +1,1104 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "service_v1": {
+      "arguments": [
+        {
+          "word": "backend",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "An IPv4, hostname, or IPv6 address for the Backend",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "auto_loadbalance",
+              "kind": "Bool(O)",
+              "info": "Should this Backend be load balanced",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "between_bytes_timeout",
+              "kind": "Int(O)",
+              "info": "How long to wait between bytes in milliseconds",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "connect_timeout",
+              "kind": "Int(O)",
+              "info": "How long to wait for a timeout in milliseconds",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "error_threshold",
+              "kind": "Int(O)",
+              "info": "Number of errors to allow before the Backend is marked as down",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "first_byte_timeout",
+              "kind": "Int(O)",
+              "info": "How long to wait for the first bytes in milliseconds",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "healthcheck",
+              "kind": "String(O)",
+              "info": "The healthcheck name that should be used for this Backend",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "max_conn",
+              "kind": "Int(O)",
+              "info": "Maximum number of connections for this Backend",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A name for this Backend",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "info": "The port number Backend responds on. Default 80",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "request_condition",
+              "kind": "String(O)",
+              "info": "Name of a condition, which if met, will select this backend during a request.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "shield",
+              "kind": "String(O)",
+              "info": "The POP of the shield designated to reduce inbound load.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssl_ca_cert",
+              "kind": "String(O)",
+              "info": "CA certificate attached to origin.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssl_cert_hostname",
+              "kind": "String(O)",
+              "info": "SSL certificate hostname for cert verification",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssl_check_cert",
+              "kind": "Bool(O)",
+              "info": "Be strict on checking SSL certs",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssl_hostname",
+              "kind": "String(O)",
+              "info": "SSL certificate hostname",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssl_sni_hostname",
+              "kind": "String(O)",
+              "info": "SSL certificate hostname for SNI verification",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "weight",
+              "kind": "Int(O)",
+              "info": "The portion of traffic to send to a specific origins. Each origin receives weight/total of the traffic.",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "cache_setting",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(O)",
+              "info": "Action to take",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cache_condition",
+              "kind": "String(O)",
+              "info": "Name of a condition to check if this Cache Setting applies",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A name to refer to this Cache Setting",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "stale_ttl",
+              "kind": "Int(O)",
+              "info": "Max 'Time To Live' for stale (unreachable) objects.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ttl",
+              "kind": "Int(O)",
+              "info": "The 'Time To Live' for the object",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "condition",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "priority",
+              "kind": "Int(R)",
+              "info": "A number used to determine the order in which multiple conditions execute. Lower numbers execute first",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "statement",
+              "kind": "String(R)",
+              "info": "The statement used to determine if the condition is met",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "info": "Type of the condition, either `REQUEST`, `RESPONSE`, or `CACHE`",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "default_host",
+          "kind": "String(O)",
+          "info": "The default hostname for the version",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "default_ttl",
+          "kind": "Int(O)",
+          "info": "The default Time-to-live (TTL) for the version",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "domain",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "comment",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The domain that this Service will respond to",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "force_destroy",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "gcslogging",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "bucket_name",
+              "kind": "String(R)",
+              "info": "The name of the bucket in which to store the logs.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "email",
+              "kind": "String(O)",
+              "info": "The email address associated with the target GCS bucket on your account.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "format",
+              "kind": "String(O)",
+              "info": "Apache-style string or VCL variables to use for log formatting",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "gzip_level",
+              "kind": "Int(O)",
+              "info": "Gzip Compression level",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Unique name to refer to this logging setup",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "path",
+              "kind": "String(O)",
+              "info": "Path to store the files. Must end with a trailing slash",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "period",
+              "kind": "Int(O)",
+              "info": "How frequently the logs should be transferred, in seconds (Default 3600)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "response_condition",
+              "kind": "String(O)",
+              "info": "Name of a condition to apply this logging.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "secret_key",
+              "kind": "String(O)",
+              "info": "The secret key associated with the target gcs bucket on your account.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "timestamp_format",
+              "kind": "String(O)",
+              "info": "specified timestamp formatting (default `%Y-%m-%dT%H:%M:%S.000`)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "gzip",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "cache_condition",
+              "kind": "String(O)",
+              "info": "Name of a condition controlling when this gzip configuration applies.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "content_types",
+              "kind": "Set(O)",
+              "info": "Content types to apply automatic gzip to",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extensions",
+              "kind": "Set(O)",
+              "info": "File extensions to apply automatic gzip to. Do not include '.'",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A name to refer to this gzip condition",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "header",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(R)",
+              "info": "One of set, append, delete, regex, or regex_repeat",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cache_condition",
+              "kind": "String(O)",
+              "info": "Optional name of a cache condition to apply.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination",
+              "kind": "String(R)",
+              "info": "Header this affects",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "ignore_if_set",
+              "kind": "Bool(O)",
+              "info": "Don't add the header if it is already. (Only applies to 'set' action.). Default `false`",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A name to refer to this Header object",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "priority",
+              "kind": "Int(O)",
+              "info": "Lower priorities execute first. (Default: 100.)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "regex",
+              "kind": "String(O)",
+              "info": "Regular expression to use (Only applies to 'regex' and 'regex_repeat' actions.)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "request_condition",
+              "kind": "String(O)",
+              "info": "Optional name of a request condition to apply.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "response_condition",
+              "kind": "String(O)",
+              "info": "Optional name of a response condition to apply.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source",
+              "kind": "String(O)",
+              "info": "Variable to be used as a source for the header content (Does not apply to 'delete' action.)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "substitution",
+              "kind": "String(O)",
+              "info": "Value to substitute in place of regular expression. (Only applies to 'regex' and 'regex_repeat'.)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "info": "Type to manipulate: request, fetch, cache, response",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "healthcheck",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "check_interval",
+              "kind": "Int(O)",
+              "info": "How often to run the healthcheck in milliseconds",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "expected_response",
+              "kind": "Int(O)",
+              "info": "The status code expected from the host",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "host",
+              "kind": "String(R)",
+              "info": "Which host to check",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "http_version",
+              "kind": "String(O)",
+              "info": "Whether to use version 1.0 or 1.1 HTTP",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "initial",
+              "kind": "Int(O)",
+              "info": "When loading a config, the initial number of probes to be seen as OK",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "method",
+              "kind": "String(O)",
+              "info": "Which HTTP method to use",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A name to refer to this healthcheck",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "path",
+              "kind": "String(R)",
+              "info": "The path to check",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "threshold",
+              "kind": "Int(O)",
+              "info": "How many healthchecks must succeed to be considered healthy",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "timeout",
+              "kind": "Int(O)",
+              "info": "Timeout in milliseconds",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "window",
+              "kind": "Int(O)",
+              "info": "The number of most recent healthcheck queries to keep for this healthcheck",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Unique name for this Service",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "papertrail",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The address of the papertrail service",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "format",
+              "kind": "String(O)",
+              "info": "Apache-style string or VCL variables to use for log formatting",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Unique name to refer to this logging setup",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(R)",
+              "info": "The port of the papertrail service",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "response_condition",
+              "kind": "String(O)",
+              "info": "Name of a condition to apply this logging",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "request_setting",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(O)",
+              "info": "Allows you to terminate request handling and immediately perform an action",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "bypass_busy_wait",
+              "kind": "Bool(O)",
+              "info": "Disable collapsed forwarding",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "default_host",
+              "kind": "String(O)",
+              "info": "the host header",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "force_miss",
+              "kind": "Bool(O)",
+              "info": "Force a cache miss for the request",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "force_ssl",
+              "kind": "Bool(O)",
+              "info": "Forces the request use SSL",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "geo_headers",
+              "kind": "Bool(O)",
+              "info": "Inject Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "hash_keys",
+              "kind": "String(O)",
+              "info": "Comma separated list of varnish request object fields that should be in the hash key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "max_stale_age",
+              "kind": "Int(O)",
+              "info": "How old an object is allowed to be, in seconds. Default `60`",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Unique name to refer to this Request Setting",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "request_condition",
+              "kind": "String(O)",
+              "info": "Name of a request condition to apply. If there is no condition this setting will always be applied.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "timer_support",
+              "kind": "Bool(O)",
+              "info": "Injects the X-Timer info into the request",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "xff",
+              "kind": "String(O)",
+              "info": "X-Forwarded-For options",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "response_object",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "cache_condition",
+              "kind": "String(O)",
+              "info": "Name of the condition checked after we have retrieved an object. If the condition passes then deliver this Request Object instead.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "content",
+              "kind": "String(O)",
+              "info": "The content to deliver for the response object",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "content_type",
+              "kind": "String(O)",
+              "info": "The MIME type of the content",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Unique name to refer to this request object",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "request_condition",
+              "kind": "String(O)",
+              "info": "Name of the condition to be checked during the request phase to see if the object should be delivered",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "response",
+              "kind": "String(O)",
+              "info": "The HTTP Response of the object",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "status",
+              "kind": "Int(O)",
+              "info": "The HTTP Status Code of the object",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "s3logging",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "bucket_name",
+              "kind": "String(R)",
+              "info": "S3 Bucket name to store logs in",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "domain",
+              "kind": "String(O)",
+              "info": "Bucket endpoint",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "format",
+              "kind": "String(O)",
+              "info": "Apache-style string or VCL variables to use for log formatting",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "format_version",
+              "kind": "Int(O)",
+              "info": "The version of the custom logging format used for the configured endpoint. Can be either 1 or 2. (Default: 1)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "gzip_level",
+              "kind": "Int(O)",
+              "info": "Gzip Compression level",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "message_type",
+              "kind": "String(O)",
+              "info": "How the message should be formatted.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Unique name to refer to this logging setup",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "path",
+              "kind": "String(O)",
+              "info": "Path to store the files. Must end with a trailing slash",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "period",
+              "kind": "Int(O)",
+              "info": "How frequently the logs should be transferred, in seconds (Default 3600)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "response_condition",
+              "kind": "String(O)",
+              "info": "Name of a condition to apply this logging.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "s3_access_key",
+              "kind": "String(O)",
+              "info": "AWS Access Key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "s3_secret_key",
+              "kind": "String(O)",
+              "info": "AWS Secret Key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "timestamp_format",
+              "kind": "String(O)",
+              "info": "specified timestamp formatting (default `%Y-%m-%dT%H:%M:%S.000`)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "sumologic",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "format",
+              "kind": "String(O)",
+              "info": "Apache-style string or VCL variables to use for log formatting",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "format_version",
+              "kind": "Int(O)",
+              "info": "The version of the custom logging format used for the configured endpoint. Can be either 1 or 2. (Default: 1)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "message_type",
+              "kind": "String(O)",
+              "info": "How the message should be formatted.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Unique name to refer to this logging setup",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "response_condition",
+              "kind": "String(O)",
+              "info": "Name of a condition to apply this logging.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "url",
+              "kind": "String(R)",
+              "info": "The URL to POST to.",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "vcl",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "content",
+              "kind": "String(R)",
+              "info": "The contents of this VCL configuration",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "main",
+              "kind": "Bool(O)",
+              "info": "Should this VCL configuration be the main configuration",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A name to refer to this VCL configuration",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "active_version",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "default_host",
+          "kind": "String",
+          "info": "The default hostname for the version",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "ip_ranges": {
+      "arguments": [],
+      "attributes": [
+        {
+          "word": "cidr_blocks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

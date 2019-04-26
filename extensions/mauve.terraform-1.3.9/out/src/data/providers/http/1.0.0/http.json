@@ -1,0 +1,42 @@
+{
+  "provider_arguments": [],
+  "resources": {},
+  "datas": {
+    "": {
+      "arguments": [
+        {
+          "word": "request_headers",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "url",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "body",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

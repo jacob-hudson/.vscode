@@ -1,0 +1,353 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "collector": {
+      "arguments": [
+        {
+          "word": "backup_collector_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "collector_group_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_collector_device_failover",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_failback",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "escalation_chain_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "resend_interval",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "suppress_alert_clear",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "collector_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "device": {
+      "arguments": [
+        {
+          "word": "collector",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_alerting",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hostgroup_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_addr",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "properties",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "device_group": {
+      "arguments": [
+        {
+          "word": "applies_to",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_alerting",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "parent_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "properties",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "collectors": {
+      "arguments": [
+        {
+          "word": "filters",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "operator",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "property",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "most_recent",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "offset",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "device_group": {
+      "arguments": [
+        {
+          "word": "filters",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "custom_property_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "custom_property_value",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "operator",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "property",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "offset",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

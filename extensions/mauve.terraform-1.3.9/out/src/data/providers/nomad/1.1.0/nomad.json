@@ -1,0 +1,46 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "job": {
+      "arguments": [
+        {
+          "word": "deregister_on_destroy",
+          "kind": "Bool(O)",
+          "info": "If true, the job will be deregistered on destroy.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "deregister_on_id_change",
+          "kind": "Bool(O)",
+          "info": "If true, the job will be deregistered when the job ID changes.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "jobspec",
+          "kind": "String(R)",
+          "info": "Job specification. If you want to point to a file use the file() function.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

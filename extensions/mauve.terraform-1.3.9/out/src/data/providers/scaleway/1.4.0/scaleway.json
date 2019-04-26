@@ -1,0 +1,656 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "ip": {
+      "arguments": [
+        {
+          "word": "reverse",
+          "kind": "String(O)",
+          "info": "The ipv4 reverse dns",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server",
+          "kind": "String(O)",
+          "info": "The server associated with the ip",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ip",
+          "kind": "String",
+          "info": "The ipv4 address of the ip",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server",
+          "kind": "String",
+          "info": "The server associated with the ip",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "info": "The description of the security group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "enable_default_security",
+          "kind": "Bool(O)",
+          "info": "Add default security group rules",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the security group",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group_rule": {
+      "arguments": [
+        {
+          "word": "action",
+          "kind": "String(R)",
+          "info": "The action to take when the security group rule is triggered (accept or drop)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "direction",
+          "kind": "String(R)",
+          "info": "The direction the traffic is affected (inbound or outbound)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip_range",
+          "kind": "String(R)",
+          "info": "The ip range affected by the security group rule",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "info": "The port affected by the security group rule",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "info": "The protocol of the security group rule (ICMP, TCP or UDP)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "security_group",
+          "kind": "String(R)",
+          "info": "The security group this rule is attached to",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "boot_type",
+          "kind": "String(O)",
+          "info": "The boot_type of the server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "bootscript",
+          "kind": "String(O)",
+          "info": "The boot configuration of the server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dynamic_ip_required",
+          "kind": "Bool(O)",
+          "info": "determines if a public IP address should be allocated for the server",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_ipv6",
+          "kind": "Bool(O)",
+          "info": "determines if IPv6 is enabled for the server",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image",
+          "kind": "String(R)",
+          "info": "The base image of the server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_ip",
+          "kind": "String(O)",
+          "info": "the public IPv4 address of the server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_group",
+          "kind": "String(O)",
+          "info": "The security group the server is attached to",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "state",
+          "kind": "String(O)",
+          "info": "the server state (running, stopped)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "info": "The tags associated with the server",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "The instance type of the server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "volume",
+          "kind": "List(O)(B)",
+          "info": "Volumes attached to the server on creation",
+          "subblock": [
+            {
+              "word": "size_in_gb",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "boot_type",
+          "kind": "String",
+          "info": "The boot_type of the server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip",
+          "kind": "String",
+          "info": "the Scaleway internal IP address of the server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ip",
+          "kind": "String",
+          "info": "the public IPv4 address of the server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ipv6",
+          "kind": "String",
+          "info": "the public IPv6 address of the server, if enabled",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "info": "the server state (running, stopped)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state_detail",
+          "kind": "String",
+          "info": "scaleway description of the server state",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "key",
+          "kind": "String(R)",
+          "info": "The ssh key",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "token": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "The token description.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "email",
+          "kind": "String(O)",
+          "info": "The account email. Defaults to registered user.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "expires",
+          "kind": "Bool(O)",
+          "info": "Defines if the token is set to expire",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "info": "User password, in case a login is require",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "email",
+          "kind": "String",
+          "info": "The account email. Defaults to registered user.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "expiration_date",
+          "kind": "String",
+          "info": "The tokens expiration date",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "user_id",
+          "kind": "String",
+          "info": "The userid of the associated user.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "user_data": {
+      "arguments": [
+        {
+          "word": "key",
+          "kind": "String(R)",
+          "info": "The key of the user data to manage",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "server",
+          "kind": "String(R)",
+          "info": "The server the meta data is associated with",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "value",
+          "kind": "String(R)",
+          "info": "The value of the user",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "the name of the volume",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size_in_gb",
+          "kind": "Int(R)",
+          "info": "the size of the volume in GB",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "the type of backing storage",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "server",
+          "kind": "String",
+          "info": "the server the volume is attached to",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_attachment": {
+      "arguments": [
+        {
+          "word": "server",
+          "kind": "String(R)",
+          "info": "the server a volume should be attached to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "volume",
+          "kind": "String(R)",
+          "info": "the volume to attach",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "bootscript": {
+      "arguments": [
+        {
+          "word": "architecture",
+          "kind": "String(O)",
+          "info": "architecture of the desired bootscript",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "exact name of the desired bootscript",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name_filter",
+          "kind": "String(O)",
+          "info": "partial name of the desired bootscript to filter with",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "architecture",
+          "kind": "String",
+          "info": "architecture of the desired bootscript",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "boot_cmd_args",
+          "kind": "String",
+          "info": "commandline boot options used",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dtb",
+          "kind": "String",
+          "info": "path to Device Tree Blob detailing hardware information",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "initrd",
+          "kind": "String",
+          "info": "URL to initial ramdisk content",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel",
+          "kind": "String",
+          "info": "URL to used kernel",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "organization",
+          "kind": "String",
+          "info": "organization owning the bootscript",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "Bool",
+          "info": "indication if the bootscript is public",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "image": {
+      "arguments": [
+        {
+          "word": "architecture",
+          "kind": "String(R)",
+          "info": "architecture of the desired image",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "exact name of the desired image",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name_filter",
+          "kind": "String(O)",
+          "info": "partial name of the desired image to filter with",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "creation_date",
+          "kind": "String",
+          "info": "date when the image was created",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "info": "exact name of the desired image",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "organization",
+          "kind": "String",
+          "info": "organization owning the bootscript",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "Bool",
+          "info": "indication if the bootscript is public",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

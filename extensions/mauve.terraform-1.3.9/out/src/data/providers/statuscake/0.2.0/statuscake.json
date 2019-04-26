@@ -1,0 +1,250 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "test": {
+      "arguments": [
+        {
+          "word": "basic_pass",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "basic_user",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "branding",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "check_rate",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "confirmations",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "contact_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "custom_header",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "do_not_find",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "final_endpoint",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "find_string",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "follow_redirect",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "logo_image",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "node_locations",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "paused",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ping_url",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "post_raw",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "public",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "real_browser",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "status_codes",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "test_tags",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "test_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "trigger_rate",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_jar",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_agent",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virus",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "website_host",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "website_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "website_url",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "test_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uptime",
+          "kind": "Float",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

@@ -1,0 +1,2233 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "alb_server_attachment": {
+      "arguments": [
+        {
+          "word": "backends",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "instance_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "weight",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "listener_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "loadbalancer_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "location_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "protocol_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cbs_snapshot": {
+      "arguments": [
+        {
+          "word": "snapshot_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "disk_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "pecent",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "snapshot_status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "storage_size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cbs_storage": {
+      "arguments": [
+        {
+          "word": "availability_zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "period",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "snapshot_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "storage_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "attached",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "storage_status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cbs_storage_attachment": {
+      "arguments": [
+        {
+          "word": "instance_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "container_cluster": {
+      "arguments": [
+        {
+          "word": "bandwidth",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "bandwidth_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cluster_cidr",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cluster_desc",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cluster_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cluster_version",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cpu",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cvm_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "docker_graph_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "goods_num",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "instance_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "is_vpc_gateway",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "key_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mem",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "mount_target",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "os_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "period",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "require_wan_ip",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "root_size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "root_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sg_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "storage_size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subnet_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "user_script",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "kubernetes_version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nodes_num",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "nodes_status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "total_cpu",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "total_mem",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "container_cluster_instance": {
+      "arguments": [
+        {
+          "word": "bandwidth",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "bandwidth_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cluster_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cpu",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cvm_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "docker_graph_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "is_vpc_gateway",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "key_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mem",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "mount_target",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "period",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "require_wan_ip",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "root_size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "root_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sg_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "storage_size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subnet_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "unschedulable",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_script",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "abnormal_reason",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "instance_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_normal",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "lan_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "wan_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dnat": {
+      "arguments": [
+        {
+          "word": "elastic_ip",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "elastic_port",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nat_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_ip",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_port",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "eip": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "eip_association": {
+      "arguments": [
+        {
+          "word": "eip_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "instance_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network_interface_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "private_ip",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "instance_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network_interface_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "instance": {
+      "arguments": [
+        {
+          "word": "allocate_public_ip",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "availability_zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "data_disks",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "data_disk_size",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "data_disk_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "disable_monitor_service",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_security_service",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "instance_charge_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_charge_type_prepaid_period",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_charge_type_prepaid_renew_flag",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "internet_charge_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "internet_max_bandwidth_out",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "key_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "private_ip",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_groups",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subnet_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "system_disk_size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "system_disk_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_data",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "data_disks",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "data_disk_size",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "data_disk_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "instance_status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "key_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "subnet_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "system_disk_size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "system_disk_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "key_pair": {
+      "arguments": [
+        {
+          "word": "key_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "nat_gateway": {
+      "arguments": [
+        {
+          "word": "assigned_eip_set",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "bandwidth",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "max_concurrent",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "route_entry": {
+      "arguments": [
+        {
+          "word": "cidr_block",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "next_hub",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "next_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "route_table_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "route_table": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group_rule": {
+      "arguments": [
+        {
+          "word": "cidr_ip",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip_protocol",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "policy",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port_range",
+          "kind": "String(O)",
+          "info": "example: 53、80,443、80-90",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_group_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "subnet": {
+      "arguments": [
+        {
+          "word": "availability_zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cidr_block",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "route_table_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc": {
+      "arguments": [
+        {
+          "word": "cidr_block",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "is_default",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "is_multicast",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "availability_zones": {
+      "arguments": [
+        {
+          "word": "include_unavailable",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zones",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "description",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "state",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "container_cluster_instances": {
+      "arguments": [
+        {
+          "word": "cluster_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "limit",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "nodes",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "abnormal_reason",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cpu",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "instance_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "is_normal",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "lan_ip",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "mem",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "wan_ip",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "total_count",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "container_clusters": {
+      "arguments": [
+        {
+          "word": "cluster_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "limit",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "clusters",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "cluster_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "description",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "kubernetes_version",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "nodes_num",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "nodes_status",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_certification_authority",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_cluster_external_endpoint",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_password",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_username",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "total_cpu",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "total_mem",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "total_count",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "eip": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "include_arrears",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "include_blocked",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "image": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "image_name_regex",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "os_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "image_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "instance_types": {
+      "arguments": [
+        {
+          "word": "cpu_core_count",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "memory_size",
+          "kind": "Float(O)",
+          "type": "float",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "instance_types",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "availability_zone",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cpu_core_count",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "family",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "instance_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "memory_size",
+              "kind": "Float",
+              "type": "float",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "nats": {
+      "arguments": [
+        {
+          "word": "bandwidth",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_concurrent",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "state",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "nats",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "assigned_eip_set",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "bandwidth",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "create_time",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "max_concurrent",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "state",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "vpc_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "route_table": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "route_table_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "create_time",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "routes",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "cidr_block",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "description",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "next_hub",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "next_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "subnet_num",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_group_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "be_associate_count",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "create_time",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "subnet": {
+      "arguments": [
+        {
+          "word": "subnet_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "availability_zone",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cidr_block",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "route_table_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc": {
+      "arguments": [
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cidr_block",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_default",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "is_multicast",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

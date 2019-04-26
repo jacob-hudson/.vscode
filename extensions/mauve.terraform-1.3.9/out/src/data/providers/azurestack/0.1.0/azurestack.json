@@ -1,0 +1,2656 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "availability_set": {
+      "arguments": [
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "platform_fault_domain_count",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "platform_update_domain_count",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dns_a_record": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "records",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dns_zone": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "max_number_of_record_sets",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name_servers",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "number_of_record_sets",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network_interface": {
+      "arguments": [
+        {
+          "word": "applied_dns_servers",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_servers",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_ip_forwarding",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "internal_dns_name_label",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "internal_fqdn",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_configuration",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "application_gateway_backend_address_pools_ids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "application_security_group_ids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "load_balancer_backend_address_pools_ids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "load_balancer_inbound_nat_rules_ids",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "primary",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "private_ip_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "private_ip_address_allocation",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "public_ip_address_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "subnet_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "mac_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_security_group_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virtual_machine_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "applied_dns_servers",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "internal_dns_name_label",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "internal_fqdn",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mac_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip_addresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "virtual_machine_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network_security_group": {
+      "arguments": [
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "security_rule",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "access",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination_address_prefix",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination_port_range",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "direction",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "priority",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_address_prefix",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source_port_range",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "security_rule",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "access",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "description",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "destination_address_prefix",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "destination_port_range",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "direction",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "priority",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "source_address_prefix",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "source_port_range",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network_security_rule": {
+      "arguments": [
+        {
+          "word": "access",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_address_prefix",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_port_range",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "direction",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_security_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "priority",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_address_prefix",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_application_security_group_ids",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_port_range",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "public_ip": {
+      "arguments": [
+        {
+          "word": "domain_name_label",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "idle_timeout_in_minutes",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_ip_address_allocation",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "reverse_fqdn",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fqdn",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "resource_group": {
+      "arguments": [
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "storage_account": {
+      "arguments": [
+        {
+          "word": "access_tier",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "account_encryption_source",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "account_kind",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "account_replication_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "account_tier",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "account_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "custom_domain",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "use_subdomain",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "enable_blob_encryption",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "access_tier",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "account_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "enable_blob_encryption",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "primary_access_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_blob_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_blob_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_file_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_queue_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_table_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_access_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_blob_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_blob_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_queue_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_table_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "storage_blob": {
+      "arguments": [
+        {
+          "word": "attempts",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "parallelism",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_uri",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "storage_account_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_container_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "storage_container": {
+      "arguments": [
+        {
+          "word": "container_access_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_account_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "properties",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "subnet": {
+      "arguments": [
+        {
+          "word": "address_prefix",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip_configurations",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_security_group_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "route_table_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virtual_network_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ip_configurations",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "virtual_machine": {
+      "arguments": [
+        {
+          "word": "availability_set_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "boot_diagnostics",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "enabled",
+              "kind": "Bool(R)",
+              "type": "bool",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "storage_uri",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "delete_data_disks_on_termination",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "delete_os_disk_on_termination",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "identity",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "license_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_interface_ids",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "os_profile",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "admin_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "admin_username",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "computer_name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "custom_data",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "os_profile_linux_config",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "disable_password_authentication",
+              "kind": "Bool(R)",
+              "type": "bool",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "ssh_keys",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "key_data",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "path",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "os_profile_secrets",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "source_vault_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "vault_certificates",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "certificate_store",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "certificate_url",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "os_profile_windows_config",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "additional_unattend_config",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "component",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "content",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "pass",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "setting_name",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "enable_automatic_upgrades",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "provision_vm_agent",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "winrm",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "certificate_url",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "protocol",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "plan",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "product",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "publisher",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "primary_network_interface_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_data_disk",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "caching",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_option",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "disk_size_gb",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lun",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "managed_disk_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "managed_disk_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "vhd_uri",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "storage_image_reference",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "offer",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "publisher",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sku",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "version",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "storage_os_disk",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "caching",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_option",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "disk_size_gb",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image_uri",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "managed_disk_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "managed_disk_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "os_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "vhd_uri",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vm_size",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "availability_set_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "identity",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "principal_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "license_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "storage_image_reference",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "offer",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "publisher",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "sku",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "version",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "virtual_machine_extension": {
+      "arguments": [
+        {
+          "word": "auto_upgrade_minor_version",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protected_settings",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "publisher",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "settings",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type_handler_version",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "virtual_machine_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "virtual_network": {
+      "arguments": [
+        {
+          "word": "address_space",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "location",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subnet",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address_prefix",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "security_group",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "subnet",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "address_prefix",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_group",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "network_interface": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "applied_dns_servers",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "enable_ip_forwarding",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "internal_dns_name_label",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "internal_fqdn",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_configuration",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "application_gateway_backend_address_pools_ids",
+              "kind": "Set",
+              "type": "set",
+              "block": false
+            },
+            {
+              "word": "load_balancer_backend_address_pools_ids",
+              "kind": "Set",
+              "type": "set",
+              "block": false
+            },
+            {
+              "word": "load_balancer_inbound_nat_rules_ids",
+              "kind": "Set",
+              "type": "set",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "primary",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "private_ip_address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "private_ip_address_allocation",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "public_ip_address_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "subnet_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mac_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network_security_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip_addresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "virtual_machine_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network_security_group": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "security_rule",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "access",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "description",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "destination_address_prefix",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "destination_port_range",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "direction",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "priority",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "source_address_prefix",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "source_port_range",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "source_port_ranges",
+              "kind": "Set",
+              "type": "set",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "resource_group": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "storage_account": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "access_tier",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "account_encryption_source",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "account_kind",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "account_replication_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "account_tier",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "custom_domain",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "enable_blob_encryption",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_access_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_blob_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_blob_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_file_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_queue_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "primary_table_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_access_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_blob_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_blob_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_connection_string",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_queue_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secondary_table_endpoint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "virtual_network": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address_spaces",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "subnets",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

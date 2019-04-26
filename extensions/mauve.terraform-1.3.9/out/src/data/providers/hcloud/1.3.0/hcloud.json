@@ -1,0 +1,545 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "floating_ip": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "home_location",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "labels",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "home_location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server_id",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "floating_ip_assignment": {
+      "arguments": [
+        {
+          "word": "floating_ip_id",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "server_id",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "rdns": {
+      "arguments": [
+        {
+          "word": "dns_ptr",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "floating_ip_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "server_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "backup_window",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "iso",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "keep_disk",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "labels",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "location",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rescue",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ssh_keys",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_data",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv4_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "labels",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "floating_ip": {
+      "arguments": [
+        {
+          "word": "id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "selector",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "home_location",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ip_network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "labels",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "server_id",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "image": {
+      "arguments": [
+        {
+          "word": "id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "selector",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "deprecated",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "labels",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "os_flavor",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "os_version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "rapid_deploy",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "fingerprint",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "selector",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "labels",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

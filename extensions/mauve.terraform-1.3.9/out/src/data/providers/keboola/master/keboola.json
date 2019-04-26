@@ -1,0 +1,1322 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "access_token": {
+      "arguments": [
+        {
+          "word": "bucket_permissions",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "can_manage_buckets",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "can_manage_tokens",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "can_read_all_file_uploads",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "component_access",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "expires_in",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "csvimport_extractor": {
+      "arguments": [
+        {
+          "word": "delimiter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "enclosure",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "incremental",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "primary_key",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "gooddata_user_management": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "input",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "columns",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "datatypes",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "days",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "indexes",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "where_column",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "where_operator",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "where_values",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "output",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "delete_where_column",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delete_where_operator",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delete_where_values",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "incremental",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "primary_key",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "writer",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "gooddata_writer": {
+      "arguments": [
+        {
+          "word": "auth_token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "writer_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "gooddata_writer_table": {
+      "arguments": [
+        {
+          "word": "column",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "data_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "data_type_size",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "date_dimension",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "format",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "reference",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "schema_reference",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "title",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "export",
+          "kind": "Bool(R)",
+          "type": "bool",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "identifier",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "incremental_days",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "title",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "writer_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "orchestration": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notification",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "channel",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "email",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parameters",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "schedule_cron",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "orchestration_tasks": {
+      "arguments": [
+        {
+          "word": "orchestration_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "task",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "action_parameters",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "component",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "continue_on_failure",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "is_active",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "phase",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "timeout",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "postgresql_writer": {
+      "arguments": [
+        {
+          "word": "db_parameters",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "postgresql_db_parameters",
+          "kind": "Map(O)(B)",
+          "subblock": [
+            {
+              "word": "database",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "hashed_password",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "hostname",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "schema",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "username",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "map",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "postgresql_writer_tables": {
+      "arguments": [
+        {
+          "word": "table",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "column",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "db_name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "default",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "nullable",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "size",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "type",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "db_name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "export",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "incremental",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "primary_key",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "table_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "writer_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "snowflake_writer": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "provision_new_instance",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "snowflake_db_parameters",
+          "kind": "Map(O)(B)",
+          "subblock": [
+            {
+              "word": "database",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "hashed_password",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "hostname",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "schema",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "username",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "warehouse",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "map",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "snowflake_writer_tables": {
+      "arguments": [
+        {
+          "word": "table",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "column",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "db_name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "default",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "nullable",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "size",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "type",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "db_name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "export",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "incremental",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "primary_key",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "table_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "writer_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "storage_bucket": {
+      "arguments": [
+        {
+          "word": "backend",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "stage",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "storage_table": {
+      "arguments": [
+        {
+          "word": "bucket_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "columns",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "delimiter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enclosure",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "indexed_columns",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "primary_key",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "transactional",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "transformation": {
+      "arguments": [
+        {
+          "word": "backend",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "bucket_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "input",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "columns",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "datatypes",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "days",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "indexes",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "where_column",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "where_operator",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "where_values",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "output",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "delete_where_column",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delete_where_operator",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delete_where_values",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "incremental",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "primary_key",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "phase",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "queries",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "transformation_bucket": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

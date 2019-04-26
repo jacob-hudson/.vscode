@@ -1,0 +1,404 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "admin_user": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the administrator",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "node",
+          "kind": "String(O)",
+          "info": "Node to create admin user one (couchdb 2.x only)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "password",
+          "kind": "String(R)",
+          "info": "Password of the administrator",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "database": {
+      "arguments": [
+        {
+          "word": "clustering",
+          "kind": "List(O)(B)",
+          "info": "database clustering configuration",
+          "subblock": [
+            {
+              "word": "replicas",
+              "kind": "Int(O)",
+              "info": "Number of replicas",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "shards",
+              "kind": "Int(O)",
+              "info": "Number of shards",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the database",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "security",
+          "kind": "List(O)(B)",
+          "info": "Security configuration of the database",
+          "subblock": [
+            {
+              "word": "admin_roles",
+              "kind": "Set(O)",
+              "info": "Database administration roles",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "admins",
+              "kind": "Set(O)",
+              "info": "Database administrators",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "member_roles",
+              "kind": "Set(O)",
+              "info": "Database member roles",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "members",
+              "kind": "Set(O)",
+              "info": "Database members",
+              "type": "set",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "data_size",
+          "kind": "Int",
+          "info": "Size of database data",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "disk_format_version",
+          "kind": "Int",
+          "info": "Disk format version",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "disk_size",
+          "kind": "Int",
+          "info": "Size of storage disk",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "document_count",
+          "kind": "Int",
+          "info": "Number of documents in database",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "document_deletion_count",
+          "kind": "Int",
+          "info": "Number of tombstones in database",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "database_design_document": {
+      "arguments": [
+        {
+          "word": "database",
+          "kind": "String(R)",
+          "info": "Database to associate design with",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "language",
+          "kind": "String(O)",
+          "info": "Language of map/ reduce functions",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the design document",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "view",
+          "kind": "Set(O)(B)",
+          "info": "A view inside the design document",
+          "subblock": [
+            {
+              "word": "map",
+              "kind": "String(R)",
+              "info": "Map function",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Name of the view",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "reduce",
+              "kind": "String(O)",
+              "info": "Reduce functionn",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "revision",
+          "kind": "String",
+          "info": "Revision",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "database_replication": {
+      "arguments": [
+        {
+          "word": "context",
+          "kind": "List(O)(B)",
+          "info": "Execution context of the replication. Can be a specific user or a set of roles",
+          "subblock": [
+            {
+              "word": "roles",
+              "kind": "Set(O)",
+              "info": "Execution context roles",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user",
+              "kind": "String(O)",
+              "info": "Execution context username",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "continuous",
+          "kind": "Bool(O)",
+          "info": "Keep the replication permanently running?",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "create_target",
+          "kind": "Bool(O)",
+          "info": "Create target if it does not exist?",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "filter",
+          "kind": "String(O)",
+          "info": "Filter documents when replicating",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the replication document",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "query_params",
+          "kind": "Map(O)",
+          "info": "Additional query parameters for the filter function",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source",
+          "kind": "String(R)",
+          "info": "Source of the replication",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "target",
+          "kind": "String(R)",
+          "info": "Target of the replication",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "replication_id",
+          "kind": "String",
+          "info": "Internal replication ID",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "replication_state",
+          "kind": "String",
+          "info": "currennt replication state",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "replication_state_reason",
+          "kind": "String",
+          "info": "current replication state transition reason",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "user": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Username",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(R)",
+          "info": "Password",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "roles",
+          "kind": "Set(O)",
+          "info": "User roles",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "revision",
+          "kind": "String",
+          "info": "Revision",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

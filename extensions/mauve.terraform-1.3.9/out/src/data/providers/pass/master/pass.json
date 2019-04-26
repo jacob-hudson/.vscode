@@ -1,0 +1,95 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "password": {
+      "arguments": [
+        {
+          "word": "data",
+          "kind": "Map(O)",
+          "info": "additional secret data.",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "password",
+          "kind": "String(R)",
+          "info": "secret password.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "path",
+          "kind": "String(R)",
+          "info": "Full path where the pass data will be written.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "password": {
+      "arguments": [
+        {
+          "word": "path",
+          "kind": "String(R)",
+          "info": "Full path from which a password will be read.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "body",
+          "kind": "String",
+          "info": "raw secret data if not YAML.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "data",
+          "kind": "Map",
+          "info": "additional secret data.",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "full",
+          "kind": "String",
+          "info": "entire secret contents",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "password",
+          "kind": "String",
+          "info": "secret password.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

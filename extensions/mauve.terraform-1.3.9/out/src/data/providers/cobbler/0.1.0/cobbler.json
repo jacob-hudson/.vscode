@@ -1,0 +1,1510 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "distro": {
+      "arguments": [
+        {
+          "word": "arch",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "boot_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "breed",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fetchable_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "initrd",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "kernel",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "kernel_options",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kernel_options_post",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mgmt_classes",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "os_version",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "owners",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "redhat_management_key",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "redhat_management_server",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "arch",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "boot_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "comment",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fetchable_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel_options",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel_options_post",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mgmt_classes",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "owners",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "redhat_management_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "redhat_management_server",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "template_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "kickstart_file": {
+      "arguments": [
+        {
+          "word": "body",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "profile": {
+      "arguments": [
+        {
+          "word": "boot_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "distro",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "enable_gpxe",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_menu",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fetchable_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kernel_options",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kernel_options_post",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kickstart",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ks_meta",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mgmt_classes",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mgmt_parameters",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name_servers",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name_servers_search",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "owners",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "parent",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "proxy",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "redhat_management_key",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "redhat_management_server",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "repos",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template_remote_kickstarts",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_auto_boot",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_bridge",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_cpus",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_disk_driver",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_file_size",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_ram",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "boot_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "comment",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "enable_gpxe",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "enable_menu",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "fetchable_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel_options",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel_options_post",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kickstart",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ks_meta",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mgmt_classes",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "mgmt_parameters",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name_servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name_servers_search",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "owners",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "parent",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "proxy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "redhat_management_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "redhat_management_server",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "repos",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "server",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "template_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "template_remote_kickstarts",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "virt_auto_boot",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_bridge",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_cpus",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_disk_driver",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_file_size",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_path",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_ram",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "snippet": {
+      "arguments": [
+        {
+          "word": "body",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "system": {
+      "arguments": [
+        {
+          "word": "boot_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_gpxe",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fetchable_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "gateway",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hostname",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "interface",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "bonding_opts",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "bridge_opts",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cnames",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "dhcp_tag",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "dns_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "gateway",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "interface_master",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "interface_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ip_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_default_gateway",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_mtu",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_secondaries",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_static_routes",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mac_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "management",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "netmask",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "static",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "static_routes",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "virt_bridge",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "ipv6_default_device",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kernel_options",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kernel_options_post",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kickstart",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ks_meta",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ldap_enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ldap_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mgmt_classes",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mgmt_parameters",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "monit_enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name_servers",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name_servers_search",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "netboot_enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "owners",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "power_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "power_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "power_pass",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "power_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "power_user",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "profile",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "proxy",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "redhat_management_key",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "redhat_management_server",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "status",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template_files",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template_remote_kickstarts",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_auto_boot",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_cpus",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_disk_driver",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_file_size",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_pxe_boot",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_ram",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virt_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "boot_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "comment",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "enable_gpxe",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "fetchable_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "image",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "interface",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "bonding_opts",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "bridge_opts",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cnames",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "dhcp_tag",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "dns_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "gateway",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "interface_master",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "interface_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ip_address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ipv6_address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ipv6_default_gateway",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ipv6_mtu",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ipv6_secondaries",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "ipv6_static_routes",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "mac_address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "management",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "netmask",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "static",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "static_routes",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "virt_bridge",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "ipv6_default_device",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel_options",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel_options_post",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kickstart",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ks_meta",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ldap_enabled",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "ldap_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mgmt_classes",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "mgmt_parameters",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "monit_enabled",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "name_servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name_servers_search",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "netboot_enabled",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "owners",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "power_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "power_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "power_pass",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "power_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "power_user",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "proxy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "redhat_management_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "redhat_management_server",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "template_files",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "template_remote_kickstarts",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "virt_auto_boot",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_cpus",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_disk_driver",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_file_size",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_path",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_pxe_boot",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "virt_ram",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virt_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

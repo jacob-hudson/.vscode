@@ -1,0 +1,479 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "database": {
+      "arguments": [
+        {
+          "word": "allow_connections",
+          "kind": "Bool(O)",
+          "info": "If false then no one can connect to this database",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connection_limit",
+          "kind": "Int(O)",
+          "info": "How many concurrent connections can be made to this database",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "encoding",
+          "kind": "String(O)",
+          "info": "Character set encoding to use in the new database",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "is_template",
+          "kind": "Bool(O)",
+          "info": "If true, then this database can be cloned by any user with CREATEDB privileges",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "lc_collate",
+          "kind": "String(O)",
+          "info": "Collation order (LC_COLLATE) to use in the new database",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "lc_ctype",
+          "kind": "String(O)",
+          "info": "Character classification (LC_CTYPE) to use in the new database",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The PostgreSQL database name to connect to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "owner",
+          "kind": "String(O)",
+          "info": "The ROLE which owns the database",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tablespace_name",
+          "kind": "String(O)",
+          "info": "The name of the tablespace that will be associated with the new database",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template",
+          "kind": "String(O)",
+          "info": "The name of the template from which to create the new database",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "encoding",
+          "kind": "String",
+          "info": "Character set encoding to use in the new database",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_template",
+          "kind": "Bool",
+          "info": "If true, then this database can be cloned by any user with CREATEDB privileges",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "lc_collate",
+          "kind": "String",
+          "info": "Collation order (LC_COLLATE) to use in the new database",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "lc_ctype",
+          "kind": "String",
+          "info": "Character classification (LC_CTYPE) to use in the new database",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "owner",
+          "kind": "String",
+          "info": "The ROLE which owns the database",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tablespace_name",
+          "kind": "String",
+          "info": "The name of the tablespace that will be associated with the new database",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "template",
+          "kind": "String",
+          "info": "The name of the template from which to create the new database",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "extension": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "schema",
+          "kind": "String(O)",
+          "info": "Sets the schema of an extension",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "version",
+          "kind": "String(O)",
+          "info": "Sets the version number of the extension",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "schema",
+          "kind": "String",
+          "info": "Sets the schema of an extension",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "version",
+          "kind": "String",
+          "info": "Sets the version number of the extension",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "role": {
+      "arguments": [
+        {
+          "word": "bypass_row_level_security",
+          "kind": "Bool(O)",
+          "info": "Determine whether a role bypasses every row-level security (RLS) policy",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "connection_limit",
+          "kind": "Int(O)",
+          "info": "How many concurrent connections can be made with this role",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "create_database",
+          "kind": "Bool(O)",
+          "info": "Define a role's ability to create databases",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "create_role",
+          "kind": "Bool(O)",
+          "info": "Determine whether this role will be permitted to create new roles",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "encrypted",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "encrypted_password",
+          "kind": "Bool(O)",
+          "info": "Control whether the password is stored encrypted in the system catalogs",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "inherit",
+          "kind": "Bool(O)",
+          "info": "Determine whether a role \"inherits\" the privileges of roles it is a member of",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "login",
+          "kind": "Bool(O)",
+          "info": "Determine whether a role is allowed to log in",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the role",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "info": "Sets the role's password",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "replication",
+          "kind": "Bool(O)",
+          "info": "Determine whether a role is allowed to initiate streaming replication or put the system in and out of backup mode",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "skip_drop_role",
+          "kind": "Bool(O)",
+          "info": "Skip actually running the DROP ROLE command when removing a ROLE from PostgreSQL",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "skip_reassign_owned",
+          "kind": "Bool(O)",
+          "info": "Skip actually running the REASSIGN OWNED command when removing a role from PostgreSQL",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "superuser",
+          "kind": "Bool(O)",
+          "info": "Determine whether the new role is a \"superuser\"",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "valid_until",
+          "kind": "String(O)",
+          "info": "Sets a date and time after which the role's password is no longer valid",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "password",
+          "kind": "String",
+          "info": "Sets the role's password",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "schema": {
+      "arguments": [
+        {
+          "word": "if_not_exists",
+          "kind": "Bool(O)",
+          "info": "When true, use the existing schema if it exists",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the schema",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "owner",
+          "kind": "String(O)",
+          "info": "The ROLE name who owns the schema",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "policy",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "create",
+              "kind": "Bool(O)",
+              "info": "If true, allow the specified ROLEs to CREATE new objects within the schema(s)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_with_grant",
+              "kind": "Bool(O)",
+              "info": "If true, allow the specified ROLEs to CREATE new objects within the schema(s) and GRANT the same CREATE privilege to different ROLEs",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "role",
+              "kind": "String(O)",
+              "info": "ROLE who will receive this policy (default: PUBLIC)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "usage",
+              "kind": "Bool(O)",
+              "info": "If true, allow the specified ROLEs to use objects within the schema(s)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "usage_with_grant",
+              "kind": "Bool(O)",
+              "info": "If true, allow the specified ROLEs to use objects within the schema(s) and GRANT the same USAGE privilege to different ROLEs",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "owner",
+          "kind": "String",
+          "info": "The ROLE name who owns the schema",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "policy",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "create",
+              "kind": "Bool",
+              "info": "If true, allow the specified ROLEs to CREATE new objects within the schema(s)",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "create_with_grant",
+              "kind": "Bool",
+              "info": "If true, allow the specified ROLEs to CREATE new objects within the schema(s) and GRANT the same CREATE privilege to different ROLEs",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "role",
+              "kind": "String",
+              "info": "ROLE who will receive this policy (default: PUBLIC)",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "usage",
+              "kind": "Bool",
+              "info": "If true, allow the specified ROLEs to use objects within the schema(s)",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "usage_with_grant",
+              "kind": "Bool",
+              "info": "If true, allow the specified ROLEs to use objects within the schema(s) and GRANT the same USAGE privilege to different ROLEs",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

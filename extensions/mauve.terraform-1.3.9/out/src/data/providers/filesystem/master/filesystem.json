@@ -1,0 +1,140 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "file_reader": {
+      "arguments": [
+        {
+          "word": "path",
+          "kind": "String(R)",
+          "info": "Path to read the file on disk",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "root",
+          "kind": "String(O)",
+          "info": "Path to the root of the module",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "contents",
+          "kind": "String",
+          "info": "Raw file contents",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mode",
+          "kind": "String",
+          "info": "File mode bits",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "info": "Basename of the file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "info": "Size of the file in bytes",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "file_writer": {
+      "arguments": [
+        {
+          "word": "contents",
+          "kind": "String(O)",
+          "info": "Raw file contents",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "create_parent_dirs",
+          "kind": "Bool(O)",
+          "info": "Create parent directories if they do not exist",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "delete_on_destroy",
+          "kind": "Bool(O)",
+          "info": "Delete the created file on destroy",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mode",
+          "kind": "String(O)",
+          "info": "File mode bits",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "path",
+          "kind": "String(R)",
+          "info": "Path to write the file on disk",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "root",
+          "kind": "String(O)",
+          "info": "Path to the root of the module",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "name",
+          "kind": "String",
+          "info": "Basename of the file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "info": "Size of the file in bytes",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

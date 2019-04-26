@@ -1,0 +1,5027 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "credential": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of the credential object",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the credential object",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "value",
+          "kind": "String(R)",
+          "info": "value of the credential object",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cwf_process": {
+      "arguments": [
+        {
+          "word": "parameters",
+          "kind": "List(O)(B)",
+          "info": "main definition parameter values in order of declaration",
+          "subblock": [
+            {
+              "word": "kind",
+              "kind": "String(R)",
+              "info": "Entities have a kind and a value.\n  * The kind for a JSON value corresponds to the JSON type name ('string',\n  'number', 'bool', 'null', 'array', 'object')\n  * The kind for a resource declaration is 'declaration'\n  * The kind for a resource collection is 'collection'",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "info": "Entities have a kind and a value.\n  * The value for entities of kind 'string', 'number', 'bool', 'null', 'array'\n    or 'object' is the JSON reprensentation of the underlying value.\n  * The value for a resource collection is a JSON object with the following keys:\n      - 'namespace' contains a string representing the collection namespace (e.g. 'rs')\n      - 'type' contains a string representing the collection type (e.g. 'servers')\n      - 'hrefs' contains an arry of strings representing the hrefs of the resources in the collection\n      - 'details' contains an array of hashes representing the resource attributes\n  * The value for a resource declaration is a JSON object with the following keys:\n      - 'namespace' contains a string representing the declaration namespace (e.g. 'rs')\n      - 'type' contains a string reprensenting the declaration type (e.g. 'servers')\n      - 'fields' contains a hash reprensenting the data needed to create the resource\n      - 'dependencies' contains an array that lists names of references this declaration depends on",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "source",
+          "kind": "String(R)",
+          "info": "process source code, must contain a definition called 'main'",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "error",
+          "kind": "String",
+          "info": "process execution error if any",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "outputs",
+          "kind": "Map",
+          "info": "process outputs if any",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "info": "process status, one of \"completed\", \"failed\", \"canceled\" or \"aborted\"",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "deployment": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of deployment",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "locked",
+          "kind": "Bool(O)",
+          "info": "whether deployment is locked",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of deployment",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_group_href",
+          "kind": "String(O)",
+          "info": "ID of the Windows Azure Resource Group attached to the deployment",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_tag_scope",
+          "kind": "String(O)",
+          "info": "routing scope for tags for servers in the deployment",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "href of deployment",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "instance": {
+      "arguments": [
+        {
+          "word": "associate_public_ip_address",
+          "kind": "Bool(O)",
+          "info": "Specify whether or not you want a public IP assigned when this Instance is launched. Only applies to Network-enabled Instances. If this is not specified, it will default to true.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "The ID of the instance cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cloud_specific_attributes",
+          "kind": "List(O)(B)",
+          "info": "Cloud specific attributes that have no generic rightscale abstraction",
+          "subblock": [
+            {
+              "word": "admin_username",
+              "kind": "String(O)",
+              "info": "The user that will be granted administrative privileges. Supported by AzureRM cloud only. For more information, review the documentation.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "automatic_instance_store_mapping",
+              "kind": "String(O)",
+              "info": "A flag indicating whether instance store mapping should be enabled. Not supported in all Clouds.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "availability_set",
+              "kind": "String(O)",
+              "info": "Availability set for raw instance. Supported by Azure v2 cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_boot_volume",
+              "kind": "String(O)",
+              "info": "If enabled, the instance will launch into volume storage. Otherwise, it will boot to local storage.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_default_port_forwarding_rules",
+              "kind": "String(O)",
+              "info": "Automatically create default port forwarding rules (enabled by default). Supported by Azure cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delete_boot_volume",
+              "kind": "String(O)",
+              "info": "If enabled, the associated volume will be deleted when the instance is terminated.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disk_gb",
+              "kind": "Int(O)",
+              "info": "The size of root disk. Supported by UCA cloud only.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ebs_optimized",
+              "kind": "String(O)",
+              "info": "Whether the instance is able to connect to IOPS-enabled volumes.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "iam_instance_profile",
+              "kind": "String(O)",
+              "info": "The name or ARN of the IAM Instance Profile (IIP) to associate with the instance (Amazon only)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "keep_alive_id",
+              "kind": "String(O)",
+              "info": "The id of keep alive. Supported by UCA cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "keep_alive_url",
+              "kind": "String(O)",
+              "info": "he ulr of keep alive. Supported by UCA cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "local_ssd_count",
+              "kind": "String(O)",
+              "info": "Additional local SSDs. Supported by GCE cloud only",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "local_ssd_interface",
+              "kind": "String(O)",
+              "info": "The type of SSD(s) to be created. Supported by GCE cloud only",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "max_spot_price",
+              "kind": "String(O)",
+              "info": "Specify the max spot price you will pay for. Required when 'pricing_type' is 'spot'. Only applies to clouds which support spot-pricing and when 'spot' is chosen as the 'pricing_type'. Should be a Float value >= 0.001, eg: 0.095, 0.123, 1.23, etc...",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "memory_mb",
+              "kind": "Int(O)",
+              "info": "The size of instance memory. Supported by UCA cloud only.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "metadata",
+              "kind": "String(O)",
+              "info": "Extra data used for configuration, in query string format.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "num_cores",
+              "kind": "Int(O)",
+              "info": "The number of instance cores. Supported by UCA cloud only.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "placement_tenancy",
+              "kind": "String(O)",
+              "info": "The tenancy of the server you want to launch. A server with a tenancy of dedicated runs on single-tenant hardware and can only be launched into a VPC.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "preemptible",
+              "kind": "String(O)",
+              "info": "Launch a preemptible instance. A preemptible instance costs much less, but lasts only 24 hours. It can be terminated sooner due to system demands. Supported by GCE cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "pricing_type",
+              "kind": "String(O)",
+              "info": "Specify whether or not you want to utilize 'fixed' (on-demand) or 'spot' pricing. Defaults to 'fixed' and only applies to clouds which support spot instances. Can only be set on when creating a new Instance, Server, or ServerArray, or when updating a Server or ServerArray's next_instance.WARNING: By using spot pricing, you acknowledge that your instance/server/array may not be able to be launched (and arrays may be unable to grow) as newly launched instances might be stuck in bidding, and/or existing instances may be terminated at any time, due to the cloud's spot pricing changes and availability.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "root_volume_performance",
+              "kind": "String(O)",
+              "info": "The number of IOPS (I/O Operations Per Second) this root volume should support. Only available on clouds supporting performance provisioning.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "root_volume_size",
+              "kind": "String(O)",
+              "info": "The size for root disk. Not supported in all Clouds.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "root_volume_type_uid",
+              "kind": "String(O)",
+              "info": "The type of root volume for instance. Only available on clouds supporting root volume type.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_account",
+              "kind": "String(O)",
+              "info": "Email of service account for instance. Scope will default to cloud-platform. Supported by GCE cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "datacenter_href",
+          "kind": "String(O)",
+          "info": "The ID of the instance datacenter",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "deployment_href",
+          "kind": "String(O)",
+          "info": "The ID of the instance deployment",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image_href",
+          "kind": "String(R)",
+          "info": "The ID of the instance image",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "inputs",
+          "kind": "List(O)",
+          "info": "Inputs associated with an instance when incarnated from a server or server array",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_type_href",
+          "kind": "String(R)",
+          "info": "The ID of the instance type",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip_forwarding_enabled",
+          "kind": "Bool(O)",
+          "info": "Allows this Instance to send and receive network traffic when the source and destination IP addresses do not match the IP address of this Instance.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "kernel_image_href",
+          "kind": "String(O)",
+          "info": "The ID of the instance kernel image.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "locked",
+          "kind": "Bool(O)",
+          "info": "whether instance is locked, a locked instance cannot be terminated or deleted",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the instance",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "placement_group_href",
+          "kind": "String(O)",
+          "info": "The placement group to launch the instance in. Not supported by all clouds & instance types.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "private_ip_address",
+          "kind": "String(O)",
+          "info": "The private ip address for the instance",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ramdisk_image_href",
+          "kind": "String(O)",
+          "info": "The ID of the ramdisk image",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_group_hrefs",
+          "kind": "List(O)",
+          "info": "The IDs of the security groups",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_template_href",
+          "kind": "String(O)",
+          "info": "The ID of the server template.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_href",
+          "kind": "String(O)",
+          "info": "The ID of the SSH key to use",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subnet_hrefs",
+          "kind": "List(O)",
+          "info": "The IDs of the instance subnets",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_data",
+          "kind": "String(O)",
+          "info": "User data that RightScale automatically passes to your instance at boot time",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "pricing_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip_addresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "public_ip_addresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network": {
+      "arguments": [
+        {
+          "word": "cidr_block",
+          "kind": "String(O)",
+          "info": "range of IP addresses for network, this parameter is required for Amazon clouds",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of cloud to create network in",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "deployment_href",
+          "kind": "String(O)",
+          "info": "Optional href of deployment that owns the network.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of network",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance_tenancy",
+          "kind": "String(O)",
+          "info": "launch policy for AWS instances in the network. Specify 'dedicated' to force all instances to be launched as 'dedicated'.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "name of network",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "route_table_href",
+          "kind": "String(O)",
+          "info": "sets the default route table for this network",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "href of network",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network_gateway": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of cloud in which to create network gateway",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of network gateway",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of network gateway",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_href",
+          "kind": "String(O)",
+          "info": "network href to attach to",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "type of network gateway",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "href of network gateway",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "route": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of route",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_cidr_block",
+          "kind": "String(R)",
+          "info": "Destination network in CIDR nodation",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "next_hop_href",
+          "kind": "String(O)",
+          "info": "The href of the Route's next hop. Required if 'next_hop_type' is 'instance', 'network_interface', or 'network_gateway'. Not allowed otherwise.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "next_hop_ip",
+          "kind": "String(O)",
+          "info": "The IP Address of the Route's next hop. Required if 'next_hop_type' is 'ip_string'. Not allowed otherwise.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "next_hop_type",
+          "kind": "String(R)",
+          "info": "The route next hop type.  Options are 'instance', 'network_interface', 'network_gateway', 'ip_string', and 'url'",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "next_hop_url",
+          "kind": "String(O)",
+          "info": "The URL of the Route's next hop. Required if 'next_hop_type' is 'url'. Not allowed otherwise.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "route_table_href",
+          "kind": "String(R)",
+          "info": "Href of route table in which to create new route",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "Href of route table",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "route_table": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "Href of cloud in which to create route table",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of route table",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of route table",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_href",
+          "kind": "String(R)",
+          "info": "Href of network in which to create route table",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "Href of route table",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "href of the security group cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "deployment_href",
+          "kind": "String(O)",
+          "info": "Optional href of deployment that owns the security group",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of the security group",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of the security group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_href",
+          "kind": "String(R)",
+          "info": "href of the network to create the security group in",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "href of security group",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group_rule": {
+      "arguments": [
+        {
+          "word": "cidr_ips",
+          "kind": "String(O)",
+          "info": "An IP address range in CIDR notation. Required if source_type is 'cidr'. Conflicts with 'group_name' and 'group_owner'",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "direction",
+          "kind": "String(O)",
+          "info": "Direction of traffic.  Options are 'ingress' or 'egress.'",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "group_name",
+          "kind": "String(O)",
+          "info": "Name of source Security Group. Required if source_type is 'group'.  Conflicts with 'cidr_ips'.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "group_owner",
+          "kind": "String(O)",
+          "info": "Owner of source Security Group. Required if source_type is 'group'. Conflicts with 'cidr_ips'.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "priority",
+          "kind": "Int(O)",
+          "info": "Lower takes precedence. Supported by security group rules created in Microsoft Azure only.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "info": "Protocol to filter on.  Options are 'tcp', 'udp', 'icmp' and 'all'.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol_details",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "end_port",
+              "kind": "String(O)",
+              "info": "End of port range (inclusive). Required if protocol is 'tcp' or 'udp'.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "icmp_code",
+              "kind": "String(O)",
+              "info": "ICMP code. Required if protocol is 'icmp'.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "icmp_type",
+              "kind": "String(O)",
+              "info": "ICMP type. Required if protocol is 'icmp'.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "start_port",
+              "kind": "String(O)",
+              "info": "Start of port range (inclusive). Required if protocol is 'tcp' or 'udp'.",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "security_group_href",
+          "kind": "String(R)",
+          "info": "Href of parent security group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_type",
+          "kind": "String(R)",
+          "info": "Source type. May be a CIDR block or another Security Group. Options are 'cidr_ips' or 'group'.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "Href of security group rule",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "deployment_href",
+          "kind": "String(O)",
+          "info": "ID of deployment in which to create server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "instance",
+          "kind": "List(R)(B)",
+          "info": "server instance details",
+          "subblock": [
+            {
+              "word": "associate_public_ip_address",
+              "kind": "Bool(O)",
+              "info": "Specify whether or not you want a public IP assigned when this Instance is launched. Only applies to Network-enabled Instances. If this is not specified, it will default to true.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_href",
+              "kind": "String(R)",
+              "info": "The ID of the instance cloud",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cloud_specific_attributes",
+              "kind": "List(O)(B)",
+              "info": "Cloud specific attributes that have no generic rightscale abstraction",
+              "subblock": [
+                {
+                  "word": "admin_username",
+                  "kind": "String(O)",
+                  "info": "The user that will be granted administrative privileges. Supported by AzureRM cloud only. For more information, review the documentation.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "automatic_instance_store_mapping",
+                  "kind": "String(O)",
+                  "info": "A flag indicating whether instance store mapping should be enabled. Not supported in all Clouds.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "availability_set",
+                  "kind": "String(O)",
+                  "info": "Availability set for raw instance. Supported by Azure v2 cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "create_boot_volume",
+                  "kind": "String(O)",
+                  "info": "If enabled, the instance will launch into volume storage. Otherwise, it will boot to local storage.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "create_default_port_forwarding_rules",
+                  "kind": "String(O)",
+                  "info": "Automatically create default port forwarding rules (enabled by default). Supported by Azure cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "delete_boot_volume",
+                  "kind": "String(O)",
+                  "info": "If enabled, the associated volume will be deleted when the instance is terminated.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "disk_gb",
+                  "kind": "Int(O)",
+                  "info": "The size of root disk. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ebs_optimized",
+                  "kind": "String(O)",
+                  "info": "Whether the instance is able to connect to IOPS-enabled volumes.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "iam_instance_profile",
+                  "kind": "String(O)",
+                  "info": "The name or ARN of the IAM Instance Profile (IIP) to associate with the instance (Amazon only)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "keep_alive_id",
+                  "kind": "String(O)",
+                  "info": "The id of keep alive. Supported by UCA cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "keep_alive_url",
+                  "kind": "String(O)",
+                  "info": "he ulr of keep alive. Supported by UCA cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "local_ssd_count",
+                  "kind": "String(O)",
+                  "info": "Additional local SSDs. Supported by GCE cloud only",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "local_ssd_interface",
+                  "kind": "String(O)",
+                  "info": "The type of SSD(s) to be created. Supported by GCE cloud only",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "max_spot_price",
+                  "kind": "String(O)",
+                  "info": "Specify the max spot price you will pay for. Required when 'pricing_type' is 'spot'. Only applies to clouds which support spot-pricing and when 'spot' is chosen as the 'pricing_type'. Should be a Float value >= 0.001, eg: 0.095, 0.123, 1.23, etc...",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "memory_mb",
+                  "kind": "Int(O)",
+                  "info": "The size of instance memory. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "metadata",
+                  "kind": "String(O)",
+                  "info": "Extra data used for configuration, in query string format.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "num_cores",
+                  "kind": "Int(O)",
+                  "info": "The number of instance cores. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "placement_tenancy",
+                  "kind": "String(O)",
+                  "info": "The tenancy of the server you want to launch. A server with a tenancy of dedicated runs on single-tenant hardware and can only be launched into a VPC.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "preemptible",
+                  "kind": "String(O)",
+                  "info": "Launch a preemptible instance. A preemptible instance costs much less, but lasts only 24 hours. It can be terminated sooner due to system demands. Supported by GCE cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "pricing_type",
+                  "kind": "String(O)",
+                  "info": "Specify whether or not you want to utilize 'fixed' (on-demand) or 'spot' pricing. Defaults to 'fixed' and only applies to clouds which support spot instances. Can only be set on when creating a new Instance, Server, or ServerArray, or when updating a Server or ServerArray's next_instance.WARNING: By using spot pricing, you acknowledge that your instance/server/array may not be able to be launched (and arrays may be unable to grow) as newly launched instances might be stuck in bidding, and/or existing instances may be terminated at any time, due to the cloud's spot pricing changes and availability.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "root_volume_performance",
+                  "kind": "String(O)",
+                  "info": "The number of IOPS (I/O Operations Per Second) this root volume should support. Only available on clouds supporting performance provisioning.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "root_volume_size",
+                  "kind": "String(O)",
+                  "info": "The size for root disk. Not supported in all Clouds.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "root_volume_type_uid",
+                  "kind": "String(O)",
+                  "info": "The type of root volume for instance. Only available on clouds supporting root volume type.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "service_account",
+                  "kind": "String(O)",
+                  "info": "Email of service account for instance. Scope will default to cloud-platform. Supported by GCE cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "datacenter_href",
+              "kind": "String(O)",
+              "info": "The ID of the instance datacenter",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "The ID of the instance deployment",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image_href",
+              "kind": "String(R)",
+              "info": "The ID of the instance image",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "inputs",
+              "kind": "List(O)",
+              "info": "Inputs associated with an instance when incarnated from a server or server array",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "instance_type_href",
+              "kind": "String(R)",
+              "info": "The ID of the instance type",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "ip_forwarding_enabled",
+              "kind": "Bool(O)",
+              "info": "Allows this Instance to send and receive network traffic when the source and destination IP addresses do not match the IP address of this Instance.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "kernel_image_href",
+              "kind": "String(O)",
+              "info": "The ID of the instance kernel image.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "locked",
+              "kind": "Bool(O)",
+              "info": "whether instance is locked, a locked instance cannot be terminated or deleted",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The name of the instance",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "placement_group_href",
+              "kind": "String(O)",
+              "info": "The placement group to launch the instance in. Not supported by all clouds & instance types.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "private_ip_address",
+              "kind": "String(O)",
+              "info": "The private ip address for the instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ramdisk_image_href",
+              "kind": "String(O)",
+              "info": "The ID of the ramdisk image",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "security_group_hrefs",
+              "kind": "List(O)",
+              "info": "The IDs of the security groups",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "server_template_href",
+              "kind": "String(O)",
+              "info": "The ID of the server template.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_key_href",
+              "kind": "String(O)",
+              "info": "The ID of the SSH key to use",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "subnet_hrefs",
+              "kind": "List(O)",
+              "info": "The IDs of the instance subnets",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user_data",
+              "kind": "String(O)",
+              "info": "User data that RightScale automatically passes to your instance at boot time",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "optimized",
+          "kind": "Bool(O)",
+          "info": "A flag indicating whether Instances of this Server should be optimized for high-performance volumes (e.g. Volumes supporting a specified number of IOPS). Not supported in all Clouds.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "info": "Tags to apply to server and associated instance",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "href of server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server_array": {
+      "arguments": [
+        {
+          "word": "array_type",
+          "kind": "String(O)",
+          "info": "The array type for the Server Array.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datacenter_policy",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "datacenter_href",
+              "kind": "String(R)",
+              "info": "The href of the Datacenter / Zone.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "max",
+              "kind": "Int(R)",
+              "info": "Max instances (0 for unlimited).",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "weight",
+              "kind": "Int(R)",
+              "info": "Instance allocation (should total 100%).",
+              "type": "int",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "deployment_href",
+          "kind": "String(O)",
+          "info": "ID of deployment in which to create server_array",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of server_array",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "elasticity_params",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "alert_specific_params",
+              "kind": "List(O)(B)",
+              "info": "Alert based server array params, required if 'array_type' is 'alert'",
+              "subblock": [
+                {
+                  "word": "decision_threshold",
+                  "kind": "Int(O)",
+                  "info": "The percentage of servers that must agree in order to trigger an alert before an action is taken.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "voters_tag_predicate",
+                  "kind": "String(O)",
+                  "info": "The Voters Tag that RightScale will use in order to determine when to scale up/down.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "bounds",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "max_count",
+                  "kind": "Int(R)",
+                  "info": "The maximum number of servers that can be operational at the same time in the server array.",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "min_count",
+                  "kind": "Int(R)",
+                  "info": "The minimum number of servers that must be operational at all times in the server array.",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "pacing",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "resize_calm_time",
+                  "kind": "Int(O)",
+                  "info": "The time (in minutes) on how long you want to wait before you repeat another action.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "resize_down_by",
+                  "kind": "Int(O)",
+                  "info": "The number of servers to scale down by.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "resize_up_by",
+                  "kind": "Int(O)",
+                  "info": "The number of servers to scale up by.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "queue_specific_params",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "collect_audit_entries",
+                  "kind": "String(O)",
+                  "info": "The audit SQS queue that will store audit entries.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "item_age",
+                  "kind": "List(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "algorithm",
+                      "kind": "String(O)",
+                      "info": "The algorithm that defines how an item's age will be determined, either by the average age or max (oldest) age.",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "max_age",
+                      "kind": "Int(O)",
+                      "info": "The threshold (in seconds) before a resize action occurs on the server array.",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "regexp",
+                      "kind": "String(O)",
+                      "info": "The regexp that helps the system determine an item's \"age\" in the queue. Example: created_at: (\\d\\d\\d\\d-\\d\\d-\\d\\d \\d\\d:\\d\\d:\\d\\d UTC)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": false
+                },
+                {
+                  "word": "queue_size",
+                  "kind": "List(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "items_per_instance",
+                      "kind": "Int(O)",
+                      "info": "Defines the ratio of worker instances per items in the queue. Example: If there are 50 items in the queue and \"Items per instance\" is set to 10, the server array will resize to 5 worker instances (50/10). Default = 1",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "schedule",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "day",
+                  "kind": "String(R)",
+                  "info": "Specifies the day when an alert-based array resizes.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "max_count",
+                  "kind": "Int(R)",
+                  "info": "The maximum number of servers that must be operational at all times in the server array. NOTE: Any changes that are made to the min/max count in the server array schedule will overwrite the array's default min/max count settings.",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "min_count",
+                  "kind": "Int(R)",
+                  "info": "The minimum number of servers that must be operational at all times in the server array. NOTE: Any changes that are made to the min/max count in the server array schedule will overwrite the array's default min/max count settings.",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "time",
+                  "kind": "String(R)",
+                  "info": "Specifies the time when an alert-based array resizes.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "instance",
+          "kind": "List(R)(B)",
+          "info": "server array instance details",
+          "subblock": [
+            {
+              "word": "associate_public_ip_address",
+              "kind": "Bool(O)",
+              "info": "Specify whether or not you want a public IP assigned when this Instance is launched. Only applies to Network-enabled Instances. If this is not specified, it will default to true.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_href",
+              "kind": "String(R)",
+              "info": "The ID of the instance cloud",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "cloud_specific_attributes",
+              "kind": "List(O)(B)",
+              "info": "Cloud specific attributes that have no generic rightscale abstraction",
+              "subblock": [
+                {
+                  "word": "admin_username",
+                  "kind": "String(O)",
+                  "info": "The user that will be granted administrative privileges. Supported by AzureRM cloud only. For more information, review the documentation.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "automatic_instance_store_mapping",
+                  "kind": "String(O)",
+                  "info": "A flag indicating whether instance store mapping should be enabled. Not supported in all Clouds.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "availability_set",
+                  "kind": "String(O)",
+                  "info": "Availability set for raw instance. Supported by Azure v2 cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "create_boot_volume",
+                  "kind": "String(O)",
+                  "info": "If enabled, the instance will launch into volume storage. Otherwise, it will boot to local storage.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "create_default_port_forwarding_rules",
+                  "kind": "String(O)",
+                  "info": "Automatically create default port forwarding rules (enabled by default). Supported by Azure cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "delete_boot_volume",
+                  "kind": "String(O)",
+                  "info": "If enabled, the associated volume will be deleted when the instance is terminated.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "disk_gb",
+                  "kind": "Int(O)",
+                  "info": "The size of root disk. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "ebs_optimized",
+                  "kind": "String(O)",
+                  "info": "Whether the instance is able to connect to IOPS-enabled volumes.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "iam_instance_profile",
+                  "kind": "String(O)",
+                  "info": "The name or ARN of the IAM Instance Profile (IIP) to associate with the instance (Amazon only)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "keep_alive_id",
+                  "kind": "String(O)",
+                  "info": "The id of keep alive. Supported by UCA cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "keep_alive_url",
+                  "kind": "String(O)",
+                  "info": "he ulr of keep alive. Supported by UCA cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "local_ssd_count",
+                  "kind": "String(O)",
+                  "info": "Additional local SSDs. Supported by GCE cloud only",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "local_ssd_interface",
+                  "kind": "String(O)",
+                  "info": "The type of SSD(s) to be created. Supported by GCE cloud only",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "max_spot_price",
+                  "kind": "String(O)",
+                  "info": "Specify the max spot price you will pay for. Required when 'pricing_type' is 'spot'. Only applies to clouds which support spot-pricing and when 'spot' is chosen as the 'pricing_type'. Should be a Float value >= 0.001, eg: 0.095, 0.123, 1.23, etc...",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "memory_mb",
+                  "kind": "Int(O)",
+                  "info": "The size of instance memory. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "metadata",
+                  "kind": "String(O)",
+                  "info": "Extra data used for configuration, in query string format.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "num_cores",
+                  "kind": "Int(O)",
+                  "info": "The number of instance cores. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "placement_tenancy",
+                  "kind": "String(O)",
+                  "info": "The tenancy of the server you want to launch. A server with a tenancy of dedicated runs on single-tenant hardware and can only be launched into a VPC.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "preemptible",
+                  "kind": "String(O)",
+                  "info": "Launch a preemptible instance. A preemptible instance costs much less, but lasts only 24 hours. It can be terminated sooner due to system demands. Supported by GCE cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "pricing_type",
+                  "kind": "String(O)",
+                  "info": "Specify whether or not you want to utilize 'fixed' (on-demand) or 'spot' pricing. Defaults to 'fixed' and only applies to clouds which support spot instances. Can only be set on when creating a new Instance, Server, or ServerArray, or when updating a Server or ServerArray's next_instance.WARNING: By using spot pricing, you acknowledge that your instance/server/array may not be able to be launched (and arrays may be unable to grow) as newly launched instances might be stuck in bidding, and/or existing instances may be terminated at any time, due to the cloud's spot pricing changes and availability.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "root_volume_performance",
+                  "kind": "String(O)",
+                  "info": "The number of IOPS (I/O Operations Per Second) this root volume should support. Only available on clouds supporting performance provisioning.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "root_volume_size",
+                  "kind": "String(O)",
+                  "info": "The size for root disk. Not supported in all Clouds.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "root_volume_type_uid",
+                  "kind": "String(O)",
+                  "info": "The type of root volume for instance. Only available on clouds supporting root volume type.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "service_account",
+                  "kind": "String(O)",
+                  "info": "Email of service account for instance. Scope will default to cloud-platform. Supported by GCE cloud only.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "datacenter_href",
+              "kind": "String(O)",
+              "info": "The ID of the instance datacenter",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "The ID of the instance deployment",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image_href",
+              "kind": "String(R)",
+              "info": "The ID of the instance image",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "inputs",
+              "kind": "List(O)",
+              "info": "Inputs associated with an instance when incarnated from a server or server array",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "instance_type_href",
+              "kind": "String(R)",
+              "info": "The ID of the instance type",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "ip_forwarding_enabled",
+              "kind": "Bool(O)",
+              "info": "Allows this Instance to send and receive network traffic when the source and destination IP addresses do not match the IP address of this Instance.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "kernel_image_href",
+              "kind": "String(O)",
+              "info": "The ID of the instance kernel image.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "locked",
+              "kind": "Bool(O)",
+              "info": "whether instance is locked, a locked instance cannot be terminated or deleted",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The name of the instance",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "placement_group_href",
+              "kind": "String(O)",
+              "info": "The placement group to launch the instance in. Not supported by all clouds & instance types.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "private_ip_address",
+              "kind": "String(O)",
+              "info": "The private ip address for the instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ramdisk_image_href",
+              "kind": "String(O)",
+              "info": "The ID of the ramdisk image",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "security_group_hrefs",
+              "kind": "List(O)",
+              "info": "The IDs of the security groups",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "server_template_href",
+              "kind": "String(O)",
+              "info": "The ID of the server template.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_key_href",
+              "kind": "String(O)",
+              "info": "The ID of the SSH key to use",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "subnet_hrefs",
+              "kind": "List(O)",
+              "info": "The IDs of the instance subnets",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user_data",
+              "kind": "String(O)",
+              "info": "User data that RightScale automatically passes to your instance at boot time",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of server array",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "optimized",
+          "kind": "Bool(O)",
+          "info": "A flag indicating whether Instances of this ServerArray should be optimized for high-performance volumes (e.g. Volumes supporting a specified number of IOPS). Not supported in all Clouds.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "state",
+          "kind": "String(R)",
+          "info": "The status of the server array. If active, the server array is enabled for scaling actions.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "href of array",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "The ID of the cloud to operate against",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name of SSH key",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "subnet": {
+      "arguments": [
+        {
+          "word": "cidr_block",
+          "kind": "String(R)",
+          "info": "range of IP addresses for subnet, this parameter is required for Amazon clouds",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "Href of cloud resource",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "datacenter_href",
+          "kind": "String(O)",
+          "info": "ID of subnet datacenter",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "description of subnet",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "name of subnet",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network_href",
+          "kind": "String(R)",
+          "info": "ID of subnet network",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "route_table_href",
+          "kind": "String(O)",
+          "info": "ID of subnet route table",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "info": "href of subnet",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_default",
+          "kind": "Bool",
+          "info": "whether the subnet is the network default subnet",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "info": "cloud ID of subnet resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "info": "indicates whether subnet is pending, available etc.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "cloud": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cloud_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "credential": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of credential",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of credential, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "Filter at api level for the view: 'default' or 'sensitive' are valid options",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "value",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "datacenter": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "Href of datacenter cloud resource",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "deployment": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of deployment, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of deployment, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_group_href",
+              "kind": "String(O)",
+              "info": "resource group href to filter on",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "server_tag_scope",
+              "kind": "String(O)",
+              "info": "tag routing scope of deployments to filter on, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "Filter at api level for the view: 'default,' 'inputs' or 'inputs_2_0' are valid options",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server_tag_scope",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "image": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of image cloud resource",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cpu_architecture",
+              "kind": "String(O)",
+              "info": "CPU architecture of image, e.g. 'x86_64', uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of image, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image_type",
+              "kind": "String(O)",
+              "info": "The Image Type to filter on. This will be either \"machine\", \"machine_azure\", \"ramdisk\" or \"kernel\"",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of image, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "os_platform",
+              "kind": "String(O)",
+              "info": "The image's operating system to filter on. Examples: Linux or Windows.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "visibility",
+              "kind": "String(O)",
+              "info": "The visibility of the Image in the cloud to filter on, defaults to 'private.' Options: private, public.",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cpu_architecture",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "image_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "os_platform",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "root_device_storage",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "virtualization_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "visibility",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "instance": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(O)",
+          "info": "ID of instance cloud resource, exclusive with 'server_array_href'",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cloud_specific_attributes",
+          "kind": "List(O)(B)",
+          "info": "Cloud specific attributes that have no generic rightscale abstraction",
+          "subblock": [
+            {
+              "word": "admin_username",
+              "kind": "String(O)",
+              "info": "The user that will be granted administrative privileges. Supported by AzureRM cloud only. For more information, review the documentation.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "automatic_instance_store_mapping",
+              "kind": "String(O)",
+              "info": "A flag indicating whether instance store mapping should be enabled. Not supported in all Clouds.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "availability_set",
+              "kind": "String(O)",
+              "info": "Availability set for raw instance. Supported by Azure v2 cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_boot_volume",
+              "kind": "String(O)",
+              "info": "If enabled, the instance will launch into volume storage. Otherwise, it will boot to local storage.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "create_default_port_forwarding_rules",
+              "kind": "String(O)",
+              "info": "Automatically create default port forwarding rules (enabled by default). Supported by Azure cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delete_boot_volume",
+              "kind": "String(O)",
+              "info": "If enabled, the associated volume will be deleted when the instance is terminated.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disk_gb",
+              "kind": "Int(O)",
+              "info": "The size of root disk. Supported by UCA cloud only.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ebs_optimized",
+              "kind": "String(O)",
+              "info": "Whether the instance is able to connect to IOPS-enabled volumes.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "iam_instance_profile",
+              "kind": "String(O)",
+              "info": "The name or ARN of the IAM Instance Profile (IIP) to associate with the instance (Amazon only)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "keep_alive_id",
+              "kind": "String(O)",
+              "info": "The id of keep alive. Supported by UCA cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "keep_alive_url",
+              "kind": "String(O)",
+              "info": "he ulr of keep alive. Supported by UCA cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "local_ssd_count",
+              "kind": "String(O)",
+              "info": "Additional local SSDs. Supported by GCE cloud only",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "local_ssd_interface",
+              "kind": "String(O)",
+              "info": "The type of SSD(s) to be created. Supported by GCE cloud only",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "max_spot_price",
+              "kind": "String(O)",
+              "info": "Specify the max spot price you will pay for. Required when 'pricing_type' is 'spot'. Only applies to clouds which support spot-pricing and when 'spot' is chosen as the 'pricing_type'. Should be a Float value >= 0.001, eg: 0.095, 0.123, 1.23, etc...",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "memory_mb",
+              "kind": "Int(O)",
+              "info": "The size of instance memory. Supported by UCA cloud only.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "metadata",
+              "kind": "String(O)",
+              "info": "Extra data used for configuration, in query string format.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "num_cores",
+              "kind": "Int(O)",
+              "info": "The number of instance cores. Supported by UCA cloud only.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "placement_tenancy",
+              "kind": "String(O)",
+              "info": "The tenancy of the server you want to launch. A server with a tenancy of dedicated runs on single-tenant hardware and can only be launched into a VPC.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "preemptible",
+              "kind": "String(O)",
+              "info": "Launch a preemptible instance. A preemptible instance costs much less, but lasts only 24 hours. It can be terminated sooner due to system demands. Supported by GCE cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "pricing_type",
+              "kind": "String(O)",
+              "info": "Specify whether or not you want to utilize 'fixed' (on-demand) or 'spot' pricing. Defaults to 'fixed' and only applies to clouds which support spot instances. Can only be set on when creating a new Instance, Server, or ServerArray, or when updating a Server or ServerArray's next_instance.WARNING: By using spot pricing, you acknowledge that your instance/server/array may not be able to be launched (and arrays may be unable to grow) as newly launched instances might be stuck in bidding, and/or existing instances may be terminated at any time, due to the cloud's spot pricing changes and availability.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "root_volume_performance",
+              "kind": "String(O)",
+              "info": "The number of IOPS (I/O Operations Per Second) this root volume should support. Only available on clouds supporting performance provisioning.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "root_volume_size",
+              "kind": "String(O)",
+              "info": "The size for root disk. Not supported in all Clouds.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "root_volume_type_uid",
+              "kind": "String(O)",
+              "info": "The type of root volume for instance. Only available on clouds supporting root volume type.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_account",
+              "kind": "String(O)",
+              "info": "Email of service account for instance. Scope will default to cloud-platform. Supported by GCE cloud only.",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "datacenter_href",
+              "kind": "String(O)",
+              "info": "ID of the instance datacenter resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "ID of deployment resource that owns instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of instance, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "os_platform",
+              "kind": "String(O)",
+              "info": "OS platform of instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "parent_href",
+              "kind": "String(O)",
+              "info": "ID of instance server or server array parent resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "placement_group_href",
+              "kind": "String(O)",
+              "info": "ID of instance placement group resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "private_dns_name",
+              "kind": "String(O)",
+              "info": "Private DNS name of instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "private_ip",
+              "kind": "String(O)",
+              "info": "Private IP instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "public_dns_name",
+              "kind": "String(O)",
+              "info": "Public DNS name of instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "public_ip",
+              "kind": "String(O)",
+              "info": "Public IP of instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "server_template_href",
+              "kind": "String(O)",
+              "info": "ID of instance server template resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "state",
+              "kind": "String(O)",
+              "info": "state of instance",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "server_array_href",
+          "kind": "String(O)",
+          "info": "ID of instance server array resource, exclusive with 'cloud_href'",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "associate_public_ip_address",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "pricing_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_ip_addresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "public_ip_addresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "instance_type": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of instance cloud resource",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cpu_architecture",
+              "kind": "String(O)",
+              "info": "CPU architecture of instance type, e.g. 'x86_64'",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of instance type, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of instance type, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cpu_architecture",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cpu_count",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cpu_speed",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "memory",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "multi_cloud_image": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of multi-cloud image, partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of multi-cloud image, partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "revision",
+              "kind": "Int(O)",
+              "info": "revision of multi-cloud image, use 0 to match latest non-committed version",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "server_template_href",
+          "kind": "String(O)",
+          "info": "ID of image's server template resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cidr_block",
+              "kind": "String(O)",
+              "info": "CIDR of the network resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cloud_href",
+              "kind": "String(O)",
+              "info": "ID of the network cloud",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "ID of deployment resource that owns network",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of network, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cidr_block",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "instance_tenancy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_default",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network_gateway": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_href",
+              "kind": "String(O)",
+              "info": "filter by href of the specified cloud",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "filter by name of network gateway, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "network_href",
+              "kind": "String(O)",
+              "info": "filter by network href",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "route_table": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_href",
+              "kind": "String(O)",
+              "info": "Href of the route table's cloud",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of route table, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "network_href",
+              "kind": "String(O)",
+              "info": "Href of the route table's network",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "routes",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of the security group cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "ID of deployment resource that owns security group",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of security group, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "network_href",
+              "kind": "String(O)",
+              "info": "ID of the security group network resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cloud_href",
+              "kind": "String(O)",
+              "info": "ID of cloud the server is in",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "ID of deployment the server is in",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of server",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "name of server",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "info": "description of server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "instance",
+          "kind": "List(B)",
+          "info": "server instance details",
+          "subblock": [
+            {
+              "word": "associate_public_ip_address",
+              "kind": "Bool",
+              "info": "Specify whether or not you want a public IP assigned when this Instance is launched. Only applies to Network-enabled Instances. If this is not specified, it will default to true.",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "cloud_href",
+              "kind": "String",
+              "info": "The ID of the instance cloud",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cloud_specific_attributes",
+              "kind": "List(B)",
+              "info": "Cloud specific attributes that have no generic rightscale abstraction",
+              "subblock": [
+                {
+                  "word": "admin_username",
+                  "kind": "String",
+                  "info": "The user that will be granted administrative privileges. Supported by AzureRM cloud only. For more information, review the documentation.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "automatic_instance_store_mapping",
+                  "kind": "String",
+                  "info": "A flag indicating whether instance store mapping should be enabled. Not supported in all Clouds.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "availability_set",
+                  "kind": "String",
+                  "info": "Availability set for raw instance. Supported by Azure v2 cloud only.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "create_boot_volume",
+                  "kind": "String",
+                  "info": "If enabled, the instance will launch into volume storage. Otherwise, it will boot to local storage.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "create_default_port_forwarding_rules",
+                  "kind": "String",
+                  "info": "Automatically create default port forwarding rules (enabled by default). Supported by Azure cloud only.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "delete_boot_volume",
+                  "kind": "String",
+                  "info": "If enabled, the associated volume will be deleted when the instance is terminated.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "disk_gb",
+                  "kind": "Int",
+                  "info": "The size of root disk. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "ebs_optimized",
+                  "kind": "String",
+                  "info": "Whether the instance is able to connect to IOPS-enabled volumes.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "iam_instance_profile",
+                  "kind": "String",
+                  "info": "The name or ARN of the IAM Instance Profile (IIP) to associate with the instance (Amazon only)",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "keep_alive_id",
+                  "kind": "String",
+                  "info": "The id of keep alive. Supported by UCA cloud only.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "keep_alive_url",
+                  "kind": "String",
+                  "info": "he ulr of keep alive. Supported by UCA cloud only.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "local_ssd_count",
+                  "kind": "String",
+                  "info": "Additional local SSDs. Supported by GCE cloud only",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "local_ssd_interface",
+                  "kind": "String",
+                  "info": "The type of SSD(s) to be created. Supported by GCE cloud only",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "max_spot_price",
+                  "kind": "String",
+                  "info": "Specify the max spot price you will pay for. Required when 'pricing_type' is 'spot'. Only applies to clouds which support spot-pricing and when 'spot' is chosen as the 'pricing_type'. Should be a Float value >= 0.001, eg: 0.095, 0.123, 1.23, etc...",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "memory_mb",
+                  "kind": "Int",
+                  "info": "The size of instance memory. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "metadata",
+                  "kind": "String",
+                  "info": "Extra data used for configuration, in query string format.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "num_cores",
+                  "kind": "Int",
+                  "info": "The number of instance cores. Supported by UCA cloud only.",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "placement_tenancy",
+                  "kind": "String",
+                  "info": "The tenancy of the server you want to launch. A server with a tenancy of dedicated runs on single-tenant hardware and can only be launched into a VPC.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "preemptible",
+                  "kind": "String",
+                  "info": "Launch a preemptible instance. A preemptible instance costs much less, but lasts only 24 hours. It can be terminated sooner due to system demands. Supported by GCE cloud only.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "pricing_type",
+                  "kind": "String",
+                  "info": "Specify whether or not you want to utilize 'fixed' (on-demand) or 'spot' pricing. Defaults to 'fixed' and only applies to clouds which support spot instances. Can only be set on when creating a new Instance, Server, or ServerArray, or when updating a Server or ServerArray's next_instance.WARNING: By using spot pricing, you acknowledge that your instance/server/array may not be able to be launched (and arrays may be unable to grow) as newly launched instances might be stuck in bidding, and/or existing instances may be terminated at any time, due to the cloud's spot pricing changes and availability.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "root_volume_performance",
+                  "kind": "String",
+                  "info": "The number of IOPS (I/O Operations Per Second) this root volume should support. Only available on clouds supporting performance provisioning.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "root_volume_size",
+                  "kind": "String",
+                  "info": "The size for root disk. Not supported in all Clouds.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "root_volume_type_uid",
+                  "kind": "String",
+                  "info": "The type of root volume for instance. Only available on clouds supporting root volume type.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "service_account",
+                  "kind": "String",
+                  "info": "Email of service account for instance. Scope will default to cloud-platform. Supported by GCE cloud only.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "created_at",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "datacenter_href",
+              "kind": "String",
+              "info": "The ID of the instance datacenter",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "deployment_href",
+              "kind": "String",
+              "info": "The ID of the instance deployment",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "image_href",
+              "kind": "String",
+              "info": "The ID of the instance image",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "inputs",
+              "kind": "List",
+              "info": "Inputs associated with an instance when incarnated from a server or server array",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "instance_type_href",
+              "kind": "String",
+              "info": "The ID of the instance type",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ip_forwarding_enabled",
+              "kind": "Bool",
+              "info": "Allows this Instance to send and receive network traffic when the source and destination IP addresses do not match the IP address of this Instance.",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "kernel_image_href",
+              "kind": "String",
+              "info": "The ID of the instance kernel image.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "links",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "locked",
+              "kind": "Bool",
+              "info": "whether instance is locked, a locked instance cannot be terminated or deleted",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "info": "The name of the instance",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "placement_group_href",
+              "kind": "String",
+              "info": "The placement group to launch the instance in. Not supported by all clouds & instance types.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "pricing_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "private_ip_address",
+              "kind": "String",
+              "info": "The private ip address for the instance",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "private_ip_addresses",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "public_ip_addresses",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "ramdisk_image_href",
+              "kind": "String",
+              "info": "The ID of the ramdisk image",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_group_hrefs",
+              "kind": "List",
+              "info": "The IDs of the security groups",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "server_template_href",
+              "kind": "String",
+              "info": "The ID of the server template.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ssh_key_href",
+              "kind": "String",
+              "info": "The ID of the SSH key to use",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "state",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "subnet_hrefs",
+              "kind": "List",
+              "info": "The IDs of the instance subnets",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "updated_at",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "user_data",
+              "kind": "String",
+              "info": "User data that RightScale automatically passes to your instance at boot time",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "info": "Hrefs of related API resources",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "optimized",
+          "kind": "Bool",
+          "info": "A flag indicating whether Instances of this Server should be optimized for high-performance volumes (e.g. Volumes supporting a specified number of IOPS). Not supported in all Clouds.",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server_template": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of ServerTemplate, partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lineage",
+              "kind": "String(O)",
+              "info": "lineage of ServerTemplate",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "multi_cloud_image_href",
+              "kind": "String(O)",
+              "info": "ID of ServerTemplate multi cloud image resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of ServerTemplate, partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "revision",
+              "kind": "Int(O)",
+              "info": "revision of ServerTemplate, use 0 to match latest non-committed version",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "lineage",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of the SSH key cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of SSH key, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "Filter at api level for the view: 'default' or 'sensitive' are valid options",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "material",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "subnet": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of the subnet cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "datacenter_href",
+              "kind": "String(O)",
+              "info": "Href of the subnet datacenter resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "instance_href",
+              "kind": "String(O)",
+              "info": "Href of instance resource attached to subnet",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "Name of subnet, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "network_href",
+              "kind": "String(O)",
+              "info": "Href of network resource that owns subnet",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "visibility",
+              "kind": "String(O)",
+              "info": "Visibility of the subnet to filter by (private, shared, etc)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cidr_block",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_default",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "visibility",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of the volume cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "datacenter_href",
+              "kind": "String(O)",
+              "info": "ID of the volume datacenter resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "ID of deployment resource that owns volume",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of volume, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of volume, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "parent_volume_snapshot_href",
+              "kind": "String(O)",
+              "info": "ID of volume snapshot that volume was created from",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cloud_specific_attributes",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_snapshot": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of the volume snapshot cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "deployment_href",
+              "kind": "String(O)",
+              "info": "ID of deployment resource that owns volume snapshot",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "description of volume snapshot, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of volume snapshot, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "parent_volume_href",
+              "kind": "String(O)",
+              "info": "ID of volume resource from which volume snapshot was created",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "state",
+              "kind": "String(O)",
+              "info": "state of the volume snapshot",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_type": {
+      "arguments": [
+        {
+          "word": "cloud_href",
+          "kind": "String(R)",
+          "info": "ID of the volume type cloud",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filter",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "name of volume type, uses partial match",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resource_uid",
+              "kind": "String(O)",
+              "info": "cloud ID - if this filter is set additional retry logic will fire to allow for cloud resource discovery",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "links",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_uid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "updated_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

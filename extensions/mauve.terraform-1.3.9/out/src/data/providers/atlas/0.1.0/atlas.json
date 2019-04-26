@@ -1,0 +1,167 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "artifact": {
+      "arguments": [
+        {
+          "word": "build",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metadata",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metadata_keys",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "version",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "file_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "metadata_full",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "slug",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "version_real",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "artifact": {
+      "arguments": [
+        {
+          "word": "build",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metadata",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metadata_keys",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "version",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "file_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "metadata_full",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "slug",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "version_real",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

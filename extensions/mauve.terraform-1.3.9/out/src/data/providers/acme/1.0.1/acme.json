@@ -1,0 +1,162 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "certificate": {
+      "arguments": [
+        {
+          "word": "account_key_pem",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "certificate_request_pem",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "common_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_challenge",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "config",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "provider",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "key_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "min_days_remaining",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "must_staple",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subject_alternative_names",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "account_ref",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "certificate_domain",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "certificate_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "certificate_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "issuer_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_key_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "registration": {
+      "arguments": [
+        {
+          "word": "account_key_pem",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "email_address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "registration_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

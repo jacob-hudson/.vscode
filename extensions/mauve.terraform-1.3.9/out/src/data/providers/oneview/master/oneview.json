@@ -1,0 +1,1808 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "ethernet_network": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ethernet_network_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_network",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "purpose",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "smart_link",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vlan_id",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "category",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "connection_template_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "eTag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fabric_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "fc_network": {
+      "arguments": [
+        {
+          "word": "auto_login_redistribution",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fabric_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "link_stability_time",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "category",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "connection_template_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "eTag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "fcoe_network": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vlanId",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "category",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "connectionTemplateUri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "eTag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fabricUri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "managedSanUri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "i3s_plan": {
+      "arguments": [
+        {
+          "word": "deploy_net_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "deployment_attribute",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "key",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "os_deployment_plan",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "server_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "icsp_server": {
+      "arguments": [
+        {
+          "word": "build_plans",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "custom_attribute",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "key",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "scope",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "host_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ilo_ip",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "public_mac",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "public_slot_id",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "serial_number",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "mid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ipv4",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_interconnect_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "interconnect_map_entry_template",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "bay_number",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "enclosure_index",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "interconnect_type_name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "interconnect_settings",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "fast_mac_cache_failover",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "igmp_snooping",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "igmp_timeout_interval",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mac_refresh_interval",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "network_loop_protection",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "pause_flood_protection",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "rich_tlv",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "internal_network_uris",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "quality_of_service",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "active_qos_config_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "config_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "downlink_classification_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "qos_traffic_class",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "bandwidth_share",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "egress_dot1p_value",
+                  "kind": "Int(R)",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "enabled",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "max_bandwidth",
+                  "kind": "Int(R)",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "qos_classification_map",
+                  "kind": "List(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "dot1p_class_map",
+                      "kind": "Set(O)",
+                      "type": "set",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "dscp_class_map",
+                      "kind": "Set(O)",
+                      "type": "set",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": false
+                },
+                {
+                  "word": "real_time",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "uplink_classification_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "snmp_configuration",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "enabled",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "read_community",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "snmp_access",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "system_contact",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "trap_destination",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "community_string",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "enet_trap_categories",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "fc_trap_categories",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "trap_destination",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "trap_format",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "trap_severities",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vcm_trap_categories",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "telemetry_configuration",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "enabled",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sample_count",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sample_interval",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "uplink_set",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "ethernet_network_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lacp_timer",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "logical_port_config",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "bay_num",
+                  "kind": "Int(R)",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "desired_speed",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "enclosure_num",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "port_num",
+                  "kind": "Set(R)",
+                  "type": "set",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "primary_port",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "mode",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "native_network_uri",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "network_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "network_uris",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "category",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "eTag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fabric_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "interconnect_settings",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "fast_mac_cache_failover",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "igmp_snooping",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "igmp_timeout_interval",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "mac_refresh_interval",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "network_loop_protection",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "pause_flood_protection",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "rich_tlv",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "quality_of_service",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "active_qos_config_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "config_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "downlink_classification_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "qos_traffic_class",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "bandwidth_share",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "egress_dot1p_value",
+                  "kind": "Int",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "enabled",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "max_bandwidth",
+                  "kind": "Int",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "qos_classification_map",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "dot1p_class_map",
+                      "kind": "Set",
+                      "type": "set",
+                      "block": false
+                    },
+                    {
+                      "word": "dscp_class_map",
+                      "kind": "Set",
+                      "type": "set",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "real_time",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "uplink_classification_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "snmp_configuration",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "enabled",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "read_community",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "snmp_access",
+              "kind": "Set",
+              "type": "set",
+              "block": false
+            },
+            {
+              "word": "system_contact",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "trap_destination",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "community_string",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "enet_trap_categories",
+                  "kind": "Set",
+                  "type": "set",
+                  "block": false
+                },
+                {
+                  "word": "fc_trap_categories",
+                  "kind": "Set",
+                  "type": "set",
+                  "block": false
+                },
+                {
+                  "word": "trap_destination",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "trap_format",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "trap_severities",
+                  "kind": "Set",
+                  "type": "set",
+                  "block": false
+                },
+                {
+                  "word": "vcm_trap_categories",
+                  "kind": "Set",
+                  "type": "set",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "telemetry_configuration",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "enabled",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "sample_count",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "sample_interval",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_switch_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "location_entry_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "switch_count",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "switch_type_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "category",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "eTag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fabric_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "switch_type_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network_set": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "native_network_uri",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network_uris",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "category",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "connection_template_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "eTag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server_profile": {
+      "arguments": [
+        {
+          "word": "hardware_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hw_filter",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "power_state",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "public_connection",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hardware_uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ilo_ip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_mac",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_slot_id",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "serial_number",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server_profile_template": {
+      "arguments": [
+        {
+          "word": "affinity",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "boot_order",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enclosure_group",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "hide_unused_flex_nics",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mac_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "function_type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "network_uri",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port_id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "requested_mbps",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "serial_number_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_hardware_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "wwn_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "etag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uri",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

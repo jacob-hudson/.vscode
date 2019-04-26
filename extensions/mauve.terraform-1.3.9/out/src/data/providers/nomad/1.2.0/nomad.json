@@ -1,0 +1,324 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "acl_policy": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description for this policy.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Unique name for this policy.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rules_hcl",
+          "kind": "String(R)",
+          "info": "HCL or JSON representation of the rules to enforce on this policy. Use file() to specify a file as input.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "acl_token": {
+      "arguments": [
+        {
+          "word": "global",
+          "kind": "Bool(O)",
+          "info": "Whether the token should be replicated to all regions or not.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "Human-readable name for this token.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "policies",
+          "kind": "Set(O)",
+          "info": "The ACL policies to associate with the token, if it's a 'client' type.",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "The type of token to create, 'client' or 'management'.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "accessor_id",
+          "kind": "String",
+          "info": "Nomad-generated ID for this token.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "secret_id",
+          "kind": "String",
+          "info": "The value that grants access to Nomad.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "job": {
+      "arguments": [
+        {
+          "word": "deregister_on_destroy",
+          "kind": "Bool(O)",
+          "info": "If true, the job will be deregistered on destroy.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "deregister_on_id_change",
+          "kind": "Bool(O)",
+          "info": "If true, the job will be deregistered when the job ID changes.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "jobspec",
+          "kind": "String(R)",
+          "info": "Job specification. If you want to point to a file use the file() function.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "policy_override",
+          "kind": "Bool(O)",
+          "info": "Override any soft-mandatory Sentinel policies that fail.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "namespace": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description for this namespace.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Unique name for this namespace.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "quota",
+          "kind": "String(O)",
+          "info": "Quota to set for this namespace.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "quota_specification": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description for this quota specification.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "limits",
+          "kind": "Set(R)(B)",
+          "info": "Limits encapsulated by this quota specification.",
+          "subblock": [
+            {
+              "word": "region",
+              "kind": "String(R)",
+              "info": "Region in which this limit has affect.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "region_limit",
+              "kind": "Set(R)(B)",
+              "info": "The limit applied to this region.",
+              "subblock": [
+                {
+                  "word": "cpu",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "memory_mb",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Unique name for this quota specification.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sentinel_policy": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description for this policy.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enforcement_level",
+          "kind": "String(R)",
+          "info": "Specifies the enforcement level of the policy.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Unique name for this policy.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "policy",
+          "kind": "String(R)",
+          "info": "The Sentinel policy.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "scope",
+          "kind": "String(R)",
+          "info": "Specifies the scope for this policy. Only 'submit-job' is currently supported.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "regions": {
+      "arguments": [],
+      "attributes": [
+        {
+          "word": "regions",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

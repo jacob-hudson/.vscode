@@ -1,0 +1,740 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "device": {
+      "arguments": [
+        {
+          "word": "always_pxe",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "billing_cycle",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "facility",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "hardware_reservation_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hostname",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ipxe_script_url",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "operating_system",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plan",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_ipv4_subnet_size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "storage",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_data",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "access_private_ipv4",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "access_public_ipv4",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "access_public_ipv6",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "hardware_reservation_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "network",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cidr",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "family",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "gateway",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "public",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "public_ipv4_subnet_size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "root_password",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ip_attachment": {
+      "arguments": [
+        {
+          "word": "cidr_notation",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "device_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "address_family",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "cidr",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "manageable",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "management",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "netmask",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "project": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "payment_method_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "payment_method_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "reserved_ip_block": {
+      "arguments": [
+        {
+          "word": "facility",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "quantity",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "address_family",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "cidr",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "cidr_notation",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "manageable",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "management",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "netmask",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume": {
+      "arguments": [
+        {
+          "word": "billing_cycle",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "facility",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "plan",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "snapshot_policies",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "snapshot_count",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "snapshot_frequency",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "attachments",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "href",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "billing_cycle",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "updated",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_attachment": {
+      "arguments": [
+        {
+          "word": "device_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "volume_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "precreated_ip_block": {
+      "arguments": [
+        {
+          "word": "address_family",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "facility",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public",
+          "kind": "Bool(R)",
+          "type": "bool",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cidr",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "cidr_notation",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "manageable",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "management",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "netmask",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "quantity",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

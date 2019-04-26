@@ -1,0 +1,109 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "acl": {
+      "arguments": [
+        {
+          "word": "acl_host",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "acl_operation",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "acl_permission_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "acl_principal",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_name",
+          "kind": "String(R)",
+          "info": "The name of the resouce",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "topic": {
+      "arguments": [
+        {
+          "word": "config",
+          "kind": "Map(O)",
+          "info": "A map of string k/v attributes.",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the topic.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "partitions",
+          "kind": "Int(R)",
+          "info": "Number of partitions.",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "replication_factor",
+          "kind": "Int(R)",
+          "info": "Number of replicas.",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

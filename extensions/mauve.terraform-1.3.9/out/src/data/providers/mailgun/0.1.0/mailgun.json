@@ -1,0 +1,151 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "domain": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "smtp_login",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "smtp_password",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "spam_action",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "wildcard",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "receiving_records",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "priority",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "record_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "valid",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "value",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "sending_records",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "record_type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "valid",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "value",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "smtp_login",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "spam_action",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "wildcard",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

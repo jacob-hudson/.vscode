@@ -1,0 +1,53 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "object": {
+      "arguments": [
+        {
+          "word": "data",
+          "kind": "String(R)",
+          "info": "Valid JSON data that this provider will manage with the API server.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "debug",
+          "kind": "Bool(O)",
+          "info": "Whether to emit verbose debug output while working with the API object on the server.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "path",
+          "kind": "String(R)",
+          "info": "The API path on top of the base URL set in the provider that represents objects of this type on the API server.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "api_data",
+          "kind": "Map",
+          "info": "After data from the API server is read, this map will include k/v pairs usable in other terraform resources as readable objects. Currently the value is the golang fmt package's representation of the value (simple primitives are set as expected, but complex types like arrays and maps contain golang formatting).",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

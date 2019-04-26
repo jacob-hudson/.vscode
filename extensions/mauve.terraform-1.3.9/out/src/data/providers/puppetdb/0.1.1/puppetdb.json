@@ -1,0 +1,119 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "node": {
+      "arguments": [
+        {
+          "word": "certname",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cached_catalog_status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "catalog_environment",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "catalog_timestamp",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "deactivated",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "expired",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "facts_environment",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "facts_timestamp",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "latest_report_corrective_change",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "latest_report_hash",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "latest_report_noop",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "latest_report_noop_pending",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "latest_report_status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "report_environment",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "report_timestamp",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

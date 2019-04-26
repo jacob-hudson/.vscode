@@ -1,0 +1,2275 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "check": {
+      "arguments": [
+        {
+          "word": "active",
+          "kind": "Bool(O)",
+          "info": "If the check is activate or disabled",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "caql",
+          "kind": "Set(O)(B)",
+          "info": "CAQL check configuration",
+          "subblock": [
+            {
+              "word": "query",
+              "kind": "String(R)",
+              "info": "The query definition",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "cloudwatch",
+          "kind": "Set(O)(B)",
+          "info": "CloudWatch check configuration",
+          "subblock": [
+            {
+              "word": "api_key",
+              "kind": "String(R)",
+              "info": "The AWS API Key",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "api_secret",
+              "kind": "String(R)",
+              "info": "The AWS API Secret",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "dimmensions",
+              "kind": "Map(R)",
+              "info": "The dimensions to query for the metric",
+              "type": "map",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "metric",
+              "kind": "Set(R)",
+              "info": "One or more CloudWatch Metric attributes",
+              "type": "set",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "namespace",
+              "kind": "String(R)",
+              "info": "The namespace to pull telemetry from",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "url",
+              "kind": "String(R)",
+              "info": "The URL including schema and hostname for the Cloudwatch monitoring server. This value will be used to specify the region - for example, to pull from us-east-1, the URL would be https://monitoring.us-east-1.amazonaws.com.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "version",
+              "kind": "String(O)",
+              "info": "The version of the Cloudwatch API to use.",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "collector",
+          "kind": "Set(O)(B)",
+          "info": "The collector(s) that are responsible for gathering the metrics",
+          "subblock": [
+            {
+              "word": "id",
+              "kind": "String(R)",
+              "info": "The ID of the collector",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "consul",
+          "kind": "List(O)(B)",
+          "info": "Consul check configuration",
+          "subblock": [
+            {
+              "word": "acl_token",
+              "kind": "String(O)",
+              "info": "A Consul ACL token",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "allow_stale",
+              "kind": "Bool(O)",
+              "info": "Allow Consul to read from a non-leader system",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ca_chain",
+              "kind": "String(O)",
+              "info": "A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for TLS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "certificate_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing the client certificate that will be presented to the remote server (for TLS-enabled checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "check_blacklist",
+              "kind": "List(O)",
+              "info": "A blacklist of check names to exclude from metric results",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ciphers",
+              "kind": "String(O)",
+              "info": "A list of ciphers to be used in the TLS protocol (for HTTPS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "dc",
+              "kind": "String(O)",
+              "info": "The Consul datacenter to extract health information from",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "headers",
+              "kind": "Map(O)",
+              "info": "Map of HTTP Headers to send along with HTTP Requests",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "http_addr",
+              "kind": "String(O)",
+              "info": "The HTTP Address of a Consul agent to query",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "key_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing key to be used in conjunction with the cilent certificate (for TLS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node",
+              "kind": "String(O)",
+              "info": "Node Name or NodeID of a Consul agent",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node_blacklist",
+              "kind": "List(O)",
+              "info": "A blacklist of node names or IDs to exclude from metric results",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service",
+              "kind": "String(O)",
+              "info": "Name of the Consul service to check",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_blacklist",
+              "kind": "List(O)",
+              "info": "A blacklist of service names to exclude from metric results",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "state",
+              "kind": "String(O)",
+              "info": "Check for Consul services in this particular state",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "http",
+          "kind": "Set(O)(B)",
+          "info": "HTTP check configuration",
+          "subblock": [
+            {
+              "word": "auth_method",
+              "kind": "String(O)",
+              "info": "The HTTP Authentication method",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "auth_password",
+              "kind": "String(O)",
+              "info": "The HTTP Authentication user password",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "auth_user",
+              "kind": "String(O)",
+              "info": "The HTTP Authentication user name",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "body_regexp",
+              "kind": "String(O)",
+              "info": "This regular expression is matched against the body of the response. If a match is not found, the check will be marked as \"bad.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ca_chain",
+              "kind": "String(O)",
+              "info": "A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for TLS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "certificate_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing the client certificate that will be presented to the remote server (for TLS-enabled checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ciphers",
+              "kind": "String(O)",
+              "info": "A list of ciphers to be used in the TLS protocol (for HTTPS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "code",
+              "kind": "String(O)",
+              "info": "The HTTP code that is expected. If the code received does not match this regular expression, the check is marked as \"bad.\"",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extract",
+              "kind": "String(O)",
+              "info": "This regular expression is matched against the body of the response globally. The first capturing match is the key and the second capturing match is the value. Each key/value extracted is registered as a metric for the check.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "headers",
+              "kind": "Map(O)",
+              "info": "Map of HTTP Headers to send along with HTTP Requests",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "key_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing key to be used in conjunction with the cilent certificate (for TLS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "method",
+              "kind": "String(O)",
+              "info": "The HTTP method to use",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "payload",
+              "kind": "String(O)",
+              "info": "The information transferred as the payload of an HTTP request",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "read_limit",
+              "kind": "Int(O)",
+              "info": "Sets an approximate limit on the data read (0 means no limit)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "url",
+              "kind": "String(R)",
+              "info": "The URL to use as the target of the check",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "version",
+              "kind": "String(O)",
+              "info": "Sets the HTTP version for the check to use",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "httptrap",
+          "kind": "Set(O)(B)",
+          "info": "HTTP Trap check configuration",
+          "subblock": [
+            {
+              "word": "async_metrics",
+              "kind": "Bool(O)",
+              "info": "Specify whether httptrap metrics are logged immediately or held until the status message is emitted",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "secret",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "icmp_ping",
+          "kind": "Set(O)(B)",
+          "info": "ICMP ping check configuration",
+          "subblock": [
+            {
+              "word": "availability",
+              "kind": "Float(O)",
+              "info": "The percentage of ICMP available required for the check to be considered \"good.\"",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "count",
+              "kind": "Int(O)",
+              "info": "The number of ICMP requests to send during a single check.",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "interval",
+              "kind": "String(O)",
+              "info": "The number of milliseconds between ICMP requests.",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "json",
+          "kind": "Set(O)(B)",
+          "info": "JSON check configuration",
+          "subblock": [
+            {
+              "word": "auth_method",
+              "kind": "String(O)",
+              "info": "The HTTP Authentication method",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "auth_password",
+              "kind": "String(O)",
+              "info": "The HTTP Authentication user password",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "auth_user",
+              "kind": "String(O)",
+              "info": "The HTTP Authentication user name",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ca_chain",
+              "kind": "String(O)",
+              "info": "A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for TLS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "certificate_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing the client certificate that will be presented to the remote server (for TLS-enabled checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ciphers",
+              "kind": "String(O)",
+              "info": "A list of ciphers to be used in the TLS protocol (for HTTPS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "headers",
+              "kind": "Map(O)",
+              "info": "Map of HTTP Headers to send along with HTTP Requests",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "key_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing key to be used in conjunction with the cilent certificate (for TLS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "method",
+              "kind": "String(O)",
+              "info": "The HTTP method to use",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "payload",
+              "kind": "String(O)",
+              "info": "The information transferred as the payload of an HTTP request",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "info": "Specifies the port on which the management interface can be reached",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "read_limit",
+              "kind": "Int(O)",
+              "info": "Sets an approximate limit on the data read (0 means no limit)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "url",
+              "kind": "String(R)",
+              "info": "The URL to use as the target of the check",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "version",
+              "kind": "String(O)",
+              "info": "Sets the HTTP version for the check to use",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "metric",
+          "kind": "Set(O)(B)",
+          "info": "Configuration for a stream of metrics",
+          "subblock": [
+            {
+              "word": "active",
+              "kind": "Bool(O)",
+              "info": "Enables or disables the metric",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "Name of the metric",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tags",
+              "kind": "Set(O)",
+              "info": "Tags assigned to the metric",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "info": "Type of metric (e.g. numeric, histogram, text)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "unit",
+              "kind": "String(O)",
+              "info": "The unit of measurement for a metric",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "metric_limit",
+          "kind": "Int(O)",
+          "info": "Setting a metric_limit will enable all (-1), disable (0), or allow up to the specified limit of metrics for this check (\"N+\", where N is a positive integer)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mysql",
+          "kind": "Set(O)(B)",
+          "info": "MySQL check configuration",
+          "subblock": [
+            {
+              "word": "dsn",
+              "kind": "String(R)",
+              "info": "The connect DSN for the MySQL instance",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "query",
+              "kind": "String(R)",
+              "info": "The SQL to use as the query",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "The name of the check bundle that will be displayed in the web interface",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notes",
+          "kind": "String(O)",
+          "info": "Notes about this check bundle",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "period",
+          "kind": "String(O)",
+          "info": "The period between each time the check is made",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "postgresql",
+          "kind": "Set(O)(B)",
+          "info": "PostgreSQL check configuration",
+          "subblock": [
+            {
+              "word": "dsn",
+              "kind": "String(R)",
+              "info": "The connect DSN for the PostgreSQL instance",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "query",
+              "kind": "String(R)",
+              "info": "The SQL to use as the query",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "statsd",
+          "kind": "Set(O)(B)",
+          "info": "statsd check configuration",
+          "subblock": [
+            {
+              "word": "source_ip",
+              "kind": "String(R)",
+              "info": "The source IP of the statsd metrics stream",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "A list of tags assigned to the check",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "target",
+          "kind": "String(O)",
+          "info": "The target of the check (e.g. hostname, URL, IP, etc)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tcp",
+          "kind": "Set(O)(B)",
+          "info": "TCP check configuration",
+          "subblock": [
+            {
+              "word": "banner_regexp",
+              "kind": "String(O)",
+              "info": "This regular expression is matched against the response banner. If a match is not found, the check will be marked as bad.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ca_chain",
+              "kind": "String(O)",
+              "info": "A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for TLS checks).",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "certificate_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing the client certificate that will be presented to the remote server (for TLS checks).",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ciphers",
+              "kind": "String(O)",
+              "info": "A list of ciphers to be used when establishing a TLS connection",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "host",
+              "kind": "String(R)",
+              "info": "Specifies the host name or IP address to connect to for this TCP check",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "key_file",
+              "kind": "String(O)",
+              "info": "A path to a file containing key to be used in conjunction with the cilent certificate (for TLS checks)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "Int(R)",
+              "info": "Specifies the port on which the management interface can be reached.",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tls",
+              "kind": "Bool(O)",
+              "info": "Upgrade TCP connection to use TLS.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "String(O)",
+          "info": "The length of time in seconds (and fractions of a second) before the check will timeout if no response is returned to the collector",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "info": "The check type",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "check_by_collector",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "check_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "checks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "created",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "last_modified",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "last_modified_by",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "metric_limit",
+          "kind": "Int",
+          "info": "Setting a metric_limit will enable all (-1), disable (0), or allow up to the specified limit of metrics for this check (\"N+\", where N is a positive integer)",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "info": "The name of the check bundle that will be displayed in the web interface",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "notes",
+          "kind": "String",
+          "info": "Notes about this check bundle",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "period",
+          "kind": "String",
+          "info": "The period between each time the check is made",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "reverse_connect_urls",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "target",
+          "kind": "String",
+          "info": "The target of the check (e.g. hostname, URL, IP, etc)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "timeout",
+          "kind": "String",
+          "info": "The length of time in seconds (and fractions of a second) before the check will timeout if no response is returned to the collector",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "info": "The check type",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uuids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "contact_group": {
+      "arguments": [
+        {
+          "word": "aggregation_window",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "alert_option",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "escalate_after",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "escalate_to",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "reminder",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "severity",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "email",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "http",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "format",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "method",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "irc",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "user",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "long_message",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "long_subject",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "long_summary",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "pager_duty",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "contact_group_fallback",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_key",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "webhook_url",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "short_message",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "short_summary",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "slack",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "buttons",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "channel",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "contact_group_fallback",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "team",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "username",
+              "kind": "String(O)",
+              "info": "Username Slackbot uses in Slack to deliver a notification",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "sms",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "victorops",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "api_key",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "contact_group_fallback",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "critical",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "info",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "team",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "warning",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "xmpp",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_modified",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "last_modified_by",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "graph": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graph_style",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "left",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "line_style",
+          "kind": "String(O)",
+          "info": "How the line should change between point. A string containing either 'stepped', 'interpolated' or null.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metric",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "active",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "alpha",
+              "kind": "Float(O)",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "axis",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "caql",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "check",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "color",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "formula",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "function",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "legend_formula",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "metric_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "metric_type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stack",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "metric_cluster",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "active",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "aggregate",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "axis",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "color",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "query",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notes",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "right",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "metric": {
+      "arguments": [
+        {
+          "word": "active",
+          "kind": "Bool(O)",
+          "info": "Enables or disables the metric",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the metric",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Tags assigned to the metric",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "Type of metric (e.g. numeric, histogram, text)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "unit",
+          "kind": "String(O)",
+          "info": "The unit of measurement for a metric",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "metric_cluster": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "A description of the metric cluster",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the metric cluster",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "query",
+          "kind": "Set(O)(B)",
+          "info": "A metric cluster query definition",
+          "subblock": [
+            {
+              "word": "definition",
+              "kind": "String(R)",
+              "info": "A query to select a collection of metric streams",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "info": "The operation to perform on the matching metric streams",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "A list of tags assigned to the metric cluster",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "info": "A description of the metric cluster",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "rule_set": {
+      "arguments": [
+        {
+          "word": "check",
+          "kind": "String(R)",
+          "info": "The CID of the check that contains the metric for this rule set",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "if",
+          "kind": "List(R)(B)",
+          "info": "A rule to execute for this rule set",
+          "subblock": [
+            {
+              "word": "then",
+              "kind": "Set(O)(B)",
+              "info": "Description of the action(s) to take when this rule set is active",
+              "subblock": [
+                {
+                  "word": "after",
+                  "kind": "String(O)",
+                  "info": "The length of time we should wait before contacting the contact groups after this ruleset has faulted.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "notify",
+                  "kind": "List(O)",
+                  "info": "List of contact groups to notify at the following appropriate severity if this rule set is active.",
+                  "type": "list",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "severity",
+                  "kind": "Int(O)",
+                  "info": "Send a notification at this severity level.",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "Set(O)(B)",
+              "info": "Predicate that the rule set uses to evaluate a stream of metrics",
+              "subblock": [
+                {
+                  "word": "absent",
+                  "kind": "String(O)",
+                  "info": "Fire the rule set if there has been no data for the given metric stream over the last duration",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "changed",
+                  "kind": "Bool(O)",
+                  "info": "Boolean indicating the value has changed",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "contains",
+                  "kind": "String(O)",
+                  "info": "Fire the rule set if the text metric contain the following string",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "match",
+                  "kind": "String(O)",
+                  "info": "Fire the rule set if the text metric exactly match the following string",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "max_value",
+                  "kind": "String(O)",
+                  "info": "Fire the rule set if the numeric value is more than the specified value",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "min_value",
+                  "kind": "String(O)",
+                  "info": "Fire the rule set if the numeric value less than the specified value",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "not_contain",
+                  "kind": "String(O)",
+                  "info": "Fire the rule set if the text metric does not contain the following string",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "not_match",
+                  "kind": "String(O)",
+                  "info": "Fire the rule set if the text metric not match the following string",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "over",
+                  "kind": "Set(O)(B)",
+                  "info": "Use a derived value using a window",
+                  "subblock": [
+                    {
+                      "word": "last",
+                      "kind": "String(O)",
+                      "info": "Duration over which data from the last interval is examined",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "using",
+                      "kind": "String(O)",
+                      "info": "Define the window funciton to use over the last duration",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": true
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "link",
+          "kind": "String(O)",
+          "info": "URL to show users when this rule set is active (e.g. wiki)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "metric_name",
+          "kind": "String(R)",
+          "info": "The name of the metric stream within a check to register the rule set with",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "metric_type",
+          "kind": "String(O)",
+          "info": "The type of data flowing through the specified metric stream",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notes",
+          "kind": "String(O)",
+          "info": "Notes describing this rule set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "parent",
+          "kind": "String(O)",
+          "info": "Parent CID that must be healthy for this rule set to be active",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Tags associated with this rule set",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "link",
+          "kind": "String",
+          "info": "URL to show users when this rule set is active (e.g. wiki)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "notes",
+          "kind": "String",
+          "info": "Notes describing this rule set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "parent",
+          "kind": "String",
+          "info": "Parent CID that must be healthy for this rule set to be active",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "worksheet": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "favourite",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graphs",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notes",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "smart_queries",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "query",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "title",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "account": {
+      "arguments": [
+        {
+          "word": "current",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address1",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "address2",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cc_email",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "city",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "contact_groups",
+          "kind": "List",
+          "info": "Contact Groups in this account",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "country",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "current",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "invites",
+          "kind": "List(B)",
+          "info": "Outstanding invites attached to the account",
+          "subblock": [
+            {
+              "word": "email",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "role",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "owner",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "timezone",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ui_base_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "usage",
+          "kind": "List(B)",
+          "info": "Account's usage limits",
+          "subblock": [
+            {
+              "word": "limit",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "used",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "users",
+          "kind": "List(B)",
+          "info": "Users attached to this account",
+          "subblock": [
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "role",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "collector": {
+      "arguments": [
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "details",
+          "kind": "List(B)",
+          "info": "Details associated with individual collectors (a.k.a. broker)",
+          "subblock": [
+            {
+              "word": "cn",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "external_host",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "external_port",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "ip",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "min_version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "modules",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "port",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "skew",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "status",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "latitude",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "longitude",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

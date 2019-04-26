@@ -1,0 +1,2797 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "algorithm_type_ns_service": {
+      "arguments": [
+        {
+          "word": "algorithm",
+          "kind": "String(R)",
+          "info": "Algorithm",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_port",
+          "kind": "String(R)",
+          "info": "A single destination port",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_ports",
+          "kind": "Set(O)",
+          "info": "Set of source ports or ranges",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_service",
+          "kind": "Bool",
+          "info": "A boolean flag which reflects whether this is a default NSServices which can't be modified/deleted",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dhcp_relay_profile": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_addresses",
+          "kind": "Set(R)",
+          "info": "Set of dhcp relay server addresses",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dhcp_relay_service": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dhcp_relay_profile_id",
+          "kind": "String(R)",
+          "info": "DHCP relay profile referenced by the dhcp relay service",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ether_type_ns_service": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ether_type",
+          "kind": "Int(R)",
+          "info": "Type of the encapsulated protocol",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_service",
+          "kind": "Bool",
+          "info": "A boolean flag which reflects whether this is a default NSServices which can't be modified/deleted",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "firewall_section": {
+      "arguments": [
+        {
+          "word": "applied_to",
+          "kind": "Set(O)(B)",
+          "info": "List of objects where the rules in this section will be enforced. This will take precedence over rule level appliedTo",
+          "subblock": [
+            {
+              "word": "target_id",
+              "kind": "String(O)",
+              "info": "Identifier of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target_type",
+              "kind": "String(O)",
+              "info": "Type of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "rule",
+          "kind": "List(O)(B)",
+          "info": "List of firewall rules in the section. Only homogeneous rules are supported",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(R)",
+              "info": "Action enforced on the packets which matches the firewall rule",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "applied_to",
+              "kind": "List(O)(B)",
+              "info": "List of object where rule will be enforced. The section level field overrides this one. Null will be treated as any",
+              "subblock": [
+                {
+                  "word": "target_id",
+                  "kind": "String(O)",
+                  "info": "Identifier of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "target_type",
+                  "kind": "String(O)",
+                  "info": "Type of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "Description of this resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination",
+              "kind": "List(O)(B)",
+              "info": "List of the destinations. Null will be treated as any",
+              "subblock": [
+                {
+                  "word": "target_id",
+                  "kind": "String(O)",
+                  "info": "Identifier of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "target_type",
+                  "kind": "String(O)",
+                  "info": "Type of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "destinations_excluded",
+              "kind": "Bool(O)",
+              "info": "Negation of the destination",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "direction",
+              "kind": "String(O)",
+              "info": "Rule direction in case of stateless firewall rules. This will only considered if section level parameter is set to stateless. Default to IN_OUT if not specified",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disabled",
+              "kind": "Bool(O)",
+              "info": "Flag to disable rule. Disabled will only be persisted but never provisioned/realized",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "display_name",
+              "kind": "String(O)",
+              "info": "Defaults to ID if not set",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ip_protocol",
+              "kind": "String(O)",
+              "info": "Type of IP packet that should be matched while enforcing the rule (IPV4, IPV6, IPV4_IPV6)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "logged",
+              "kind": "Bool(O)",
+              "info": "Flag to enable packet logging. Default is disabled",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "notes",
+              "kind": "String(O)",
+              "info": "User notes specific to the rule",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "rule_tag",
+              "kind": "String(O)",
+              "info": "User level field which will be printed in CLI and packet logs",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service",
+              "kind": "List(O)(B)",
+              "info": "List of the services. Null will be treated as any",
+              "subblock": [
+                {
+                  "word": "target_id",
+                  "kind": "String(O)",
+                  "info": "Identifier of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "target_type",
+                  "kind": "String(O)",
+                  "info": "Type of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "source",
+              "kind": "List(O)(B)",
+              "info": "List of sources. Null will be treated as any",
+              "subblock": [
+                {
+                  "word": "target_id",
+                  "kind": "String(O)",
+                  "info": "Identifier of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "target_type",
+                  "kind": "String(O)",
+                  "info": "Type of the NSX resource",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "sources_excluded",
+              "kind": "Bool(O)",
+              "info": "Negation of the source",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "section_type",
+          "kind": "String(R)",
+          "info": "Type of the rules which a section can contain. Only homogeneous sections are supported",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "stateful",
+          "kind": "Bool(R)",
+          "info": "Stateful or Stateless nature of firewall section is enforced on all rules inside the section",
+          "type": "bool",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_default",
+          "kind": "Bool",
+          "info": "A boolean flag which reflects whether a firewall section is default section or not",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "icmp_type_ns_service": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icmp_code",
+          "kind": "Int(O)",
+          "info": "ICMP message code",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icmp_type",
+          "kind": "Int(O)",
+          "info": "ICMP message type",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "info": "Version of ICMP protocol (ICMPv4/ICMPv6)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_service",
+          "kind": "Bool",
+          "info": "A boolean flag which reflects whether this is a default NSServices which can't be modified/deleted",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "igmp_type_ns_service": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_service",
+          "kind": "Bool",
+          "info": "A boolean flag which reflects whether this is a default NSServices which can't be modified/deleted",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ip_protocol_ns_service": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "protocol",
+          "kind": "Int(R)",
+          "info": "IP protocol number",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_service",
+          "kind": "Bool",
+          "info": "A boolean flag which reflects whether this is a default NSServices which can't be modified/deleted",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ip_set": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_addresses",
+          "kind": "Set(O)",
+          "info": "Set of IP addresses",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "l4_port_set_ns_service": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_ports",
+          "kind": "Set(O)",
+          "info": "Set of destination ports",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "info": "L4 Protocol",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_ports",
+          "kind": "Set(O)",
+          "info": "Set of source ports",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_service",
+          "kind": "Bool",
+          "info": "A boolean flag which reflects whether this is a default NSServices which can't be modified/deleted",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_port": {
+      "arguments": [
+        {
+          "word": "admin_state",
+          "kind": "String(O)",
+          "info": "Represents Desired state of the object",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "logical_switch_id",
+          "kind": "String(R)",
+          "info": "Id of the Logical switch that this port belongs to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "switching_profile_id",
+          "kind": "Set(O)(B)",
+          "info": "List of IDs of switching profiles (of various types) to be associated with this switch. Default switching profiles will be used if not specified",
+          "subblock": [
+            {
+              "word": "key",
+              "kind": "String(R)",
+              "info": "The resource type of this profile",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "info": "The ID of this profile",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "switching_profile_id",
+          "kind": "Set(B)",
+          "info": "List of IDs of switching profiles (of various types) to be associated with this switch. Default switching profiles will be used if not specified",
+          "subblock": [
+            {
+              "word": "key",
+              "kind": "String",
+              "info": "The resource type of this profile",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "value",
+              "kind": "String",
+              "info": "The ID of this profile",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_router_downlink_port": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_address",
+          "kind": "String(R)",
+          "info": "Logical router port subnet (ipAddress / prefix length)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "linked_logical_switch_port_id",
+          "kind": "String(R)",
+          "info": "Identifier for port on logical switch to connect to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "logical_router_id",
+          "kind": "String(R)",
+          "info": "Identifier for logical router on which this port is created",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "mac_address",
+          "kind": "String(O)",
+          "info": "MAC address",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service_binding",
+          "kind": "List(O)(B)",
+          "info": "Service Bindings",
+          "subblock": [
+            {
+              "word": "target_id",
+              "kind": "String(O)",
+              "info": "Identifier of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target_type",
+              "kind": "String(O)",
+              "info": "Type of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "urpf_mode",
+          "kind": "String(O)",
+          "info": "Unicast Reverse Path Forwarding mode",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mac_address",
+          "kind": "String",
+          "info": "MAC address",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_router_link_port_on_tier0": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "logical_router_id",
+          "kind": "String(R)",
+          "info": "Identifier for logical router on which this port is created",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "service_binding",
+          "kind": "List(O)(B)",
+          "info": "Service Bindings",
+          "subblock": [
+            {
+              "word": "target_id",
+              "kind": "String(O)",
+              "info": "Identifier of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target_type",
+              "kind": "String(O)",
+              "info": "Type of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "linked_logical_router_port_id",
+          "kind": "String",
+          "info": "Identifier for port on logical router to connect to",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_router_link_port_on_tier1": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "linked_logical_router_port_id",
+          "kind": "String(R)",
+          "info": "Identifier for port on logical router to connect to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "logical_router_id",
+          "kind": "String(R)",
+          "info": "Identifier for logical router on which this port is created",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "service_binding",
+          "kind": "List(O)(B)",
+          "info": "Service Bindings",
+          "subblock": [
+            {
+              "word": "target_id",
+              "kind": "String(O)",
+              "info": "Identifier of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target_type",
+              "kind": "String(O)",
+              "info": "Type of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_switch": {
+      "arguments": [
+        {
+          "word": "address_binding",
+          "kind": "Set(O)(B)",
+          "info": "Address bindings for the Logical switch",
+          "subblock": [
+            {
+              "word": "ip_address",
+              "kind": "String(O)",
+              "info": "A single IP address or a subnet cidr",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mac_address",
+              "kind": "String(O)",
+              "info": "A single MAC address",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "vlan",
+              "kind": "Int(O)",
+              "info": "A single vlan tag value",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "admin_state",
+          "kind": "String(O)",
+          "info": "Represents Desired state of the object",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_pool_id",
+          "kind": "String(O)",
+          "info": "IP pool id that associated with a LogicalSwitch",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mac_pool_id",
+          "kind": "String(O)",
+          "info": "Mac pool id that associated with a LogicalSwitch",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "replication_mode",
+          "kind": "String(O)",
+          "info": "Replication mode of the Logical Switch",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "switching_profile_id",
+          "kind": "Set(O)(B)",
+          "info": "List of IDs of switching profiles (of various types) to be associated with this switch. Default switching profiles will be used if not specified",
+          "subblock": [
+            {
+              "word": "key",
+              "kind": "String(R)",
+              "info": "The resource type of this profile",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "info": "The ID of this profile",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "transport_zone_id",
+          "kind": "String(R)",
+          "info": "Id of the TransportZone to which this LogicalSwitch is associated",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vlan",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vni",
+          "kind": "Int(O)",
+          "info": "VNI for this LogicalSwitch",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "switching_profile_id",
+          "kind": "Set(B)",
+          "info": "List of IDs of switching profiles (of various types) to be associated with this switch. Default switching profiles will be used if not specified",
+          "subblock": [
+            {
+              "word": "key",
+              "kind": "String",
+              "info": "The resource type of this profile",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "value",
+              "kind": "String",
+              "info": "The ID of this profile",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "vni",
+          "kind": "Int",
+          "info": "VNI for this LogicalSwitch",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_tier1_router": {
+      "arguments": [
+        {
+          "word": "advertise_connected_routes",
+          "kind": "Bool(O)",
+          "info": "Enable connected NSX routes advertisement",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "advertise_nat_routes",
+          "kind": "Bool(O)",
+          "info": "Enable NAT routes advertisement",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "advertise_static_routes",
+          "kind": "Bool(O)",
+          "info": "Enable static routes advertisement",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "edge_cluster_id",
+          "kind": "String(O)",
+          "info": "Edge Cluster Id",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_router_advertisement",
+          "kind": "Bool(O)",
+          "info": "Enable router advertisement",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "failover_mode",
+          "kind": "String(O)",
+          "info": "Failover mode which determines whether the preferred service router instance for given logical router will preempt the peer",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "firewall_sections",
+          "kind": "List(O)(B)",
+          "info": "List of Firewall sections related to the logical router",
+          "subblock": [
+            {
+              "word": "target_id",
+              "kind": "String(O)",
+              "info": "Identifier of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target_type",
+              "kind": "String(O)",
+              "info": "Type of the NSX resource",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "advertise_config_revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "firewall_sections",
+          "kind": "List(B)",
+          "info": "List of Firewall sections related to the logical router",
+          "subblock": [
+            {
+              "word": "is_valid",
+              "kind": "Bool",
+              "info": "A boolean flag which will be set to false if the referenced NSX resource has been deleted",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "target_display_name",
+              "kind": "String",
+              "info": "Display name of the NSX resource",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "target_id",
+              "kind": "String",
+              "info": "Identifier of the NSX resource",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "target_type",
+              "kind": "String",
+              "info": "Type of the NSX resource",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "nat_rule": {
+      "arguments": [
+        {
+          "word": "action",
+          "kind": "String(R)",
+          "info": "NAT rule action. Valid actions: SNAT, DNAT, NO_NAT and REFLEXIVE",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "info": "enable/disable the rule",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "logging",
+          "kind": "Bool(O)",
+          "info": "enable/disable the logging of rule",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "logical_router_id",
+          "kind": "String(R)",
+          "info": "Logical router id",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "match_destination_network",
+          "kind": "String(O)",
+          "info": "IP Address | CIDR | (null implies Any)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match_source_network",
+          "kind": "String(O)",
+          "info": "IP Address | CIDR | (null implies Any)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "nat_pass",
+          "kind": "Bool(O)",
+          "info": "A boolean flag which reflects whether the following firewall stage will be skipped",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "translated_network",
+          "kind": "String(O)",
+          "info": "IP Address | IP Range | CIDR. For DNAT rules only a single ip is supported",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "translated_ports",
+          "kind": "String(O)",
+          "info": "port number or port range. DNAT only",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "rule_priority",
+          "kind": "Int",
+          "info": "The priority of the rule (ascending). Valid range [0-2147483647]",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ns_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "member",
+          "kind": "Set(O)(B)",
+          "info": "Reference to the direct/static members of the NSGroup.",
+          "subblock": [
+            {
+              "word": "target_type",
+              "kind": "String(R)",
+              "info": "Type of the resource on which this expression is evaluated",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "info": "Value that satisfies this expression",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "membership_criteria",
+          "kind": "List(O)(B)",
+          "info": "List of tag expressions which define the membership criteria for this NSGroup.",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "scope_op",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tag",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tag_op",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target_type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource. Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "static_route": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "Defaults to ID if not set",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "logical_router_id",
+          "kind": "String(R)",
+          "info": "Logical router id",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network",
+          "kind": "String(R)",
+          "info": "CIDR",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "next_hop",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "administrative_distance",
+              "kind": "Int(O)",
+              "info": "Administrative Distance for the next hop IP",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ip_address",
+              "kind": "String(O)",
+              "info": "Next Hop IP",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "logical_router_port_id",
+              "kind": "String(O)",
+              "info": "Logical router port id",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "Defaults to ID if not set",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "Int",
+          "info": "The _revision property describes the current revision of the resource. To prevent clients from overwriting each other's changes, PUT operations must include the current _revision of the resource, which clients should obtain by issuing a GET operation. If the _revision provided in a PUT request is missing or stale, the operation will be rejected",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vm_tags": {
+      "arguments": [
+        {
+          "word": "instance_id",
+          "kind": "String(R)",
+          "info": "Instance id",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tag",
+          "kind": "Set(O)(B)",
+          "info": "Set of opaque identifiers meaningful to the API user",
+          "subblock": [
+            {
+              "word": "scope",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tag",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "edge_cluster": {
+      "arguments": [
+        {
+          "word": "deployment_type",
+          "kind": "String(O)",
+          "info": "The deployment type of edge cluster members (UNKNOWN/VIRTUAL_MACHINE|PHYSICAL_MACHINE)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "member_node_type",
+          "kind": "String(O)",
+          "info": "Type of transport nodes",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "deployment_type",
+          "kind": "String",
+          "info": "The deployment type of edge cluster members (UNKNOWN/VIRTUAL_MACHINE|PHYSICAL_MACHINE)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "member_node_type",
+          "kind": "String",
+          "info": "Type of transport nodes",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "logical_tier0_router": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "edge_cluster_id",
+          "kind": "String(O)",
+          "info": "The ID of the edge cluster connected to this router",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "high_availability_mode",
+          "kind": "String(O)",
+          "info": "The High availability mode of this router",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "edge_cluster_id",
+          "kind": "String",
+          "info": "The ID of the edge cluster connected to this router",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "high_availability_mode",
+          "kind": "String",
+          "info": "The High availability mode of this router",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ns_service": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "switching_profile": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "resource_type",
+          "kind": "String",
+          "info": "The resource type representing the specific type of this profile",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "transport_zone": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_name",
+          "kind": "String(O)",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "host_switch_name",
+          "kind": "String(O)",
+          "info": "Name of the host switch on all transport nodes in this transport zone that will be used to run NSX network traffic",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "id",
+          "kind": "String(O)",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "transport_type",
+          "kind": "String(O)",
+          "info": "The transport type of this transport zone (OVERLAY or VLAN)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "info": "Description of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "display_name",
+          "kind": "String",
+          "info": "The display name of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "host_switch_name",
+          "kind": "String",
+          "info": "Name of the host switch on all transport nodes in this transport zone that will be used to run NSX network traffic",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "info": "Unique ID of this resource",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "transport_type",
+          "kind": "String",
+          "info": "The transport type of this transport zone (OVERLAY or VLAN)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

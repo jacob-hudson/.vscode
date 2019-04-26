@@ -1,0 +1,74 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "resource": {
+      "arguments": [
+        {
+          "word": "triggers",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "data_source": {
+      "arguments": [
+        {
+          "word": "has_computed_default",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "inputs",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "has_computed_default",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "outputs",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "random",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

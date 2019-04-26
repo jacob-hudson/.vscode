@@ -1,0 +1,6370 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "archive": {
+      "arguments": [
+        {
+          "word": "archive_file",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hash",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hash",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "auto_backup": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disk_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_backup_num",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "weekdays",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "bridge": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "switch_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "bucket_object": {
+      "arguments": [
+        {
+          "word": "access_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "bucket",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "content",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "content_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "etag",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "secret_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "content_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "etag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "http_cache_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "http_path_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "http_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "https_cache_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "https_path_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "https_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "last_modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cdrom": {
+      "arguments": [
+        {
+          "word": "content",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "content_file_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hash",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "iso_image_file",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hash",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "database": {
+      "arguments": [
+        {
+          "word": "allow_networks",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backup_time",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "database_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "default_route",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress1",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plan",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "switch_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "user_password",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "disk": {
+      "arguments": [
+        {
+          "word": "connector",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_pw_auth",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hostname",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "note_ids",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "plan",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "size",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_archive_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_disk_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_ids",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "server_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dns": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "dns_servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dns_record": {
+      "arguments": [
+        {
+          "word": "dns_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "priority",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "value",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "weight",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "gslb": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "health_check",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "delay_loop",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "host_header",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "path",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "status",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "sorry_server",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "weighted",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fqdn",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "gslb_server": {
+      "arguments": [
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "gslb_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "weight",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "icon": {
+      "arguments": [
+        {
+          "word": "base64content",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "body",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "internet": {
+      "arguments": [
+        {
+          "word": "band_width",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_ipv6",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "enable_ipv6",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "ipv6_nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_prefix",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_prefix_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "max_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "min_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ipv4_prt": {
+      "arguments": [
+        {
+          "word": "hostname",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "retry_interval",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "retry_max",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "load_balancer": {
+      "arguments": [
+        {
+          "word": "default_route",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "high_availability",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress1",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ipaddress2",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plan",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "switch_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vrid",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "vip_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "load_balancer_server": {
+      "arguments": [
+        {
+          "word": "check_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "check_protocol",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "check_status",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "load_balancer_vip_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "load_balancer_vip": {
+      "arguments": [
+        {
+          "word": "delay_loop",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "load_balancer_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "sorry_server",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vip",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "mobile_gateway": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_server1",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_server2",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "internet_connection",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_ipaddress",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "private_nw_mask_len",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "switch_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "dns_server1",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dns_server2",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_nw_mask_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "sim_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "mobile_gateway_static_route": {
+      "arguments": [
+        {
+          "word": "mobile_gateway_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "next_hop",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "prefix",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "nfs": {
+      "arguments": [
+        {
+          "word": "default_route",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plan",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "switch_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "note": {
+      "arguments": [
+        {
+          "word": "class",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "content",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "packet_filter": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "expressions",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "allow",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "dest_port",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_nw",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source_port",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "expressions",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "allow",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "description",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "dest_port",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "source_nw",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "source_port",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "packet_filter_rule": {
+      "arguments": [
+        {
+          "word": "allow",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dest_port",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "order",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "packet_filter_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_nw",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_port",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "private_host": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "assigned_core",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "assigned_memory",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "additional_nics",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cdrom_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "core",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disks",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "gateway",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "interface_driver",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "memory",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nic",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "packet_filter_ids",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "private_host_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cdrom_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "disks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "macaddresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "packet_filter_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "private_host_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server_connector": {
+      "arguments": [
+        {
+          "word": "cdrom_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disks",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "packet_filter_ids",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cdrom_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "disks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "packet_filter_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "sim": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "iccid",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "imei",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mobile_gateway_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "passcode",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "simple_monitor": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "health_check",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "community",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delay_loop",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "excepcted_data",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "host_header",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "oid",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "path",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "qname",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "remaining_days",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "snmp_version",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "status",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notify_email_enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notify_email_html",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notify_slack_enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "notify_slack_webhook",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "target",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key_gen": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "pass_phrase",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "subnet": {
+      "arguments": [
+        {
+          "word": "internet_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "next_hop",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ipaddresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "max_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "min_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "switch": {
+      "arguments": [
+        {
+          "word": "bridge_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "server_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router": {
+      "arguments": [
+        {
+          "word": "aliases",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress1",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipaddress2",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plan",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "switch_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "syslog_host",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vip",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vrid",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "global_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_dhcp_server": {
+      "arguments": [
+        {
+          "word": "dns_servers",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "range_start",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "range_stop",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_interface_index",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_dhcp_static_mapping": {
+      "arguments": [
+        {
+          "word": "ipaddress",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "macaddress",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_dhcp_server_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_firewall": {
+      "arguments": [
+        {
+          "word": "direction",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "expressions",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "allow",
+              "kind": "Bool(R)",
+              "type": "bool",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "dest_nw",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "dest_port",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "logging",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_nw",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_port",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_interface_index",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_interface": {
+      "arguments": [
+        {
+          "word": "graceful_shutdown_timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "index",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ipaddress",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vip",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_l2tp": {
+      "arguments": [
+        {
+          "word": "pre_shared_secret",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "range_start",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "range_stop",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_interface_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_port_forwarding": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "global_port",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_port",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_interface_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_pptp": {
+      "arguments": [
+        {
+          "word": "range_start",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "range_stop",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_interface_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_site_to_site_vpn": {
+      "arguments": [
+        {
+          "word": "local_prefix",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "peer",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "pre_shared_secret",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "remote_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "routes",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "esp_authentication_protocol",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "esp_dh_group",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "esp_encryption_protocol",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "esp_lifetime",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "esp_mode",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "esp_perfect_forward_secrecy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ike_authentication_protocol",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ike_encryption_protocol",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ike_lifetime",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ike_mode",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ike_perfect_forward_secrecy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ike_pre_shared_secret",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "peer_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "peer_inside_networks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "peer_outside_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "vpc_router_inside_networks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "vpc_router_outside_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_static_nat": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "global_address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_interface_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_static_route": {
+      "arguments": [
+        {
+          "word": "next_hop",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "prefix",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_interface_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router_user": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vpc_router_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "archive": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "os_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "bridge": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "switch_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "bucket_object": {
+      "arguments": [
+        {
+          "word": "access_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "bucket",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "secret_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "body",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "content_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "etag",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "http_cache_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "http_path_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "http_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "https_cache_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "https_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "last_modified",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cdrom": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "database": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "allow_networks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "backup_rotate",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "backup_time",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "default_route",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress1",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "plan",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "port",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "user_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "user_password",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "disk": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "connector",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "plan",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dns": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "gslb": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fqdn",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "health_check",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "delay_loop",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "host_header",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "path",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "port",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "status",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "sorry_server",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "weighted",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "icon": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "body",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "internet": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "band_width",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "enable_ipv6",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "ipv6_nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_prefix",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipv6_prefix_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "max_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "min_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "server_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "load_balancer": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_route",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "high_availability",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress1",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress2",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_double",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "plan",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "vrid",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "nfs": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "default_route",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "plan",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "note": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "class",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "content",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "packet_filter": {
+      "arguments": [
+        {
+          "word": "expressions",
+          "kind": "List(O)(B)",
+          "subblock": [],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "private_host": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "assigned_core",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "assigned_memory",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "additional_nics",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "cdrom_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "core",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "disks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "gateway",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "interface_driver",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "macaddresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "memory",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nic",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "packet_filter_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "private_host_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_host_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "simple_monitor": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "health_check",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "community",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "delay_loop",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "excepcted_data",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "host_header",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "oid",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "path",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "port",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "qname",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "remaining_days",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "snmp_version",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "status",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "notify_email_enabled",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "notify_email_html",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "notify_slack_enabled",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "notify_slack_webhook",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "target",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "fingerprint",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "subnet": {
+      "arguments": [
+        {
+          "word": "index",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "internet_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ipaddresses",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "max_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "min_ipaddress",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "next_hop",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "nw_mask_len",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "switch": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "bridge_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpc_router": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tag_selectors",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "aliases",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "description",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "global_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "icon_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress1",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ipaddress2",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "plan",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "switch_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "syslog_host",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tags",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "vip",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "vrid",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "target SakuraCloud zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

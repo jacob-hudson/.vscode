@@ -1,0 +1,2062 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "agent_service": {
+      "arguments": [
+        {
+          "word": "address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "catalog_entry": {
+      "arguments": [
+        {
+          "word": "address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "node",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "service",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "id",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tags",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "key_prefix": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "path_prefix",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subkeys",
+          "kind": "Map(R)",
+          "type": "map",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "keys": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "key",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "default",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "delete",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "path",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "var",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "node": {
+      "arguments": [
+        {
+          "word": "address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "prepared_query": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "ttl",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "failover",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "datacenters",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "nearest_n",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "near",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "only_passing",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "session",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "stored_token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "template",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "regexp",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "service": {
+      "arguments": [
+        {
+          "word": "address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "service_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "agent_config": {
+      "arguments": [],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "info": "The datacenter the agent is running in",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "node_id",
+          "kind": "String",
+          "info": "The ID of the node the agent is running on",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "node_name",
+          "kind": "String",
+          "info": "The name of the node the agent is running on",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "String",
+          "info": "The VCS revision of the build of Consul that is running",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server",
+          "kind": "Bool",
+          "info": "If the agent is a server or not",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "version",
+          "kind": "String",
+          "info": "The version of the build of Consul that is running",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "agent_self": {
+      "arguments": [],
+      "attributes": [
+        {
+          "word": "acl_datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "acl_default_policy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "acl_disabled_ttl",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "acl_down_policy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "acl_enforce_0_8_semantics",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "acl_ttl",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "addresses",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "dns",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "http",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "https",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "rpc",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "advertise_addr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "advertise_addr_wan",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "advertise_addrs",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "rpc",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "serf_lan",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "serf_wan",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "atlas_join",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "bind_addr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "bootstrap_expect",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "bootstrap_mode",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "check_deregister_interval_min",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "check_reap_interval",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "check_update_interval",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "client_addr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "data_dir",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dev_mode",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "dns",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "allow_stale",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_compression",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "enable_truncate",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "max_stale",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_ttl",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "only_passing",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "recursor_timeout",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "service_ttl",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "udp_answer_limit",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "dns_recursors",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "domain",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "enable_anonymous_signature",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "enable_coordinates",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "enable_debug",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "enable_remote_exec",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "enable_syslog",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "enable_ui",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "enable_update_check",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "leave_on_int",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "leave_on_term",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "log_level",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "performance",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "raft_multiplier",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "pid_file",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ports",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "dns",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "http",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "https",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "rpc",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "serf_lan",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "serf_wan",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "server",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "protocol_version",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "reconnect_timeout_lan",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "reconnect_timeout_wan",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "rejoin_after_leave",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "retry_join",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "retry_join_ec2",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "region",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tag_key",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tag_value",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "retry_join_gce",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "credentials_file",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "project_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tag_value",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "zone_pattern",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "retry_join_wan",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "retry_max_attempts",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "retry_max_attempts_wan",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "serf_lan_bind_addr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "serf_wan_bind_addr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server_mode",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "server_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "session_ttl_min",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "start_join",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "start_join_wan",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "syslog_facility",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tagged_addresses",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "lan",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "wan",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "telemetry",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "circonus_api_app",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_api_token",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_api_url",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_broker_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_check_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_check_tags",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_display_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_force_metric_activation",
+              "kind": "Bool",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "circonus_instance_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_search_tag",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_select_tag",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_submission_interval",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "circonus_submission_url",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "dogstatsd_addr",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "dogstatsd_tags",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "enable_hostname",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "statsd_addr",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "statsite_addr",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "statsite_prefix",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "tls_ca_file",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tls_cert_file",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tls_key_file",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tls_min_version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "tls_verify_incoming",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "tls_verify_outgoing",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "tls_verify_server_hostname",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "translate_wan_addrs",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "ui_dir",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "unix_sockets",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "group",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "mode",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "user",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "version",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "version_prerelease",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "version_revision",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "catalog_nodes": {
+      "arguments": [
+        {
+          "word": "query_options",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "allow_stale",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "datacenter",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "near",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node_meta",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "require_consistent",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "token",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wait_index",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wait_time",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "node_ids",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "node_names",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "nodes",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "meta",
+              "kind": "Map",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tagged_addresses",
+              "kind": "Map(B)",
+              "subblock": [
+                {
+                  "word": "lan",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "wan",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "map",
+              "block": true
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "catalog_service": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "query_options",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "allow_stale",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "datacenter",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "near",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node_meta",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "require_consistent",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "token",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wait_index",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wait_time",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "tag",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "service",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "create_index",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "enable_tag_override",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "modify_index",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_meta",
+              "kind": "Map",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "node_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "port",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tagged_addresses",
+              "kind": "Map(B)",
+              "subblock": [
+                {
+                  "word": "lan",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "wan",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "map",
+              "block": true
+            },
+            {
+              "word": "tags",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "catalog_services": {
+      "arguments": [
+        {
+          "word": "query_options",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "allow_stale",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "datacenter",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "near",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node_meta",
+              "kind": "Map(O)",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "require_consistent",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "token",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wait_index",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wait_time",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "names",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "services",
+          "kind": "Map(B)",
+          "subblock": [
+            {
+              "word": "tags",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "map",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "key_prefix": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "path_prefix",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subkey",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "default",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "path",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "subkeys",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "var",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "keys": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "key",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "default",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "path",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "token",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "datacenter",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "var",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

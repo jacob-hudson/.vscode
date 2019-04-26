@@ -1,0 +1,64 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "file": {
+      "arguments": [
+        {
+          "word": "content",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "filename",
+          "kind": "String(R)",
+          "info": "Path to the output file",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "file": {
+      "arguments": [
+        {
+          "word": "filename",
+          "kind": "String(R)",
+          "info": "Path to the output file",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "content",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

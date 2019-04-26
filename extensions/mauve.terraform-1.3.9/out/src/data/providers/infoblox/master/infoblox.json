@@ -1,0 +1,3733 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "admin_group": {
+      "arguments": [
+        {
+          "word": "access_method",
+          "kind": "List(O)",
+          "info": "Methods the group can use to access Infoblox",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment field",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Whether the Admin Group is disabled or not",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "email_addresses",
+          "kind": "Set(O)",
+          "info": "List of email addresses to associated with the Admin Group",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the Admin Group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "roles",
+          "kind": "List(O)",
+          "info": "List of roles to associated with the Admin Group",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "superuser",
+          "kind": "Bool(O)",
+          "info": "Whether the group is a super user group or not",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "access_method",
+          "kind": "List",
+          "info": "Methods the group can use to access Infoblox",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "disable",
+          "kind": "Bool",
+          "info": "Whether the Admin Group is disabled or not",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "superuser",
+          "kind": "Bool",
+          "info": "Whether the group is a super user group or not",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "admin_role": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "The descriptive comment of the Admin Role object.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of an admin role.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "admin_user": {
+      "arguments": [
+        {
+          "word": "admin_groups",
+          "kind": "List(R)",
+          "info": "The admin_groups the user belongs to , there can be only 1 ",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "a comment on the user",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Should the user be disabled",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "email",
+          "kind": "String(O)",
+          "info": "Email address for the user",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name for the user",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "arecord": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the record; maximum 256 characters",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "creator",
+          "kind": "String(O)",
+          "info": "The record creator.Valid values:DYNAMIC,STATIC,SYSTEM.Defaults to STATIC",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ddns_principal",
+          "kind": "String(O)",
+          "info": "The GSS-TSIG principal that owns this record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ddns_protected",
+          "kind": "Bool(O)",
+          "info": "Determines if the DDNS updates for this record are allowed or not",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Determines if the record is disabled or not. False means that the record is enabled.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_name",
+          "kind": "String(O)",
+          "info": "The name for an A record in punycode format. Values with leading or trailing white space are not valid for this field. Cannot be written nor updated.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "forbid_reclamation",
+          "kind": "Bool(O)",
+          "info": "Determines if the reclamation is allowed for the record or not.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipv4addr",
+          "kind": "String(R)",
+          "info": "IP address for hostname",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name for A record in FQDN format. This value can be in unicode format. Values with leading or trailing white space are not valid for this field.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "reclaimable",
+          "kind": "Bool(O)",
+          "info": "Determines if the record is reclaimable or not. Cannot be updated/written",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shared_record_group",
+          "kind": "String(O)",
+          "info": "The name of the shared record group in which the record resides. This field exists only on db_objects if this record is a shared record. Cannot be updated/written",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "info": "TTL in seconds for host record",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_ttl",
+          "kind": "Bool(O)",
+          "info": "Use flag for: ttl",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS view in which the record resides. Example: “external”.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "creation_time",
+          "kind": "Float",
+          "info": "The time of the record creation in Epoch seconds format.",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "creator",
+          "kind": "String",
+          "info": "The record creator.Valid values:DYNAMIC,STATIC,SYSTEM.Defaults to STATIC",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dns_name",
+          "kind": "String",
+          "info": "The name for an A record in punycode format. Values with leading or trailing white space are not valid for this field. Cannot be written nor updated.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "reclaimable",
+          "kind": "Bool",
+          "info": "Determines if the record is reclaimable or not. Cannot be updated/written",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "shared_record_group",
+          "kind": "String",
+          "info": "The name of the shared record group in which the record resides. This field exists only on db_objects if this record is a shared record. Cannot be updated/written",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "use_ttl",
+          "kind": "Bool",
+          "info": "Use flag for: ttl",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "view",
+          "kind": "String",
+          "info": "The name of the DNS view in which the record resides. Example: “external”.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "DNS Zone for the record",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "cname_record": {
+      "arguments": [
+        {
+          "word": "canonical",
+          "kind": "String(R)",
+          "info": "Canonical name in FQDN format",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the record; maximum 256 characters",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "creator",
+          "kind": "String(O)",
+          "info": "The record creator.Valid values:DYNAMIC,STATIC,SYSTEM.Defaults to STATIC",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ddns_principal",
+          "kind": "String(O)",
+          "info": "The GSS-TSIG principal that owns this record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ddns_protected",
+          "kind": "Bool(O)",
+          "info": "Determines if the DDNS updates for this record are allowed or not",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Determines if the record is disabled or not. False means that the record is enabled.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_name",
+          "kind": "String(O)",
+          "info": "The name for the CNAME record in punycode format. Values with leading or trailing white space are not valid for this field. Cannot be written nor updated.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "forbid_reclamation",
+          "kind": "Bool(O)",
+          "info": "Determines if the reclamation is allowed for the record or not.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name for a CNAME record in FQDN format",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "reclaimable",
+          "kind": "Bool(O)",
+          "info": "Determines if the record is reclaimable or not. Cannot be updated/written",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shared_record_group",
+          "kind": "String(O)",
+          "info": "The name of the shared record group in which the record resides. This field exists only on db_objects if this record is a shared record. Cannot be updated/written",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "info": "The Time To Live assigned to CNAME",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_ttl",
+          "kind": "Bool(O)",
+          "info": "Use flag for: ttl",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS View in which the record resides",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "creation_time",
+          "kind": "Float",
+          "info": "The time of the record creation in Epoch seconds format.",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "creator",
+          "kind": "String",
+          "info": "The record creator.Valid values:DYNAMIC,STATIC,SYSTEM.Defaults to STATIC",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dns_name",
+          "kind": "String",
+          "info": "The name for the CNAME record in punycode format. Values with leading or trailing white space are not valid for this field. Cannot be written nor updated.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "reclaimable",
+          "kind": "Bool",
+          "info": "Determines if the record is reclaimable or not. Cannot be updated/written",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "shared_record_group",
+          "kind": "String",
+          "info": "The name of the shared record group in which the record resides. This field exists only on db_objects if this record is a shared record. Cannot be updated/written",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int",
+          "info": "The Time To Live assigned to CNAME",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "use_ttl",
+          "kind": "Bool",
+          "info": "Use flag for: ttl",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "DNS Zone for the record",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dhcp_range": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "end_addr",
+          "kind": "String(R)",
+          "info": "The IPv4 Address end address of the range.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "member",
+          "kind": "Set(O)(B)",
+          "info": "Infoblox DHCP member that serves this range",
+          "subblock": [
+            {
+              "word": "ipv4addr",
+              "kind": "String(O)",
+              "info": "The IPv4 Address of the Grid Member.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "DHCP Member server FQDN",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "This field contains the name of the Microsoft scope.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network",
+          "kind": "String(O)",
+          "info": "The network to which this range belongs, in IPv4 Address/CIDR format.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network_view",
+          "kind": "String(O)",
+          "info": "The name of the network view in which this range resides.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "restart_if_needed",
+          "kind": "Bool(O)",
+          "info": "Restarts any services if required by this change. Default: true.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_association_type",
+          "kind": "String(O)",
+          "info": "Must be set to 'MEMBER' if member is specified",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "start_addr",
+          "kind": "String(R)",
+          "info": "The IPv4 Address starting address of the range.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dns_view": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the DNS view; maximum 64 characters.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the DNS view.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "is_default",
+          "kind": "Bool",
+          "info": "The NIOS appliance provides one default DNS view. You can rename the default view and change its settings, but you cannot delete it. There must always be at least one DNS view in the appliance.",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "mx_record": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "A comment on the record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ddns_principal",
+          "kind": "String(O)",
+          "info": "The GSS-TSIG principal that owns this record",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ddns_protected",
+          "kind": "Bool(O)",
+          "info": "Determines if the DDNS updates for this record are allowed or not",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Is the record disabled",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mail_exchanger",
+          "kind": "String(R)",
+          "info": "Mail exchanger name in FQDN format. This value can be in unicode format",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the zone the MX record refers to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "preference",
+          "kind": "Int(R)",
+          "info": "Preference value, 0 to 65535 (inclusive) in 32-bit unsigned integer format",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "info": "The Time To Live value for record. A 32-bit unsigned integer that represents the duration, in seconds, for which the record is valid ",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_ttl",
+          "kind": "Bool(O)",
+          "info": "Use flag for: ttl",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS view in which the record resides.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "network": {
+      "arguments": [
+        {
+          "word": "authority",
+          "kind": "Bool(O)",
+          "info": "Authority for the DHCP network. Associated with the field use_authority",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "auto_create_reversezone",
+          "kind": "Bool(O)",
+          "info": "This flag controls whether reverse zones are automatically created when the network is added. Cannot be updated, nor is readable",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the network, maximum 256 characters.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Determines whether a network is disabled or not. When this is set to False, the network is enabled.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "discovery_member",
+          "kind": "String(O)",
+          "info": "The member that will run discovery for this network.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_ddns",
+          "kind": "Bool(O)",
+          "info": "The dynamic DNS updates flag of a DHCP network object. If set to True, the DHCP server sends DDNS updates to DNS servers in the same Grid, and to external DNS servers.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_dhcp_thresholds",
+          "kind": "Bool(O)",
+          "info": "Determines if DHCP thresholds are enabled for the network.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_discovery",
+          "kind": "Bool(O)",
+          "info": "Determines whether a discovery is enabled or not for this network. When this is set to False, the network discovery is disabled.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "high_water_mark",
+          "kind": "Int(O)",
+          "info": "The percentage of DHCP network usage threshold above which network usage is not expected and may warrant your attention. When the high watermark is reached, the Infoblox appliance generates a syslog message and sends a warning (if enabled). A number that specifies the percentage of allocated addresses. The range is from 1 to 100.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "high_water_mark_reset",
+          "kind": "Int(O)",
+          "info": "The percentage of DHCP network usage below which the corresponding SNMP trap is reset. A number that specifies the percentage of allocated addresses. The range is from 1 to 100. The high watermark reset value must be lower than the high watermark value.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipv4addr",
+          "kind": "String(O)",
+          "info": "The IPv4 Address of the network.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "lease_scavenge_time",
+          "kind": "Int(O)",
+          "info": "An integer that specifies the period of time (in seconds) that frees and backs up leases remained in the database before they are automatically deleted. To disable lease scavenging, set the parameter to -1. The minimum positive value must be greater than 86400 seconds (1 day).",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "low_water_mark",
+          "kind": "Int(O)",
+          "info": "The percentage of DHCP network usage below which the Infoblox appliance generates a syslog message and sends a warning (if enabled). A number that specifies the percentage of allocated addresses. The range is from 1 to 100.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "low_water_mark_reset",
+          "kind": "Int(O)",
+          "info": "The percentage of DHCP network usage threshold below which network usage is not expected and may warrant your attention. When the low watermark is crossed, the Infoblox appliance generates a syslog message and sends a warning (if enabled).  A number that specifies the percentage of allocated addresses. The range is from 1 to 100. The low watermark reset value must be higher than the low watermark value.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "members",
+          "kind": "List(O)(B)",
+          "info": "DHCP Member which is going to serve this network.",
+          "subblock": [
+            {
+              "word": "ipv4addr",
+              "kind": "String(O)",
+              "info": "IPv4 address of the member pair",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6addr",
+              "kind": "String(O)",
+              "info": "IPv6 address of the member pair",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "FQDN of the member pair",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "netmask",
+          "kind": "Int(O)",
+          "info": "Number of bits in the network mask example: 8,16,24 etc ",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network",
+          "kind": "String(R)",
+          "info": "The network address in IPv4 Address/CIDR format.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_container",
+          "kind": "String(O)",
+          "info": "The network container to which this network belongs (if any). Cannot be updated nor written",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network_view",
+          "kind": "String(O)",
+          "info": "The name of the network view in which this network resides.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "options",
+          "kind": "Set(O)(B)",
+          "info": "DHCP Related] Options such as DNS servers, gateway, ntp, etc",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "DHCP Option Name",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "num",
+              "kind": "Int(O)",
+              "info": "DHCO Option number",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_option",
+              "kind": "Bool(O)",
+              "info": "Use the option or not",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value",
+              "kind": "String(O)",
+              "info": "Value of the option. For an option this value is required",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "vendor_class",
+              "kind": "String(O)",
+              "info": "Vendor Class",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "recycle_leases",
+          "kind": "Bool(O)",
+          "info": "If the field is set to True, the leases are kept in the Recycle Bin until one week after expiration. Otherwise, the leases are permanently deleted.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "restart_if_needed",
+          "kind": "Bool(O)",
+          "info": "Restarts the member service. Not readable",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "update_dns_on_lease_renewal",
+          "kind": "Bool(O)",
+          "info": "This field controls whether the DHCP server updates DNS when a DHCP lease is renewed.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_authority",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_enable_ddns",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_enable_dhcp_thresholds",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_enable_discovery",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_options",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_recycle_leases",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "high_water_mark",
+          "kind": "Int",
+          "info": "The percentage of DHCP network usage threshold above which network usage is not expected and may warrant your attention. When the high watermark is reached, the Infoblox appliance generates a syslog message and sends a warning (if enabled). A number that specifies the percentage of allocated addresses. The range is from 1 to 100.",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "high_water_mark_reset",
+          "kind": "Int",
+          "info": "The percentage of DHCP network usage below which the corresponding SNMP trap is reset. A number that specifies the percentage of allocated addresses. The range is from 1 to 100. The high watermark reset value must be lower than the high watermark value.",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "ipv4addr",
+          "kind": "String",
+          "info": "The IPv4 Address of the network.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "lease_scavenge_time",
+          "kind": "Int",
+          "info": "An integer that specifies the period of time (in seconds) that frees and backs up leases remained in the database before they are automatically deleted. To disable lease scavenging, set the parameter to -1. The minimum positive value must be greater than 86400 seconds (1 day).",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "low_water_mark",
+          "kind": "Int",
+          "info": "The percentage of DHCP network usage below which the Infoblox appliance generates a syslog message and sends a warning (if enabled). A number that specifies the percentage of allocated addresses. The range is from 1 to 100.",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "low_water_mark_reset",
+          "kind": "Int",
+          "info": "The percentage of DHCP network usage threshold below which network usage is not expected and may warrant your attention. When the low watermark is crossed, the Infoblox appliance generates a syslog message and sends a warning (if enabled).  A number that specifies the percentage of allocated addresses. The range is from 1 to 100. The low watermark reset value must be higher than the low watermark value.",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "netmask",
+          "kind": "Int",
+          "info": "Number of bits in the network mask example: 8,16,24 etc ",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "network_container",
+          "kind": "String",
+          "info": "The network container to which this network belongs (if any). Cannot be updated nor written",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network_view",
+          "kind": "String",
+          "info": "The name of the network view in which this network resides.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "options",
+          "kind": "Set(B)",
+          "info": "DHCP Related] Options such as DNS servers, gateway, ntp, etc",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String",
+              "info": "DHCP Option Name",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "num",
+              "kind": "Int",
+              "info": "DHCO Option number",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "use_option",
+              "kind": "Bool",
+              "info": "Use the option or not",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "value",
+              "kind": "String",
+              "info": "Value of the option. For an option this value is required",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "vendor_class",
+              "kind": "String",
+              "info": "Vendor Class",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ns_group_delegation": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment field",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "delegate_to",
+          "kind": "Set(R)(B)",
+          "info": "The primary preference set with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The IPv4 Address or IPv6 Address of the server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A resolvable domain name for the external DNS server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "shared_with_ms_parent_delegation",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The TSIG key name.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the name server group",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ns_group_forward": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment field",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "forwarding_servers",
+          "kind": "List(O)(B)",
+          "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "forward_to",
+              "kind": "List(O)(B)",
+              "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "String(R)",
+                  "info": "The IPv4 Address or IPv6 Address of the server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "info": "A resolvable domain name for the external DNS server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "shared_with_ms_parent_delegation",
+                  "kind": "Bool(O)",
+                  "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "stealth",
+                  "kind": "Bool(O)",
+                  "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key",
+                  "kind": "String(O)",
+                  "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_alg",
+                  "kind": "String(O)",
+                  "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_name",
+                  "kind": "String(O)",
+                  "info": "The TSIG key name.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_tsig_key_name",
+                  "kind": "Bool(O)",
+                  "info": "Use flag for: tsig_key_name",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "forwarders_only",
+              "kind": "Bool(O)",
+              "info": "Determines if the appliance sends queries to forwarders only and not to other internal or Internet root servers",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The name of this Grid member in FQDN format.The field is required on creation.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "use_override_forwarders",
+              "kind": "Bool(O)",
+              "info": "Use flag for: forward_to.The default value is False.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the name server group",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ns_group_forward_stub": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment field",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "external_servers",
+          "kind": "Set(R)(B)",
+          "info": "The primary preference set with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The IPv4 Address or IPv6 Address of the server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A resolvable domain name for the external DNS server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "shared_with_ms_parent_delegation",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The TSIG key name.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the name server group",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ns_group_stub": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment field",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the name server group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "stub_members",
+          "kind": "List(R)(B)",
+          "info": "The grid primary servers for this zone.",
+          "subblock": [
+            {
+              "word": "enable_preferred_primaries",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the preferred_primaries field values of this member are used. Defaults to false",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "grid_replicate",
+              "kind": "Bool(O)",
+              "info": "The flag represents DNS zone transfers if set to True, and ID Grid Replication if set to False. This flag is ignored if the struct is specified as part of a stub zone or if it is set as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lead",
+              "kind": "Bool(O)",
+              "info": "This flag controls whether the Grid lead secondary server performs zone transfers to non lead secondaries. This flag is ignored if the struct is specified as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The grid member name.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "preferred_primaries",
+              "kind": "List(O)(B)",
+              "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "String(R)",
+                  "info": "The IPv4 Address or IPv6 Address of the server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "info": "A resolvable domain name for the external DNS server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "shared_with_ms_parent_delegation",
+                  "kind": "Bool(O)",
+                  "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "stealth",
+                  "kind": "Bool(O)",
+                  "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key",
+                  "kind": "String(O)",
+                  "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_alg",
+                  "kind": "String(O)",
+                  "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_name",
+                  "kind": "String(O)",
+                  "info": "The TSIG key name.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_tsig_key_name",
+                  "kind": "Bool(O)",
+                  "info": "Use flag for: tsig_key_name",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "This flag governs whether the specified Grid member is in stealth mode or not. If set to True, the member is in stealth mode. This flag is ignored if the struct is specified as part of a stub zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ns_record": {
+      "arguments": [
+        {
+          "word": "addresses",
+          "kind": "Set(R)(B)",
+          "info": "The list of zone name servers",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The address of the Zone Name Server",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "auto_create_ptr",
+              "kind": "Bool(O)",
+              "info": "Flag to indicate if PTR records need to be auto created",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "creator",
+          "kind": "String(O)",
+          "info": "The record creator.Valid values:DYNAMIC,STATIC,SYSTEM.Defaults to STATIC",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_name",
+          "kind": "String(O)",
+          "info": "The name for the NS record in punycode format. Values with leading or trailing white space are not valid for this field. Cannot be written nor updated.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ms_delegation_name",
+          "kind": "String(O)",
+          "info": "The MS delegation point name",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the ns record where the record should reside. Cannot be updated",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "nameserver",
+          "kind": "String(R)",
+          "info": "The FQDN of the name server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "policy",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS view in which the record resides",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "creator",
+          "kind": "String",
+          "info": "The record creator.Valid values:DYNAMIC,STATIC,SYSTEM.Defaults to STATIC",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dns_name",
+          "kind": "String",
+          "info": "The name for the NS record in punycode format. Values with leading or trailing white space are not valid for this field. Cannot be written nor updated.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "policy",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "view",
+          "kind": "String",
+          "info": "The name of the DNS view in which the record resides",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "info": "DNS Zone for the record",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "permission": {
+      "arguments": [
+        {
+          "word": "group",
+          "kind": "String(O)",
+          "info": "The name of the admin group this permission applies to.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "object",
+          "kind": "String(O)",
+          "info": "A reference to a WAPI object, which will be the object this permission applies to.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "permission",
+          "kind": "String(R)",
+          "info": "The type of permission.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "resource_type",
+          "kind": "String(O)",
+          "info": "The type of resource this permission applies to.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "role",
+          "kind": "String(O)",
+          "info": "The name of the role this permission applies to.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "object",
+          "kind": "String",
+          "info": "A reference to a WAPI object, which will be the object this permission applies to.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "srv_record": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the record; maximum 256 characters",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name for a SRV record in FQDN format",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "priority",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "target",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "info": "The Time To Live assigned to CNAME",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_ttl",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS View in which the record resides",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "weight",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "use_ttl",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "txtrecord": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "text",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_ttl",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "view",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "zone_auth": {
+      "arguments": [
+        {
+          "word": "allow_transfer",
+          "kind": "List(O)(B)",
+          "info": "Determines whether dynamic DNS updates are allowed from a named ACL, or from a list of IPv4/IPv6 addresses, networks, and TSIG keys for the hosts.",
+          "subblock": [
+            {
+              "word": "_struct",
+              "kind": "String(O)",
+              "info": "Specifies the type of struct we're passing",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "address",
+              "kind": "String(O)",
+              "info": "The address this rule applies to or ANY",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "permission",
+              "kind": "String(O)",
+              "info": "The permission to use for this address",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The name of the TSIG key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "allow_update",
+          "kind": "List(O)(B)",
+          "info": "Determines whether dynamic DNS updates are allowed from a named ACL, or from a list of IPv4/IPv6 addresses, networks, and TSIG keys for the hosts.",
+          "subblock": [
+            {
+              "word": "_struct",
+              "kind": "String(O)",
+              "info": "Specifies the type of struct we're passing",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "address",
+              "kind": "String(O)",
+              "info": "The address this rule applies to or ANY",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "permission",
+              "kind": "String(O)",
+              "info": "The permission to use for this address",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The name of the TSIG key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the zone; maximum 256 characters",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "copy_xfer_to_notify",
+          "kind": "Bool(O)",
+          "info": "If this flag is set to True then copy allowed IPs from Allow Transfer to Also Notify.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Determines whether a zone is disabled or not",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_integrity_enable",
+          "kind": "Bool(O)",
+          "info": "If this is set to True, DNS integrity check is enabled for this zone",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_integrity_member",
+          "kind": "String(O)",
+          "info": "The Grid member that performs DNS integrity checks for this zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "external_primaries",
+          "kind": "List(O)(B)",
+          "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The IPv4 Address or IPv6 Address of the server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A resolvable domain name for the external DNS server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "shared_with_ms_parent_delegation",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The TSIG key name.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "external_secondaries",
+          "kind": "List(O)(B)",
+          "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The IPv4 Address or IPv6 Address of the server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A resolvable domain name for the external DNS server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "shared_with_ms_parent_delegation",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The TSIG key name.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "fqdn",
+          "kind": "String(R)",
+          "info": "The name of this DNS zone. For a reverse zone, this is in “address/cidr” format",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "grid_primary",
+          "kind": "List(O)(B)",
+          "info": "The grid primary servers for this zone.",
+          "subblock": [
+            {
+              "word": "enable_preferred_primaries",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the preferred_primaries field values of this member are used. Defaults to false",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "grid_replicate",
+              "kind": "Bool(O)",
+              "info": "The flag represents DNS zone transfers if set to True, and ID Grid Replication if set to False. This flag is ignored if the struct is specified as part of a stub zone or if it is set as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lead",
+              "kind": "Bool(O)",
+              "info": "This flag controls whether the Grid lead secondary server performs zone transfers to non lead secondaries. This flag is ignored if the struct is specified as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The grid member name.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "preferred_primaries",
+              "kind": "List(O)(B)",
+              "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "String(R)",
+                  "info": "The IPv4 Address or IPv6 Address of the server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "info": "A resolvable domain name for the external DNS server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "shared_with_ms_parent_delegation",
+                  "kind": "Bool(O)",
+                  "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "stealth",
+                  "kind": "Bool(O)",
+                  "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key",
+                  "kind": "String(O)",
+                  "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_alg",
+                  "kind": "String(O)",
+                  "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_name",
+                  "kind": "String(O)",
+                  "info": "The TSIG key name.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_tsig_key_name",
+                  "kind": "Bool(O)",
+                  "info": "Use flag for: tsig_key_name",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "This flag governs whether the specified Grid member is in stealth mode or not. If set to True, the member is in stealth mode. This flag is ignored if the struct is specified as part of a stub zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "grid_primary_shared_with_ms_parent_delegation",
+          "kind": "Bool(O)",
+          "info": "Determines if the server is duplicated with parent delegation.cannot be updated, nor written",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "grid_secondaries",
+          "kind": "List(O)(B)",
+          "info": "The grid primary servers for this zone.",
+          "subblock": [
+            {
+              "word": "enable_preferred_primaries",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the preferred_primaries field values of this member are used. Defaults to false",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "grid_replicate",
+              "kind": "Bool(O)",
+              "info": "The flag represents DNS zone transfers if set to True, and ID Grid Replication if set to False. This flag is ignored if the struct is specified as part of a stub zone or if it is set as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lead",
+              "kind": "Bool(O)",
+              "info": "This flag controls whether the Grid lead secondary server performs zone transfers to non lead secondaries. This flag is ignored if the struct is specified as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The grid member name.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "preferred_primaries",
+              "kind": "List(O)(B)",
+              "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "String(R)",
+                  "info": "The IPv4 Address or IPv6 Address of the server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "info": "A resolvable domain name for the external DNS server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "shared_with_ms_parent_delegation",
+                  "kind": "Bool(O)",
+                  "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "stealth",
+                  "kind": "Bool(O)",
+                  "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key",
+                  "kind": "String(O)",
+                  "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_alg",
+                  "kind": "String(O)",
+                  "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_name",
+                  "kind": "String(O)",
+                  "info": "The TSIG key name.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_tsig_key_name",
+                  "kind": "Bool(O)",
+                  "info": "Use flag for: tsig_key_name",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "This flag governs whether the specified Grid member is in stealth mode or not. If set to True, the member is in stealth mode. This flag is ignored if the struct is specified as part of a stub zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "locked",
+          "kind": "Bool(O)",
+          "info": "If you enable this flag, other administrators cannot make conflicting changes",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ns_group",
+          "kind": "String(O)",
+          "info": "The name server group that serves DNS for this zone.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "prefix",
+          "kind": "String(O)",
+          "info": "The RFC2317 prefix value of this DNS zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "restart_if_needed",
+          "kind": "Bool(O)",
+          "info": "Restarts the member service. The default value is False. Not readable",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "scavenging_settings",
+          "kind": "Map(O)",
+          "info": "The DNS scavenging settings object provides information about scavenging configuration e.g. conditions under which records can be scavenged, periodicity of scavenging operations.",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "soa_default_ttl",
+          "kind": "Int(O)",
+          "info": "The Time to Live (TTL) value of the SOA record of this zone",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "soa_expire",
+          "kind": "Int(O)",
+          "info": "This setting defines the amount of time, in seconds, after which the secondary server stops giving out answers about the zone because the zone data is too old to be useful. The default is one week.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "soa_negative_ttl",
+          "kind": "Int(O)",
+          "info": "The negative Time to Live (TTL)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "soa_refresh",
+          "kind": "Int(O)",
+          "info": "This indicates the interval at which a secondary server sends a message to the primary server for a zone to check that its data is current, and retrieve fresh data if it is not",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "soa_retry",
+          "kind": "Int(O)",
+          "info": "This indicates how long a secondary server must wait before attempting to recontact the primary server after a connection failure between the two servers occurs",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "soa_serial_number",
+          "kind": "Int(O)",
+          "info": "The serial number in the SOA record incrementally changes every time the record is modified. The SOA serial number to be used in conjunction with set_soa_serial_number (read-only)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_allow_transfer",
+          "kind": "Bool(O)",
+          "info": "allow_transfer",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_check_names_policy",
+          "kind": "Bool(O)",
+          "info": "Apply policy to dynamic updates and inbound zone transfers (This value applies only if the host name restriction policy is set to “Strict Hostname Checking”.)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_copy_xfer_to_notify",
+          "kind": "Bool(O)",
+          "info": "Use flag for: copy_xfer_to_notify.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_external_primary",
+          "kind": "Bool(O)",
+          "info": "This flag controls whether the zone is using an external primary.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_format",
+          "kind": "String(O)",
+          "info": "Determines the format of this zone - API default FORWARD",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "disable",
+          "kind": "Bool",
+          "info": "Determines whether a zone is disabled or not",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "dns_integrity_enable",
+          "kind": "Bool",
+          "info": "If this is set to True, DNS integrity check is enabled for this zone",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "dns_integrity_member",
+          "kind": "String",
+          "info": "The Grid member that performs DNS integrity checks for this zone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "grid_primary_shared_with_ms_parent_delegation",
+          "kind": "Bool",
+          "info": "Determines if the server is duplicated with parent delegation.cannot be updated, nor written",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool",
+          "info": "If you enable this flag, other administrators cannot make conflicting changes",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "locked_by",
+          "kind": "String",
+          "info": "The name of a superuser or the administrator who locked this zone (read-only)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network_view",
+          "kind": "String",
+          "info": "The name of the network view in which this zone resides (read-only)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "restart_if_needed",
+          "kind": "Bool",
+          "info": "Restarts the member service. The default value is False. Not readable",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "soa_serial_number",
+          "kind": "Int",
+          "info": "The serial number in the SOA record incrementally changes every time the record is modified. The SOA serial number to be used in conjunction with set_soa_serial_number (read-only)",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "use_allow_transfer",
+          "kind": "Bool",
+          "info": "allow_transfer",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "use_check_names_policy",
+          "kind": "Bool",
+          "info": "Apply policy to dynamic updates and inbound zone transfers (This value applies only if the host name restriction policy is set to “Strict Hostname Checking”.)",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "use_copy_xfer_to_notify",
+          "kind": "Bool",
+          "info": "Use flag for: copy_xfer_to_notify.",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "use_external_primary",
+          "kind": "Bool",
+          "info": "This flag controls whether the zone is using an external primary.",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "view",
+          "kind": "String",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone_format",
+          "kind": "String",
+          "info": "Determines the format of this zone - API default FORWARD",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "zone_delegated": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the zone; maximum 256 characters",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "delegate_to",
+          "kind": "List(R)(B)",
+          "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The IPv4 Address or IPv6 Address of the server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A resolvable domain name for the external DNS server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "shared_with_ms_parent_delegation",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The TSIG key name.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "delegated_ttl",
+          "kind": "Int(O)",
+          "info": "a TTL for the delegated zone",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Is the zone disabled",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fqdn",
+          "kind": "String(R)",
+          "info": "The FQDN for the zone that is being delegated",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool(O)",
+          "info": "Is the record locked to prevent changes",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ns_group",
+          "kind": "String(O)",
+          "info": "NameServer group for this zone",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_delegated_ttl",
+          "kind": "Bool(O)",
+          "info": "Should we use the deletated ttl",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_format",
+          "kind": "String(O)",
+          "info": "Format of the zone, default is FORWARD",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "reference",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "view",
+          "kind": "String",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "zone_forward": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the zone; maximum 256 characters",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Determines whether a zone is disabled or not",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_domain",
+          "kind": "String(O)",
+          "info": "The displayed name of the DNS zone.Not writable",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_fqdn",
+          "kind": "String(O)",
+          "info": "The name of this DNS zone in punycode format.For a reverse zone, this is in “address/cidr” format.For other zones, this is in FQDN format in punycode format.Cannot be updated",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "forward_to",
+          "kind": "List(R)(B)",
+          "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The IPv4 Address or IPv6 Address of the server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A resolvable domain name for the external DNS server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "shared_with_ms_parent_delegation",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The TSIG key name.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "forwarders_only",
+          "kind": "Bool(O)",
+          "info": "Determines if the appliance sends queries to forwarders only and not to other internal or Internet root servers",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "forwarding_servers",
+          "kind": "List(O)(B)",
+          "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "forward_to",
+              "kind": "List(O)(B)",
+              "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "String(R)",
+                  "info": "The IPv4 Address or IPv6 Address of the server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "info": "A resolvable domain name for the external DNS server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "shared_with_ms_parent_delegation",
+                  "kind": "Bool(O)",
+                  "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "stealth",
+                  "kind": "Bool(O)",
+                  "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key",
+                  "kind": "String(O)",
+                  "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_alg",
+                  "kind": "String(O)",
+                  "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_name",
+                  "kind": "String(O)",
+                  "info": "The TSIG key name.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_tsig_key_name",
+                  "kind": "Bool(O)",
+                  "info": "Use flag for: tsig_key_name",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "forwarders_only",
+              "kind": "Bool(O)",
+              "info": "Determines if the appliance sends queries to forwarders only and not to other internal or Internet root servers",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The name of this Grid member in FQDN format.The field is required on creation.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "use_override_forwarders",
+              "kind": "Bool(O)",
+              "info": "Use flag for: forward_to.The default value is False.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "fqdn",
+          "kind": "String(O)",
+          "info": "The name of this DNS zone. For a reverse zone, this is in “address/cidr” format",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "locked",
+          "kind": "Bool(O)",
+          "info": "If you enable this flag, other administrators cannot make conflicting changes. This is for administration purposes only. The zone will continue to serve DNS data even when it is locked.The default value is False.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "locked_by",
+          "kind": "String(O)",
+          "info": "The name of a superuser or the administrator who locked this zone.Not writable",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mask_prefix",
+          "kind": "String(O)",
+          "info": "IPv4 Netmask or IPv6 prefix for this zone.Not Writable",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ns_group",
+          "kind": "String(O)",
+          "info": "A forwarding member name server group. Values with leading or trailing white space are not valid for this field. The default value is undefined.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "parent",
+          "kind": "String(O)",
+          "info": "The parent zone of this zone. Note that when searching for reverse zones, the “in-addr.arpa” notation should be used. Not writable.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "prefix",
+          "kind": "String(O)",
+          "info": "The RFC2317 prefix value of this DNS zone.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "using_srg_associations",
+          "kind": "Bool(O)",
+          "info": "This is true if the zone is associated with a shared record group. Not writable",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_format",
+          "kind": "String(O)",
+          "info": "Determines the format of this zone - API default FORWARD. Cannot be updated.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "address",
+          "kind": "String",
+          "info": "The IPv4 Address or IPv6 Address of the server that is serving this zone. Not writable",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "display_domain",
+          "kind": "String",
+          "info": "The displayed name of the DNS zone.Not writable",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dns_fqdn",
+          "kind": "String",
+          "info": "The name of this DNS zone in punycode format.For a reverse zone, this is in “address/cidr” format.For other zones, this is in FQDN format in punycode format.Cannot be updated",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "locked_by",
+          "kind": "String",
+          "info": "The name of a superuser or the administrator who locked this zone.Not writable",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "mask_prefix",
+          "kind": "String",
+          "info": "IPv4 Netmask or IPv6 prefix for this zone.Not Writable",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "parent",
+          "kind": "String",
+          "info": "The parent zone of this zone. Note that when searching for reverse zones, the “in-addr.arpa” notation should be used. Not writable.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "using_srg_associations",
+          "kind": "Bool",
+          "info": "This is true if the zone is associated with a shared record group. Not writable",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "view",
+          "kind": "String",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone_format",
+          "kind": "String",
+          "info": "Determines the format of this zone - API default FORWARD. Cannot be updated.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "zone_stub": {
+      "arguments": [
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "info": "Comment for the zone; maximum 256 characters",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable",
+          "kind": "Bool(O)",
+          "info": "Is the zone disabled",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_forwarding",
+          "kind": "Bool(O)",
+          "info": "Is forward disabled for this zone",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "external_nsgroup",
+          "kind": "String(O)",
+          "info": "Name of the external name server group",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fqdn",
+          "kind": "String(R)",
+          "info": "Fqdn for the zone\t",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "locked",
+          "kind": "Bool(O)",
+          "info": "Is the record locked to prevent changes",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mask_prefix",
+          "kind": "String(O)",
+          "info": "IPv4 Netmask or IPv6 prefix for this zone.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "nsgroup",
+          "kind": "String(O)",
+          "info": "Name of the  name server group",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "prefix",
+          "kind": "String(O)",
+          "info": "IPv4 Netmask or IPv6 prefix for this zone.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "stub_from",
+          "kind": "List(O)(B)",
+          "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "The IPv4 Address or IPv6 Address of the server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "A resolvable domain name for the external DNS server.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "shared_with_ms_parent_delegation",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key",
+              "kind": "String(O)",
+              "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_alg",
+              "kind": "String(O)",
+              "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tsig_key_name",
+              "kind": "String(O)",
+              "info": "The TSIG key name.",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "use_tsig_key_name",
+              "kind": "Bool(O)",
+              "info": "Use flag for: tsig_key_name",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "stub_members",
+          "kind": "List(O)(B)",
+          "info": "The grid primary servers for this zone.",
+          "subblock": [
+            {
+              "word": "enable_preferred_primaries",
+              "kind": "Bool(O)",
+              "info": "This flag represents whether the preferred_primaries field values of this member are used. Defaults to false",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "grid_replicate",
+              "kind": "Bool(O)",
+              "info": "The flag represents DNS zone transfers if set to True, and ID Grid Replication if set to False. This flag is ignored if the struct is specified as part of a stub zone or if it is set as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lead",
+              "kind": "Bool(O)",
+              "info": "This flag controls whether the Grid lead secondary server performs zone transfers to non lead secondaries. This flag is ignored if the struct is specified as grid_member in an authoritative zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "info": "The grid member name.",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "preferred_primaries",
+              "kind": "List(O)(B)",
+              "info": "The primary preference list with Grid member names and/or External Server structs for this member.",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "String(R)",
+                  "info": "The IPv4 Address or IPv6 Address of the server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "info": "A resolvable domain name for the external DNS server.",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "shared_with_ms_parent_delegation",
+                  "kind": "Bool(O)",
+                  "info": "This flag represents whether the name server is shared with the parent Microsoft primary zone’s delegation server.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "stealth",
+                  "kind": "Bool(O)",
+                  "info": "Set this flag to hide the NS record for the primary name server from DNS queries.",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key",
+                  "kind": "String(O)",
+                  "info": "A generated TSIG key. Values with leading or trailing whitespace are not valid for this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_alg",
+                  "kind": "String(O)",
+                  "info": "The TSIG key algorithm. Valid values: HMAC-MD5 or HMAC-SHA256. The default value is HMAC-MD5.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tsig_key_name",
+                  "kind": "String(O)",
+                  "info": "The TSIG key name.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_tsig_key_name",
+                  "kind": "Bool(O)",
+                  "info": "Use flag for: tsig_key_name",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "stealth",
+              "kind": "Bool(O)",
+              "info": "This flag governs whether the specified Grid member is in stealth mode or not. If set to True, the member is in stealth mode. This flag is ignored if the struct is specified as part of a stub zone.",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "view",
+          "kind": "String(O)",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_format",
+          "kind": "String(O)",
+          "info": "Determines the format of this zone - API default FORWARD",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "view",
+          "kind": "String",
+          "info": "The name of the DNS view in which the zone resides",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone_format",
+          "kind": "String",
+          "info": "Determines the format of this zone - API default FORWARD",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

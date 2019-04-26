@@ -1,0 +1,1013 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "connection": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "back_pressure_data_size_threshold",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "back_pressure_object_threshold",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "bends",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "destination",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "group_id",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "type",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "selected_relationships",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "source",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "group_id",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "type",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "controller_service": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "properties",
+              "kind": "Map(R)",
+              "type": "map",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "funnel": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "position",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "group": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "identity",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "position",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "users",
+              "kind": "Set(R)",
+              "type": "set",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "port": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "comments",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "position",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "process_group": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "position",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "processor": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "config",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "auto_terminated_relationships",
+                  "kind": "List(R)",
+                  "type": "list",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "concurrently_schedulable_task_count",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "execution_node",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "properties",
+                  "kind": "Map(R)",
+                  "type": "map",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "scheduling_period",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "scheduling_strategy",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "position",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "remote_process_group": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "position",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "target_uris",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "transport_protocol",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "reporting_task": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "comments",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "properties",
+              "kind": "Map(R)",
+              "type": "map",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "scheduling_period",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "scheduling_strategy",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "user": {
+      "arguments": [
+        {
+          "word": "component",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "identity",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "parent_group_id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "position",
+              "kind": "List(R)(B)",
+              "subblock": [
+                {
+                  "word": "x",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "y",
+                  "kind": "Float(R)",
+                  "type": "float",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "parent_group_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "revision",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "version",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

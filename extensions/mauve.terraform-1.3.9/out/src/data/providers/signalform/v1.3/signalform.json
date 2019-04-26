@@ -1,0 +1,1121 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "dashboard": {
+      "arguments": [
+        {
+          "word": "chart",
+          "kind": "Set(O)(B)",
+          "info": "Chart ID and layout information for the charts in the dashboard",
+          "subblock": [
+            {
+              "word": "chart_id",
+              "kind": "String(R)",
+              "info": "ID of the chart to display",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "column",
+              "kind": "Int(O)",
+              "info": "The column to show the chart in (zero-based); this value always represents the leftmost column of the chart. (between 0 and 11)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "height",
+              "kind": "Int(O)",
+              "info": "How many rows the chart should take up. (greater than or equal to 1)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "row",
+              "kind": "Int(O)",
+              "info": "The row to show the chart in (zero-based); if height > 1, this value represents the topmost row of the chart. (greater than or equal to 0)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "width",
+              "kind": "Int(O)",
+              "info": "How many columns (out of a total of 12) the chart should take up. (between 1 and 12)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "charts_resolution",
+          "kind": "String(O)",
+          "info": "Specifies the chart data display resolution for charts in this dashboard. Value can be one of \"default\", \"low\", \"high\", or \"highest\". default by default",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dashboard_group",
+          "kind": "String(R)",
+          "info": "The ID of the dashboard group that contains the dashboard. If an ID is not provided during creation, the dashboard will be placed in a newly created dashboard group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the dashboard (Optional)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "end_time",
+          "kind": "Int(O)",
+          "info": "(type \"absolute\" only) Seconds since epoch to end the visualization",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "info": "Filter to apply to each chart in the dashboard",
+          "subblock": [
+            {
+              "word": "negated",
+              "kind": "Bool(O)",
+              "info": "(false by default) Whether this filter should be a \"not\" filter",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "property",
+              "kind": "String(R)",
+              "info": "A metric time series dimension or property name",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "Set(R)",
+              "info": "List of strings (which will be treated as an OR filter on the property)",
+              "type": "set",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the dashboard",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "start_time",
+          "kind": "Int(O)",
+          "info": "(type \"absolute\" only) Seconds since epoch to start the visualization",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_range",
+          "kind": "String(O)",
+          "info": "(time_span_type \"relative\" only) From when to display data. SignalFx time syntax (e.g. -5m, -1h)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_span_type",
+          "kind": "String(O)",
+          "info": "Type of time interval of the chart. It must be \"absolute\" or \"relative\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "variable",
+          "kind": "Set(O)(B)",
+          "info": "Dashboard variable to apply to each chart in the dashboard",
+          "subblock": [
+            {
+              "word": "alias",
+              "kind": "String(R)",
+              "info": "An alias for the dashboard variable. This text will appear as the label for the dropdown field on the dashboard",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "Variable description",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "property",
+              "kind": "String(R)",
+              "info": "A metric time series dimension or property name",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "restricted_suggestions",
+              "kind": "Bool(O)",
+              "info": "If true, this variable may only be set to the values listed in preferredSuggestions. and only these values will appear in autosuggestion menus. false by default",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "value_required",
+              "kind": "Bool(O)",
+              "info": "Determines whether a value is required for this variable (and therefore whether it will be possible to view this dashboard without this filter applied). false by default",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "values",
+              "kind": "Set(O)",
+              "info": "List of strings (which will be treated as an OR filter on the property)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "values_suggested",
+              "kind": "Set(O)",
+              "info": "A list of strings of suggested values for this variable; these suggestions will receive priority when values are autosuggested for this variable",
+              "type": "set",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dashboard_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the dashboard group",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the dashboard group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "detector": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the detector",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "end_time",
+          "kind": "Int(O)",
+          "info": "Seconds since epoch. Used for visualization. You must specify time_span_type = \"absolute\" too.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_delay",
+          "kind": "Int(O)",
+          "info": "How long (in seconds) to wait for late datapoints",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the detector",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "program_text",
+          "kind": "String(R)",
+          "info": "Signalflow program text for the detector. More info at \"https://developers.signalfx.com/docs/signalflow-overview\"",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rule",
+          "kind": "Set(R)(B)",
+          "info": "Set of rules used for alerting",
+          "subblock": [
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "info": "Description of the rule",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "detect_label",
+              "kind": "String(R)",
+              "info": "A detect label which matches a detect label within the program text",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "disabled",
+              "kind": "Bool(O)",
+              "info": "(default: false) When true, notifications and events will not be generated for the detect label",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "notifications",
+              "kind": "List(O)",
+              "info": "List of strings specifying where notifications will be sent when an incident occurs. See https://developers.signalfx.com/v2/docs/detector-model#notifications-models for more info",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "severity",
+              "kind": "String(R)",
+              "info": "The severity of the rule, must be one of: Critical, Warning, Major, Minor, Info",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "show_data_markers",
+          "kind": "Bool(O)",
+          "info": "(false by default) When true, markers will be drawn for each datapoint within the visualization.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "start_time",
+          "kind": "Int(O)",
+          "info": "Seconds since epoch. Used for visualization. You must specify time_span_type = \"absolute\" too.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_range",
+          "kind": "String(O)",
+          "info": "(time_span_type \"relative\" only) From when to display data. SignalFx time syntax (e.g. -5m, -1h)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_span_type",
+          "kind": "String(O)",
+          "info": "The type of time span defined for visualization. Must be either \"relative\" or \"absolute\".",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "heatmap_chart": {
+      "arguments": [
+        {
+          "word": "color_range",
+          "kind": "Set(O)(B)",
+          "info": "Values and color for the color range. Example: colorRange : { min : 0, max : 100, color : \"blue\" }",
+          "subblock": [
+            {
+              "word": "color",
+              "kind": "String(R)",
+              "info": "The color range to use. Must be either \"gray\", \"blue\", \"navy\", \"orange\", \"yellow\", \"magenta\", \"purple\", \"violet\", \"lilac\", \"green\", \"aquamarine\"",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "max_value",
+              "kind": "Float(O)",
+              "info": "The maximum value within the coloring range",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "min_value",
+              "kind": "Float(O)",
+              "info": "The minimum value within the coloring range",
+              "type": "float",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "color_scale",
+          "kind": "Set(O)(B)",
+          "info": "Values for each color in the range. Example: { thresholds : [80, 60, 40, 20, 0], inverted : true }",
+          "subblock": [
+            {
+              "word": "inverted",
+              "kind": "Bool(O)",
+              "info": "(false by default) If false or omitted, values are red if they are above the highest specified value. If true, values are red if they are below the lowest specified value",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "thresholds",
+              "kind": "List(R)",
+              "info": "The thresholds to set for the color range being used. Values must be in descending order",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the chart (Optional)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_sampling",
+          "kind": "Bool(O)",
+          "info": "(false by default) If false, samples a subset of the output MTS, which improves UI performance",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "group_by",
+          "kind": "List(O)",
+          "info": "Properties to group by in the heatmap (in nesting order)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hide_timestamp",
+          "kind": "Bool(O)",
+          "info": "(false by default) Whether to show the timestamp in the chart",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_delay",
+          "kind": "Int(O)",
+          "info": "How long (in seconds) to wait for late datapoints",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "minimum_resolution",
+          "kind": "Int(O)",
+          "info": "The minimum resolution (in seconds) to use for computing the underlying program",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the chart",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "program_text",
+          "kind": "String(R)",
+          "info": "Signalflow program text for the chart. More info at \"https://developers.signalfx.com/docs/signalflow-overview\"",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "sort_by",
+          "kind": "String(O)",
+          "info": "The property to use when sorting the elements. Must be prepended with + for ascending or - for descending (e.g. -foo)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "unit_prefix",
+          "kind": "String(O)",
+          "info": "(Metric by default) Must be \"Metric\" or \"Binary\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "list_chart": {
+      "arguments": [
+        {
+          "word": "color_by",
+          "kind": "String(O)",
+          "info": "(Metric by default) Must be \"Metric\" or \"Dimension\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the chart (Optional)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_sampling",
+          "kind": "Bool(O)",
+          "info": "(false by default) If false, samples a subset of the output MTS, which improves UI performance",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "legend_fields_to_hide",
+          "kind": "Set(O)",
+          "info": "List of properties that shouldn't be displayed in the chart legend (i.e. dimension names)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_delay",
+          "kind": "Int(O)",
+          "info": "How long (in seconds) to wait for late datapoints",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_precision",
+          "kind": "Int(O)",
+          "info": "The maximum precision to for values displayed in the list",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the chart",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "program_text",
+          "kind": "String(R)",
+          "info": "Signalflow program text for the chart. More info at \"https://developers.signalfx.com/docs/signalflow-overview\"",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "refresh_interval",
+          "kind": "Int(O)",
+          "info": "How often (in seconds) to refresh the values of the list",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sort_by",
+          "kind": "String(O)",
+          "info": "The property to use when sorting the elements. Use 'value' if you want to sort by value. Must be prepended with + for ascending or - for descending (e.g. -foo)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "unit_prefix",
+          "kind": "String(O)",
+          "info": "(Metric by default) Must be \"Metric\" or \"Binary\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "single_value_chart": {
+      "arguments": [
+        {
+          "word": "color_by",
+          "kind": "String(O)",
+          "info": "(Metric by default) Must be \"Metric\", \"Dimension\", or \"Scale\". \"Scale\" maps to Color by Value in the UI",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "color_scale",
+          "kind": "Set(O)(B)",
+          "info": "Values for each color in the range. Example: { thresholds : [80, 60, 40, 20, 0], inverted : true }",
+          "subblock": [
+            {
+              "word": "inverted",
+              "kind": "Bool(O)",
+              "info": "(false by default) If false or omitted, values are red if they are above the highest specified value. If true, values are red if they are below the lowest specified value",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "thresholds",
+              "kind": "List(R)",
+              "info": "The thresholds to set for the color range being used. Values must be in descending order",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the chart (Optional)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "is_timestamp_hidden",
+          "kind": "Bool(O)",
+          "info": "(false by default) Whether to hide the timestamp in the chart",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_delay",
+          "kind": "Int(O)",
+          "info": "How long (in seconds) to wait for late datapoints",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_precision",
+          "kind": "Int(O)",
+          "info": "The maximum precision to for values displayed in the list",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the chart",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "program_text",
+          "kind": "String(R)",
+          "info": "Signalflow program text for the chart. More info at \"https://developers.signalfx.com/docs/signalflow-overview\"",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "refresh_interval",
+          "kind": "Int(O)",
+          "info": "How often (in seconds) to refresh the values of the list",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "show_spark_line",
+          "kind": "Bool(O)",
+          "info": "(false by default) Whether to show a trend line below the current value",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "unit_prefix",
+          "kind": "String(O)",
+          "info": "(Metric by default) Must be \"Metric\" or \"Binary\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "text_chart": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the chart (Optional)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "markdown",
+          "kind": "String(R)",
+          "info": "Markdown text to display. More info at: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the chart",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "time_chart": {
+      "arguments": [
+        {
+          "word": "axis_left",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "high_watermark",
+              "kind": "Int(O)",
+              "info": "A line to draw as a high watermark",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "label",
+              "kind": "String(O)",
+              "info": "Label of the left axis",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "low_watermark",
+              "kind": "Int(O)",
+              "info": "A line to draw as a low watermark",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "max_value",
+              "kind": "Int(O)",
+              "info": "The maximum value for the left axis",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "min_value",
+              "kind": "Int(O)",
+              "info": "The minimum value for the left axis",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "color_by",
+          "kind": "String(O)",
+          "info": "(Dimension by default) Must be \"Dimension\" or \"Metric\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the chart",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_sampling",
+          "kind": "Bool(O)",
+          "info": "(false by default) If false, samples a subset of the output MTS, which improves UI performance",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "end_time",
+          "kind": "Int(O)",
+          "info": "(type \"absolute\" only) Seconds since epoch to end the visualization",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "legend_fields_to_hide",
+          "kind": "Set(O)",
+          "info": "List of properties that shouldn't be displayed in the chart legend (i.e. dimension names)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "max_delay",
+          "kind": "Int(O)",
+          "info": "How long (in seconds) to wait for late datapoints",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "minimum_resolution",
+          "kind": "Int(O)",
+          "info": "The minimum resolution (in seconds) to use for computing the underlying program",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the chart",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plot_type",
+          "kind": "String(O)",
+          "info": "(LineChart by default) The default plot display style for the visualization. Must be \"LineChart\", \"AreaChart\", \"ColumnChart\", or \"Histogram\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "program_text",
+          "kind": "String(R)",
+          "info": "Signalflow program text for the chart. More info at \"https://developers.signalfx.com/docs/signalflow-overview\"",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "show_data_markers",
+          "kind": "Bool(O)",
+          "info": "(false by default) Show markers (circles) for each datapoint used to draw line or area charts",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "show_event_lines",
+          "kind": "Bool(O)",
+          "info": "(false by default) Whether vertical highlight lines should be drawn in the visualizations at times when events occurred",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "stacked",
+          "kind": "Bool(O)",
+          "info": "(false by default) Whether area and bar charts in the visualization should be stacked",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "start_time",
+          "kind": "Int(O)",
+          "info": "(type \"absolute\" only) Seconds since epoch to start the visualization",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "synced",
+          "kind": "Bool(O)",
+          "info": "Whether the resource in SignalForm and SignalFx are identical or not. Used internally for syncing.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_range",
+          "kind": "String(O)",
+          "info": "(time_span_type \"relative\" only) From when to display data. SignalFx time syntax (e.g. -5m, -1h)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_span_type",
+          "kind": "String(O)",
+          "info": "Type of time interval of the chart. It must be \"absolute\" or \"relative\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "unit_prefix",
+          "kind": "String(O)",
+          "info": "(Metric by default) Must be \"Metric\" or \"Binary\"",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "last_updated",
+          "kind": "Float",
+          "info": "Latest timestamp the resource was updated",
+          "type": "float",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

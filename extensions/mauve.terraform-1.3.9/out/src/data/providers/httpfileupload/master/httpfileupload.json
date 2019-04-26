@@ -1,0 +1,38 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "file": {
+      "arguments": [
+        {
+          "word": "file_path",
+          "kind": "String(R)",
+          "info": "Absolute filepath including the filename.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "host_url",
+          "kind": "String(R)",
+          "info": "The http URL you want to upload file to.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

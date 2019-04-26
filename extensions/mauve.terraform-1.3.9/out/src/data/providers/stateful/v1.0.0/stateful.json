@@ -1,0 +1,86 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "map": {
+      "arguments": [
+        {
+          "word": "desired",
+          "kind": "Map(R)",
+          "type": "map",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "real",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hash",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "real",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "string": {
+      "arguments": [
+        {
+          "word": "desired",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "real",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hash",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "real",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

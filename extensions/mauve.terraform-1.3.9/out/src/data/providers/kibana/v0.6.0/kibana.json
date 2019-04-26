@@ -1,0 +1,375 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "dashboard": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the kibana saved dashboard",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the kibana saved dashboard",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "options_json",
+          "kind": "String(O)",
+          "info": "Options json",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "panels_json",
+          "kind": "String(R)",
+          "info": "Panels json",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "search_source_json",
+          "kind": "Bool(O)",
+          "info": "Search source json",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_restore",
+          "kind": "Bool(O)",
+          "info": "Saved the time selection",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ui_state_json",
+          "kind": "String(O)",
+          "info": "Ui state json",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "search": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the kibana saved search",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "display_columns",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the kibana saved search",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "search",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "filters",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "exists",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "match",
+                  "kind": "Set(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "field_name",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "query",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "type",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "meta",
+                  "kind": "Set(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "alias",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "disabled",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "index",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "key",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "negate",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "params",
+                      "kind": "Set(O)(B)",
+                      "subblock": [
+                        {
+                          "word": "query",
+                          "kind": "String(R)",
+                          "type": "string",
+                          "block": false,
+                          "required": false
+                        },
+                        {
+                          "word": "type",
+                          "kind": "String(R)",
+                          "type": "string",
+                          "block": false,
+                          "required": false
+                        }
+                      ],
+                      "type": "set",
+                      "block": true,
+                      "required": true
+                    },
+                    {
+                      "word": "type",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "index",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "query",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "sort_ascending",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sort_by_columns",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "visualization": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Description of the kibana saved visualization",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the kibana saved visualization",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "saved_search_id",
+          "kind": "String(R)",
+          "info": "Saved search id this visualization is based on",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "visualization_state",
+          "kind": "String(R)",
+          "info": "Visualization state for this resource",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "index": {
+      "arguments": [
+        {
+          "word": "filter",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "fields",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "time_field_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "title",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

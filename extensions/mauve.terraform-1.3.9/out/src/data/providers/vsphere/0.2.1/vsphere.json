@@ -1,0 +1,1056 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "datacenter": {
+      "arguments": [
+        {
+          "word": "folder",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "file": {
+      "arguments": [
+        {
+          "word": "create_directories",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datastore",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "destination_file",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_datastore",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_file",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "folder": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "path",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "existing_path",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "host_port_group": {
+      "arguments": [
+        {
+          "word": "active_nics",
+          "kind": "List(O)",
+          "info": "List of active network adapters used for load balancing.",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "allow_forged_transmits",
+          "kind": "Bool(O)",
+          "info": "Controls whether or not the virtual network adapter is allowed to send network traffic with a different MAC address than that of its own.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "allow_mac_changes",
+          "kind": "Bool(O)",
+          "info": "Controls whether or not the Media Access Control (MAC) address can be changed.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "allow_promiscuous",
+          "kind": "Bool(O)",
+          "info": "Enable promiscuous mode on the network. This flag indicates whether or not all traffic is seen on a given port.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "check_beacon",
+          "kind": "Bool(O)",
+          "info": "Enable beacon probing. Requires that the vSwitch has been configured to use a beacon. If disabled, link status is used only.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "failback",
+          "kind": "Bool(O)",
+          "info": "If true, the teaming policy will re-activate failed interfaces higher in precedence when they come back up.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "host_system_id",
+          "kind": "String(R)",
+          "info": "The managed object ID of the host to set the virtual switch up on.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the port group.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notify_switches",
+          "kind": "Bool(O)",
+          "info": "If true, the teaming policy will notify the broadcast network of a NIC failover, triggering cache updates.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_average_bandwidth",
+          "kind": "Int(O)",
+          "info": "The average bandwidth in bits per second if shaping is enabled on the port.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_burst_size",
+          "kind": "Int(O)",
+          "info": "The maximum burst size allowed in bytes if shaping is enabled on the port.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_enabled",
+          "kind": "Bool(O)",
+          "info": "True if the traffic shaper is enabled on the port.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_peak_bandwidth",
+          "kind": "Int(O)",
+          "info": "The peak bandwidth during bursts in bits per second if traffic shaping is enabled on the port.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "standby_nics",
+          "kind": "List(O)",
+          "info": "List of standby network adapters used for failover.",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "teaming_policy",
+          "kind": "String(O)",
+          "info": "The network adapter teaming policy. Can be one of loadbalance_ip, loadbalance_srcmac, loadbalance_srcid, or failover_explicit.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "virtual_switch_name",
+          "kind": "String(R)",
+          "info": "The name of the virtual switch to bind this port group to.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vlan_id",
+          "kind": "Int(O)",
+          "info": "The VLAN ID/trunk mode for this port group. An ID of 0 denotes no tagging, an ID of 1-4094 tags with the specific ID, and an ID of 4095 enables trunk mode, allowing the guest to manage its own tagging.",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "computed_policy",
+          "kind": "Map",
+          "info": "The effective network policy after inheritance. Note that this will look similar to, but is not the same, as the policy attributes defined in this resource.",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "key",
+          "kind": "String",
+          "info": "The linkable identifier for this port group.",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ports",
+          "kind": "Set(B)",
+          "info": "The ports that currently exist and are used on this port group.",
+          "subblock": [
+            {
+              "word": "key",
+              "kind": "String",
+              "info": "The linkable identifier for this port entry.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "mac_addresses",
+              "kind": "List",
+              "info": "The MAC addresses of the network service of the virtual machine connected on this port.",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "info": "Type type of the entity connected on this port. Possible values are host (VMKkernel), systemManagement (service console), virtualMachine, or unknown.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "host_virtual_switch": {
+      "arguments": [
+        {
+          "word": "active_nics",
+          "kind": "List(R)",
+          "info": "List of active network adapters used for load balancing.",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "allow_forged_transmits",
+          "kind": "Bool(O)",
+          "info": "Controls whether or not the virtual network adapter is allowed to send network traffic with a different MAC address than that of its own.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "allow_mac_changes",
+          "kind": "Bool(O)",
+          "info": "Controls whether or not the Media Access Control (MAC) address can be changed.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "allow_promiscuous",
+          "kind": "Bool(O)",
+          "info": "Enable promiscuous mode on the network. This flag indicates whether or not all traffic is seen on a given port.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "beacon_interval",
+          "kind": "Int(O)",
+          "info": "Determines how often, in seconds, a beacon should be sent to probe for the validity of a link.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "check_beacon",
+          "kind": "Bool(O)",
+          "info": "Enable beacon probing. Requires that the vSwitch has been configured to use a beacon. If disabled, link status is used only.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "failback",
+          "kind": "Bool(O)",
+          "info": "If true, the teaming policy will re-activate failed interfaces higher in precedence when they come back up.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "host_system_id",
+          "kind": "String(R)",
+          "info": "The managed object ID of the host to set the virtual switch up on.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "link_discovery_operation",
+          "kind": "String(O)",
+          "info": "Whether to advertise or listen for link discovery. Valid values are advertise, both, listen, and none.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "link_discovery_protocol",
+          "kind": "String(O)",
+          "info": "The discovery protocol type. Valid values are cdp and lldp.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mtu",
+          "kind": "Int(O)",
+          "info": "The maximum transmission unit (MTU) of the virtual switch in bytes.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the virtual switch.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_adapters",
+          "kind": "List(R)",
+          "info": "The list of network adapters to bind to this virtual switch.",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notify_switches",
+          "kind": "Bool(O)",
+          "info": "If true, the teaming policy will notify the broadcast network of a NIC failover, triggering cache updates.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "number_of_ports",
+          "kind": "Int(O)",
+          "info": "The number of ports that this virtual switch is configured to use.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_average_bandwidth",
+          "kind": "Int(O)",
+          "info": "The average bandwidth in bits per second if shaping is enabled on the port.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_burst_size",
+          "kind": "Int(O)",
+          "info": "The maximum burst size allowed in bytes if shaping is enabled on the port.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_enabled",
+          "kind": "Bool(O)",
+          "info": "True if the traffic shaper is enabled on the port.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "shaping_peak_bandwidth",
+          "kind": "Int(O)",
+          "info": "The peak bandwidth during bursts in bits per second if traffic shaping is enabled on the port.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "standby_nics",
+          "kind": "List(R)",
+          "info": "List of standby network adapters used for failover.",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "teaming_policy",
+          "kind": "String(O)",
+          "info": "The network adapter teaming policy. Can be one of loadbalance_ip, loadbalance_srcmac, loadbalance_srcid, or failover_explicit.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "license": {
+      "arguments": [
+        {
+          "word": "labels",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "license_key",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "edition_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "total",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "used",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "virtual_disk": {
+      "arguments": [
+        {
+          "word": "adapter_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datastore",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vmdk_path",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "virtual_machine": {
+      "arguments": [
+        {
+          "word": "annotation",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cdrom",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "datastore",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "path",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "cluster",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "custom_configuration_parameters",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "detach_unknown_disks_on_delete",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disk",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "bootable",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "controller_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "datastore",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "iops",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "keep_on_remove",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "size",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "template",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "vmdk",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "dns_servers",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_suffixes",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "domain",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_disk_uuid",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "folder",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "gateway",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hostname",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "linked_clone",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "memory",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "memory_reservation",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_interface",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "adapter_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ip_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv4_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv4_gateway",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv4_prefix_length",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_gateway",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6_prefix_length",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "label",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "mac_address",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "subnet_mask",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "resource_pool",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "skip_customization",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "time_zone",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vcpu",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "windows_opt_config",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "admin_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "domain",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "domain_user",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "domain_user_password",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "product_key",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "moid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "uuid",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "datacenter": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "The name of the datacenter. This can be a name or path.\tCan be omitted if there is only one datacenter in your inventory.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "host": {
+      "arguments": [
+        {
+          "word": "datacenter_id",
+          "kind": "String(R)",
+          "info": "The managed object ID of the datacenter to look for the host in.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "info": "The name of the host. This can be a name or path.\tIf not provided, the default host is used.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

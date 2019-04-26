@@ -1,0 +1,2750 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "access_rule": {
+      "arguments": [
+        {
+          "word": "configuration",
+          "kind": "Map(R)(B)",
+          "subblock": [
+            {
+              "word": "target",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "map",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "mode",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notes",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "load_balancer": {
+      "arguments": [
+        {
+          "word": "default_pool_ids",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fallback_pool_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "pop_pools",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "pool_ids",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "pop",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "proxied",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "region_pools",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "pool_ids",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "region",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "pop_pools",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "pool_ids",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "pop",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "region_pools",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "pool_ids",
+              "kind": "List",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "region",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "zone_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "load_balancer_monitor": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "expected_body",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "expected_codes",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "header",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "header",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "values",
+              "kind": "Set(R)",
+              "type": "set",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "interval",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "method",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "retries",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "load_balancer_pool": {
+      "arguments": [
+        {
+          "word": "check_regions",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "minimum_origins",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "monitor",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "notification_email",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "origins",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "enabled",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "check_regions",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "created_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "modified_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "page_rule": {
+      "arguments": [
+        {
+          "word": "actions",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "always_online",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "always_use_https",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "automatic_https_rewrites",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "browser_cache_ttl",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "browser_check",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "bypass_cache_on_cookie",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cache_by_device_type",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cache_deception_armor",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cache_level",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cache_on_cookie",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disable_apps",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disable_performance",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disable_railgun",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disable_security",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "edge_cache_ttl",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "email_obfuscation",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "explicit_cache_control",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "forwarding_url",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "status_code",
+                  "kind": "Int(R)",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "url",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "host_header_override",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ip_geolocation",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mirage",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "opportunistic_encryption",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "origin_error_page_pass_thru",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "polish",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "resolve_override",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "respect_strong_etag",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "response_buffering",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "rocket_loader",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "security_level",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "server_side_exclude",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sort_query_string_for_cache",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssl",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "true_client_ip_header",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "waf",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "priority",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "status",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "target",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "rate_limit": {
+      "arguments": [
+        {
+          "word": "action",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "mode",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "response",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "body",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "content_type",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "timeout",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "bypass_url_patterns",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "correlate",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "by",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "match",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "request",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "methods",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "schemes",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "url_pattern",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "response",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "origin_traffic",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "statuses",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "period",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "threshold",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "match",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "request",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "methods",
+                  "kind": "Set",
+                  "type": "set",
+                  "block": false
+                },
+                {
+                  "word": "schemes",
+                  "kind": "Set",
+                  "type": "set",
+                  "block": false
+                },
+                {
+                  "word": "url_pattern",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "response",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "origin_traffic",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "statuses",
+                  "kind": "Set",
+                  "type": "set",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "zone_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "record": {
+      "arguments": [
+        {
+          "word": "data",
+          "kind": "Map(O)(B)",
+          "subblock": [
+            {
+              "word": "algorithm",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "altitude",
+              "kind": "Float(O)",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "certificate",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "content",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "digest",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "digest_type",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "fingerprint",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "flags",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "key_tag",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lat_degrees",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lat_direction",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lat_minutes",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "lat_seconds",
+              "kind": "Float(O)",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "long_degrees",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "long_direction",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "long_minutes",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "long_seconds",
+              "kind": "Float(O)",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "matching_type",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "order",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "precision_horz",
+              "kind": "Float(O)",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "precision_vert",
+              "kind": "Float(O)",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "preference",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "priority",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "proto",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "public_key",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "regex",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "replacement",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "selector",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "size",
+              "kind": "Float(O)",
+              "type": "float",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "usage",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "weight",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "map",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "domain",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "priority",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "proxied",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "value",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "created_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "metadata",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "modified_on",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "proxiable",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "value",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "waf_rule": {
+      "arguments": [
+        {
+          "word": "mode",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rule_id",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "package_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "worker_route": {
+      "arguments": [
+        {
+          "word": "enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "pattern",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "script_name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "multi_script",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "zone_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "worker_script": {
+      "arguments": [
+        {
+          "word": "content",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "zone_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "zone_settings_override": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "settings",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "advanced_ddos",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "always_online",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "always_use_https",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "automatic_https_rewrites",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "brotli",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "browser_cache_ttl",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "browser_check",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cache_level",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "challenge_ttl",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cname_flattening",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "development_mode",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "edge_cache_ttl",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "email_obfuscation",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "hotlink_protection",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "http2",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ip_geolocation",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ipv6",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "max_upload",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "min_tls_version",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "minify",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "css",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "html",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "js",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "mirage",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "mobile_redirect",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "mobile_subdomain",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "status",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "strip_uri",
+                  "kind": "Bool(R)",
+                  "type": "bool",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "opportunistic_encryption",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "origin_error_page_pass_thru",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "polish",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "prefetch_preload",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "privacy_pass",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "pseudo_ipv4",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "response_buffering",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "rocket_loader",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "security_header",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "enabled",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "include_subdomains",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "max_age",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "nosniff",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "preload",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "security_level",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "server_side_exclude",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sha1_support",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sort_query_string_for_cache",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssl",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tls_1_2_only",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tls_1_3",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tls_client_auth",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "true_client_ip_header",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "waf",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "webp",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "websockets",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "initial_settings",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "advanced_ddos",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "always_online",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "always_use_https",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "automatic_https_rewrites",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "brotli",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "browser_cache_ttl",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "browser_check",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cache_level",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "challenge_ttl",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "cname_flattening",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "development_mode",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "edge_cache_ttl",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "email_obfuscation",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "hotlink_protection",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "http2",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ip_geolocation",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ipv6",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "max_upload",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "min_tls_version",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "minify",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "css",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "html",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "js",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "mirage",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "mobile_redirect",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "mobile_subdomain",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "status",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "strip_uri",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "opportunistic_encryption",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "origin_error_page_pass_thru",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "polish",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "prefetch_preload",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "privacy_pass",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "pseudo_ipv4",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "response_buffering",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "rocket_loader",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_header",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "enabled",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "include_subdomains",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "max_age",
+                  "kind": "Int",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "nosniff",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "preload",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "security_level",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "server_side_exclude",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "sha1_support",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "sort_query_string_for_cache",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ssl",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tls_1_2_only",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tls_1_3",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tls_client_auth",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "true_client_ip_header",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "waf",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "webp",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "websockets",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "initial_settings_read_at",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "readonly_settings",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "settings",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "advanced_ddos",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "always_online",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "always_use_https",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "automatic_https_rewrites",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "brotli",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "browser_cache_ttl",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "browser_check",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cache_level",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "challenge_ttl",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "cname_flattening",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "development_mode",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "edge_cache_ttl",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "email_obfuscation",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "hotlink_protection",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "http2",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ip_geolocation",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ipv6",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "max_upload",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "min_tls_version",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "minify",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "css",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "html",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "js",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "mirage",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "mobile_redirect",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "mobile_subdomain",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "status",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "strip_uri",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "opportunistic_encryption",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "origin_error_page_pass_thru",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "polish",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "prefetch_preload",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "privacy_pass",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "pseudo_ipv4",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "response_buffering",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "rocket_loader",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "security_header",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "enabled",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "include_subdomains",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "max_age",
+                  "kind": "Int",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "nosniff",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "preload",
+                  "kind": "Bool",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "security_level",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "server_side_exclude",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "sha1_support",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "sort_query_string_for_cache",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ssl",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tls_1_2_only",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tls_1_3",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "tls_client_auth",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "true_client_ip_header",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "waf",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "webp",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "websockets",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "zone_status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "zone_type",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "ip_ranges": {
+      "arguments": [],
+      "attributes": [
+        {
+          "word": "cidr_blocks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "ipv4_cidr_blocks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "ipv6_cidr_blocks",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

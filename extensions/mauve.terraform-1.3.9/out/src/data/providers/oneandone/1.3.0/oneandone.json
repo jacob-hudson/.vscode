@@ -1,0 +1,1344 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "baremetal": {
+      "arguments": [
+        {
+          "word": "baremetal_model_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "firewall_policy_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "loadbalancer_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "monitoring_policy_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_public",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ips",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "firewall_policy_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ip",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "password",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "block_storage": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "server_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "firewall_policy": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rules",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port_from",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port_to",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_ip",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "image": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "frequency",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "num_images",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "os_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "url",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "loadbalancer": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "health_check_interval",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "health_check_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "health_check_path_parser",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "health_check_test",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "method",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "persistence",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "persistence_time",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "rules",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "port_balancer",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port_server",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_ip",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "monitoring_policy": {
+      "arguments": [
+        {
+          "word": "agent",
+          "kind": "Bool(R)",
+          "type": "bool",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "email",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ports",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "alert_if",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "email_notification",
+              "kind": "Bool(R)",
+              "type": "bool",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "protocol",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "processes",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "alert_if",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "email_notification",
+              "kind": "Bool(R)",
+              "type": "bool",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "process",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "thresholds",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "cpu",
+              "kind": "Set(R)(B)",
+              "subblock": [
+                {
+                  "word": "critical",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                },
+                {
+                  "word": "warning",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "disk",
+              "kind": "Set(R)(B)",
+              "subblock": [
+                {
+                  "word": "critical",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                },
+                {
+                  "word": "warning",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "internal_ping",
+              "kind": "Set(R)(B)",
+              "subblock": [
+                {
+                  "word": "critical",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                },
+                {
+                  "word": "warning",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "ram",
+              "kind": "Set(R)(B)",
+              "subblock": [
+                {
+                  "word": "critical",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                },
+                {
+                  "word": "warning",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": false
+            },
+            {
+              "word": "transfer",
+              "kind": "Set(R)(B)",
+              "subblock": [
+                {
+                  "word": "critical",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                },
+                {
+                  "word": "warning",
+                  "kind": "Set(R)(B)",
+                  "subblock": [
+                    {
+                      "word": "alert",
+                      "kind": "Bool(R)",
+                      "type": "bool",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "value",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": false
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "private_network": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "network_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server_ids",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "subnet_mask",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "public_ip": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "reverse_dns",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ip_address",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "cores_per_processor",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "firewall_policy_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "fixed_instance_size",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hdds",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "disk_size",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "is_main",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "image",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "loadbalancer_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "monitoring_policy_id",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "password",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ram",
+          "kind": "Float(O)",
+          "type": "float",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_path",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_public",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vcores",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ips",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "firewall_policy_id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ip",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "password",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "shared_storage": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "storage_servers",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "id",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "rights",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ssh_key": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "md5",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "servers",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "vpn": {
+      "arguments": [
+        {
+          "word": "datacenter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "download_path",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "file_name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "instance_size": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ram",
+          "kind": "Float(O)",
+          "type": "float",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vcores",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

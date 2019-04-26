@@ -1,0 +1,271 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "file": {
+      "arguments": [
+        {
+          "word": "output_path",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "content",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "filename",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "source_content",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_content_filename",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_dir",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_file",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "output_base64sha256",
+          "kind": "String",
+          "info": "Base64 Encoded SHA256 checksum of output file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "output_md5",
+          "kind": "String",
+          "info": "MD5 of output file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "output_sha",
+          "kind": "String",
+          "info": "SHA1 checksum of output file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "output_size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "source",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "content",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "filename",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "file": {
+      "arguments": [
+        {
+          "word": "output_path",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "content",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "filename",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "source_content",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_content_filename",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_dir",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_file",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "output_base64sha256",
+          "kind": "String",
+          "info": "Base64 Encoded SHA256 checksum of output file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "output_md5",
+          "kind": "String",
+          "info": "MD5 of output file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "output_sha",
+          "kind": "String",
+          "info": "SHA1 checksum of output file",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "output_size",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "source",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "content",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "filename",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

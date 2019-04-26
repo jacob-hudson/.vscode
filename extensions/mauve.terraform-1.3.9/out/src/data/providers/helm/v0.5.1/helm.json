@@ -1,0 +1,311 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "release": {
+      "arguments": [
+        {
+          "word": "chart",
+          "kind": "String(R)",
+          "info": "Chart name to be installed.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "devel",
+          "kind": "Bool(O)",
+          "info": "Use chart development versions, too. Equivalent to version '>0.0.0-0'. If version is set, this is ignored",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_webhooks",
+          "kind": "Bool(O)",
+          "info": "Prevent hooks from running.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "force_update",
+          "kind": "Bool(O)",
+          "info": "Force resource update through delete/recreate if needed.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "keyring",
+          "kind": "String(O)",
+          "info": "Location of public keys used for verification.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Release name.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "namespace",
+          "kind": "String(O)",
+          "info": "Namespace to install the release into.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "recreate_pods",
+          "kind": "Bool(O)",
+          "info": "Perform pods restart during upgrade/rollback",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "repository",
+          "kind": "String(O)",
+          "info": "Repository where to locate the requested chart. If is an URL the chart is installed without installing the repository.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "reuse",
+          "kind": "Bool(O)",
+          "info": "Instruct Tiller to re-use an existing name.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "reuse_values",
+          "kind": "Bool(O)",
+          "info": "Reuse values when upgrading the release.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "set",
+          "kind": "Set(O)(B)",
+          "info": "Custom values to be merge with the values.",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "value",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "timeout",
+          "kind": "Int(O)",
+          "info": "Time in seconds to wait for any individual kubernetes operation.",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "values",
+          "kind": "List(O)",
+          "info": "List of values in raw yaml file to pass to helm.",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "verify",
+          "kind": "Bool(O)",
+          "info": "Verify the package before installing it.",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "version",
+          "kind": "String(O)",
+          "info": "Specify the exact chart version to install. If this is not specified, the latest version is installed.",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "metadata",
+          "kind": "Set(B)",
+          "info": "Status of the deployed release.",
+          "subblock": [
+            {
+              "word": "chart",
+              "kind": "String",
+              "info": "The name of the chart.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "info": "Name is the name of the release.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "namespace",
+              "kind": "String",
+              "info": "Namespace is the kubernetes namespace of the release.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "revision",
+              "kind": "Int",
+              "info": "Version is an int32 which represents the version of the release.",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "status",
+              "kind": "String",
+              "info": "Status of the release.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "values",
+              "kind": "String",
+              "info": "The raw yaml values used for the chart.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "version",
+              "kind": "String",
+              "info": "A SemVer 2 conformant version string of the chart.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "repository": {
+      "arguments": [
+        {
+          "word": "ca_file",
+          "kind": "String(O)",
+          "info": "Verify certificates of HTTPS-enabled servers using this CA bundle",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "cert_file",
+          "kind": "String(O)",
+          "info": "Identify HTTPS client using this SSL certificate file.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "key_file",
+          "kind": "String(O)",
+          "info": "Identify HTTPS client using this SSL key file.",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Chart repository name.",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "url",
+          "kind": "String(R)",
+          "info": "Chart repository URL.",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "metadata",
+          "kind": "Set(B)",
+          "info": "Status of the deployed release.",
+          "subblock": [
+            {
+              "word": "name",
+              "kind": "String",
+              "info": "Name of the repository read from the home.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "url",
+              "kind": "String",
+              "info": "URL of the repository read from the home.",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

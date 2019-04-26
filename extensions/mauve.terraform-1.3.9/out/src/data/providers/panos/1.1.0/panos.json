@@ -1,0 +1,2433 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "address_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dynamic_match",
+          "kind": "String(O)",
+          "info": "Dynamic address group definition",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The address object's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "static_addresses",
+          "kind": "List(O)",
+          "info": "Static address group entries",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the address object",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this address object in",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "address_object": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The address object's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the address object",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "info": "The type of address object (ip-netmask, ip-range, fqdn)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "value",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this address object in",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "administrative_tag": {
+      "arguments": [
+        {
+          "word": "color",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The administrative tag's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this administrative tag object in",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "dag_tags": {
+      "arguments": [
+        {
+          "word": "register",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "ip",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "tags",
+              "kind": "Set(R)",
+              "type": "set",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to config DAG tags for",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "ethernet_interface": {
+      "arguments": [
+        {
+          "word": "adjust_tcp_mss",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "aggregate_group",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "create_dhcp_default_route",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dhcp_default_route_metric",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_dhcp",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipv4_mss_adjust",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipv6_enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ipv6_mss_adjust",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "link_duplex",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "link_speed",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "link_state",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "lldp_enabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "lldp_profile",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "management_profile",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mode",
+          "kind": "String(R)",
+          "info": "The interface mode (layer3, layer2, virtual-wire, tap, ha, decrypt-mirror, aggregate-group)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "mtu",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The ethernet interface's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "netflow_profile",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "static_ips",
+          "kind": "List(O)",
+          "info": "List of static IP addresses",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vsys",
+          "kind": "String(R)",
+          "info": "The vsys to import this ethernet interface into",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "general_settings": {
+      "arguments": [
+        {
+          "word": "dns_primary",
+          "kind": "String(O)",
+          "info": "Primary DNS IP address",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dns_secondary",
+          "kind": "String(O)",
+          "info": "Secondary DNS IP address",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "domain",
+          "kind": "String(O)",
+          "info": "Domain",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hostname",
+          "kind": "String(O)",
+          "info": "The firewall hostname",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_primary_address",
+          "kind": "String(O)",
+          "info": "Primary NTP server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_primary_algorithm",
+          "kind": "String(O)",
+          "info": "NTP symmetric-key algorithm (sha1 or md5)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_primary_auth_key",
+          "kind": "String(O)",
+          "info": "NTP symmetric-key auth key",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_primary_auth_type",
+          "kind": "String(O)",
+          "info": "NTP auth type (none, autokey, symmetric-key)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_primary_key_id",
+          "kind": "Int(O)",
+          "info": "NTP symmetric-key key ID",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_secondary_address",
+          "kind": "String(O)",
+          "info": "Secondary NTP server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_secondary_algorithm",
+          "kind": "String(O)",
+          "info": "NTP symmetric-key algorithm (sha1 or md5)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_secondary_auth_key",
+          "kind": "String(O)",
+          "info": "NTP symmetric-key auth key",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_secondary_auth_type",
+          "kind": "String(O)",
+          "info": "NTP auth type (none, autokey, symmetric-key)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ntp_secondary_key_id",
+          "kind": "Int(O)",
+          "info": "NTP symmetric-key key ID",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "timezone",
+          "kind": "String(O)",
+          "info": "Timezone",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "update_server",
+          "kind": "String(O)",
+          "info": "PANOS update server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "verify_update_server",
+          "kind": "Bool(O)",
+          "info": "Verify update server identity",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "dns_primary",
+          "kind": "String",
+          "info": "Primary DNS IP address",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dns_secondary",
+          "kind": "String",
+          "info": "Secondary DNS IP address",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "domain",
+          "kind": "String",
+          "info": "Domain",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "hostname",
+          "kind": "String",
+          "info": "The firewall hostname",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_primary_address",
+          "kind": "String",
+          "info": "Primary NTP server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_primary_algorithm",
+          "kind": "String",
+          "info": "NTP symmetric-key algorithm (sha1 or md5)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_primary_auth_key",
+          "kind": "String",
+          "info": "NTP symmetric-key auth key",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_primary_auth_type",
+          "kind": "String",
+          "info": "NTP auth type (none, autokey, symmetric-key)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_primary_key_id",
+          "kind": "Int",
+          "info": "NTP symmetric-key key ID",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "ntp_secondary_address",
+          "kind": "String",
+          "info": "Secondary NTP server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_secondary_algorithm",
+          "kind": "String",
+          "info": "NTP symmetric-key algorithm (sha1 or md5)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_secondary_auth_key",
+          "kind": "String",
+          "info": "NTP symmetric-key auth key",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_secondary_auth_type",
+          "kind": "String",
+          "info": "NTP auth type (none, autokey, symmetric-key)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ntp_secondary_key_id",
+          "kind": "Int",
+          "info": "NTP symmetric-key key ID",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "timezone",
+          "kind": "String",
+          "info": "Timezone",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "management_profile": {
+      "arguments": [
+        {
+          "word": "http",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "http_ocsp",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "https",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "permitted_ips",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ping",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "response_pages",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "snmp",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "telnet",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "userid_service",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "userid_syslog_listener_ssl",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "userid_syslog_listener_udp",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "nat_policy": {
+      "arguments": [
+        {
+          "word": "dat_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dat_port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_addresses",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "destination_zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "disabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rulebase",
+          "kind": "String(O)",
+          "info": "The Panorama rulebase",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_address_type",
+          "kind": "String(O)",
+          "info": "interface-address or translated-address",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_interface",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_ip_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_ip_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_translated_addresses",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_interface",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_ip_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_static_bi_directional",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_static_translated_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_translated_addresses",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_type",
+          "kind": "String(O)",
+          "info": "none (default), dynamic-ip-and-port, dynamic-ip, or static-ip",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_addresses",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_zones",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "to_interface",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "info": "NAT type (ipv4 default, nat64, or nptv6)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this object in (default: vsys1)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "rulebase",
+          "kind": "String",
+          "info": "The Panorama rulebase",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_address_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "device_group",
+          "kind": "String(O)",
+          "info": "The device group to put this address object in",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dynamic_match",
+          "kind": "String(O)",
+          "info": "Dynamic address group definition",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The address object's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "static_addresses",
+          "kind": "List(O)",
+          "info": "Static address group entries",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the address object",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_address_object": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "device_group",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The address object's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the address object",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "info": "The type of address object (ip-netmask, ip-range, fqdn)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "value",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_administrative_tag": {
+      "arguments": [
+        {
+          "word": "color",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "comment",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "device_group",
+          "kind": "String(O)",
+          "info": "The device group to put this administrative tag object in",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The administrative tag's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_device_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "device",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "serial",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "vsys_list",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "device",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "serial",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "vsys_list",
+              "kind": "Set",
+              "type": "set",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_device_group_entry": {
+      "arguments": [
+        {
+          "word": "device_group",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "serial",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vsys_list",
+          "kind": "Set(O)",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_nat_policy": {
+      "arguments": [
+        {
+          "word": "dat_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dat_port",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_addresses",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "destination_zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "device_group",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disabled",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "negate_target",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "rulebase",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_address_type",
+          "kind": "String(O)",
+          "info": "interface-address or translated-address",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_interface",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_ip_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_ip_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_translated_addresses",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_fallback_type",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_interface",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_ip_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_static_bi_directional",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_static_translated_address",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_translated_addresses",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "sat_type",
+          "kind": "String(O)",
+          "info": "none (default), dynamic-ip-and-port, dynamic-ip, or static-ip",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "service",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "source_addresses",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_zones",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "target",
+          "kind": "Set(O)(B)",
+          "subblock": [
+            {
+              "word": "serial",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "vsys_list",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "to_interface",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(O)",
+          "info": "NAT type (ipv4 default, nat64, or nptv6)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_security_policies": {
+      "arguments": [
+        {
+          "word": "device_group",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "rule",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(O)",
+              "info": "Action (default: allow, deny, drop, reset-client, reset-server, reset-both)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "applications",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "categories",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "data_filtering",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination_addresses",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "destination_zones",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "disable_server_response_inspection",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disabled",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "file_blocking",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "group",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "hip_profiles",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "icmp_unreachable",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "log_end",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "log_setting",
+              "kind": "String(O)",
+              "info": "Log forwarding profile",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "log_start",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "negate_destination",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "negate_source",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "negate_target",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "schedule",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "services",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_addresses",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_users",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_zones",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "spyware",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tags",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "target",
+              "kind": "Set(O)(B)",
+              "subblock": [
+                {
+                  "word": "serial",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "vsys_list",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "info": "Security rule type (default: universal, interzone, intrazone)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "url_filtering",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "virus",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "vulnerability",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wildfire_analysis",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "rulebase",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_service_group": {
+      "arguments": [
+        {
+          "word": "device_group",
+          "kind": "String(O)",
+          "info": "The device group to put this service group in",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The service group's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "services",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the service group",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "panorama_service_object": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Object's description",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_port",
+          "kind": "String(R)",
+          "info": "The destination port definition",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "device_group",
+          "kind": "String(O)",
+          "info": "The device group to put this service object in",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The service object's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "info": "The protocol (tcp or udp)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_port",
+          "kind": "String(O)",
+          "info": "The source port definition",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the service object",
+          "type": "set",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_policies": {
+      "arguments": [
+        {
+          "word": "rule",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "action",
+              "kind": "String(O)",
+              "info": "Action (default: allow, deny, drop, reset-client, reset-server, reset-both)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "applications",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "categories",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "data_filtering",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "description",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "destination_addresses",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "destination_zones",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "disable_server_response_inspection",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "disabled",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "file_blocking",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "group",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "hip_profiles",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "icmp_unreachable",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "log_end",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "log_setting",
+              "kind": "String(O)",
+              "info": "Log forwarding profile",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "log_start",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "negate_destination",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "negate_source",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "schedule",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "services",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_addresses",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_users",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "source_zones",
+              "kind": "List(R)",
+              "type": "list",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "spyware",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "tags",
+              "kind": "Set(O)",
+              "type": "set",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "type",
+              "kind": "String(O)",
+              "info": "Security rule type (default: universal, interzone, intrazone)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "url_filtering",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "virus",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "vulnerability",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "wildfire_analysis",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "rulebase",
+          "kind": "String(O)",
+          "info": "The Panorama rulebase",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this object in (default: vsys1)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "rulebase",
+          "kind": "String",
+          "info": "The Panorama rulebase",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "service_group": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The service group's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "services",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the service group",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this service group in",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "service_object": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "info": "Object's description",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "destination_port",
+          "kind": "String(R)",
+          "info": "The destination port definition",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The service object's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "info": "The protocol (tcp or udp)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "source_port",
+          "kind": "String(O)",
+          "info": "The source port definition",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "Set(O)",
+          "info": "Administrative tags for the service object",
+          "type": "set",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this service object in",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "virtual_router": {
+      "arguments": [
+        {
+          "word": "ebgp_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ibgp_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "interfaces",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The virtual router's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ospf_ext_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ospf_int_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ospfv3_ext_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ospfv3_int_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "rip_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "static_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "static_ipv6_dist",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to import this virtual router into",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "zone": {
+      "arguments": [
+        {
+          "word": "enable_user_id",
+          "kind": "Bool(O)",
+          "info": "The zone's mode",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "exclude_acls",
+          "kind": "List(O)",
+          "info": "User Identification exclude ACL list",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "include_acls",
+          "kind": "List(O)",
+          "info": "User Identification include ACL list",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "interfaces",
+          "kind": "List(O)",
+          "info": "User Identification include ACL list",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "log_setting",
+          "kind": "String(O)",
+          "info": "The zone's mode",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "mode",
+          "kind": "String(O)",
+          "info": "The zone's mode",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The zone's name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "vsys",
+          "kind": "String(O)",
+          "info": "The vsys to put this zone in",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone_profile",
+          "kind": "String(O)",
+          "info": "The zone's mode",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "system_info": {
+      "arguments": [],
+      "attributes": [
+        {
+          "word": "info",
+          "kind": "Map",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "version_major",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "version_minor",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "version_patch",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

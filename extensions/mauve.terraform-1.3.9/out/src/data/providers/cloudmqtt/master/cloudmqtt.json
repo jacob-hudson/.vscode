@@ -1,0 +1,60 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "instance": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name of the instance",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plan",
+          "kind": "String(R)",
+          "info": "Name of the plan",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "region",
+          "kind": "String(R)",
+          "info": "Name of the region you want to create your instance in",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "apikey",
+          "kind": "String",
+          "info": "API key for the CloudMQTT instance",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "url",
+          "kind": "String",
+          "info": "URL of the CloudMQTT instance",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

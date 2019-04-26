@@ -1,0 +1,487 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "ip": {
+      "arguments": [
+        {
+          "word": "server",
+          "kind": "String(O)",
+          "info": "The server associated with the ip",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "ip",
+          "kind": "String",
+          "info": "The ipv4 address of the ip",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "server",
+          "kind": "String",
+          "info": "The server associated with the ip",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "info": "The description of the security group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the security group",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "security_group_rule": {
+      "arguments": [
+        {
+          "word": "action",
+          "kind": "String(R)",
+          "info": "The action to take when the security group rule is triggered (accept or drop)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "direction",
+          "kind": "String(R)",
+          "info": "The direction the traffic is affected (inbound or outbound)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ip_range",
+          "kind": "String(R)",
+          "info": "The ip range affected by the security group rule",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "info": "The port affected by the security group rule",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "protocol",
+          "kind": "String(R)",
+          "info": "The protocol of the security group rule (ICMP, TCP or UDP)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "security_group",
+          "kind": "String(R)",
+          "info": "The security group this rule is attached to",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "bootscript",
+          "kind": "String(O)",
+          "info": "The boot configuration of the server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "dynamic_ip_required",
+          "kind": "Bool(O)",
+          "info": "determines if a public IP address should be allocated for the server",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "enable_ipv6",
+          "kind": "Bool(O)",
+          "info": "determines if IPv6 is enabled for the server",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "image",
+          "kind": "String(R)",
+          "info": "The base image of the server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "public_ip",
+          "kind": "String(O)",
+          "info": "the public IPv4 address of the server",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "security_group",
+          "kind": "String(O)",
+          "info": "The security group the server is attached to",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "state",
+          "kind": "String(O)",
+          "info": "the server state (running, stopped)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "tags",
+          "kind": "List(O)",
+          "info": "The tags associated with the server",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "The instance type of the server",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "volume",
+          "kind": "List(O)(B)",
+          "info": "Volumes attached to the server on creation",
+          "subblock": [
+            {
+              "word": "size_in_gb",
+              "kind": "Int(R)",
+              "type": "int",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "type",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "private_ip",
+          "kind": "String",
+          "info": "the Scaleway internal IP address of the server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ip",
+          "kind": "String",
+          "info": "the public IPv4 address of the server",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_ipv6",
+          "kind": "String",
+          "info": "the public IPv6 address of the server, if enabled",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state",
+          "kind": "String",
+          "info": "the server state (running, stopped)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "state_detail",
+          "kind": "String",
+          "info": "scaleway description of the server state",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "the name of the volume",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "size_in_gb",
+          "kind": "Int(R)",
+          "info": "the size of the volume in GB",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "info": "the type of backing storage",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "server",
+          "kind": "String",
+          "info": "the server the volume is attached to",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "volume_attachment": {
+      "arguments": [
+        {
+          "word": "server",
+          "kind": "String(R)",
+          "info": "the server a volume should be attached to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "volume",
+          "kind": "String(R)",
+          "info": "the volume to attach",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "bootscript": {
+      "arguments": [
+        {
+          "word": "architecture",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name_filter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "architecture",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "boot_cmd_args",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dtb",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "initrd",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kernel",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "organization",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "image": {
+      "arguments": [
+        {
+          "word": "architecture",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name_filter",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "creation_date",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "name",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "organization",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

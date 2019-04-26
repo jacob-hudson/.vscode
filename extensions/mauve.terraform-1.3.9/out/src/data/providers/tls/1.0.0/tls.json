@@ -1,0 +1,446 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "cert_request": {
+      "arguments": [
+        {
+          "word": "dns_names",
+          "kind": "List(O)",
+          "info": "List of DNS names to use as subjects of the certificate",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_addresses",
+          "kind": "List(O)",
+          "info": "List of IP addresses to use as subjects of the certificate",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "key_algorithm",
+          "kind": "String(R)",
+          "info": "Name of the algorithm to use to generate the certificate's private key",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_key_pem",
+          "kind": "String(R)",
+          "info": "PEM-encoded private key that the certificate will belong to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subject",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "common_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "country",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "locality",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "organization",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "organizational_unit",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "postal_code",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "province",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "serial_number",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "street_address",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cert_request_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "locally_signed_cert": {
+      "arguments": [
+        {
+          "word": "allowed_uses",
+          "kind": "List(R)",
+          "info": "Uses that are allowed for the certificate",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ca_cert_pem",
+          "kind": "String(R)",
+          "info": "PEM-encoded CA certificate",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ca_key_algorithm",
+          "kind": "String(R)",
+          "info": "Name of the algorithm used to generate the certificate's private key",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ca_private_key_pem",
+          "kind": "String(R)",
+          "info": "PEM-encoded CA private key used to sign the certificate",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "cert_request_pem",
+          "kind": "String(R)",
+          "info": "PEM-encoded certificate request",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "early_renewal_hours",
+          "kind": "Int(O)",
+          "info": "Number of hours before the certificates expiry when a new certificate will be generated",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "is_ca_certificate",
+          "kind": "Bool(O)",
+          "info": "Whether the generated certificate will be usable as a CA certificate",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "validity_period_hours",
+          "kind": "Int(R)",
+          "info": "Number of hours that the certificate will remain valid for",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cert_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "validity_end_time",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "validity_start_time",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "private_key": {
+      "arguments": [
+        {
+          "word": "algorithm",
+          "kind": "String(R)",
+          "info": "Name of the algorithm to use to generate the private key",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ecdsa_curve",
+          "kind": "String(O)",
+          "info": "ECDSA curve to use when generating a key",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "rsa_bits",
+          "kind": "Int(O)",
+          "info": "Number of bits to use when generating an RSA key",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "private_key_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_key_openssh",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "public_key_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "self_signed_cert": {
+      "arguments": [
+        {
+          "word": "allowed_uses",
+          "kind": "List(R)",
+          "info": "Uses that are allowed for the certificate",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "dns_names",
+          "kind": "List(O)",
+          "info": "List of DNS names to use as subjects of the certificate",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "early_renewal_hours",
+          "kind": "Int(O)",
+          "info": "Number of hours before the certificates expiry when a new certificate will be generated",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ip_addresses",
+          "kind": "List(O)",
+          "info": "List of IP addresses to use as subjects of the certificate",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "is_ca_certificate",
+          "kind": "Bool(O)",
+          "info": "Whether the generated certificate will be usable as a CA certificate",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "key_algorithm",
+          "kind": "String(R)",
+          "info": "Name of the algorithm to use to generate the certificate's private key",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "private_key_pem",
+          "kind": "String(R)",
+          "info": "PEM-encoded private key that the certificate will belong to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "subject",
+          "kind": "List(R)(B)",
+          "subblock": [
+            {
+              "word": "common_name",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "country",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "locality",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "organization",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "organizational_unit",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "postal_code",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "province",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "serial_number",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "street_address",
+              "kind": "List(O)",
+              "type": "list",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "validity_period_hours",
+          "kind": "Int(R)",
+          "info": "Number of hours that the certificate will remain valid for",
+          "type": "int",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "cert_pem",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "validity_end_time",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "validity_start_time",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

@@ -1,0 +1,834 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "dirpool": {
+      "arguments": [
+        {
+          "word": "conflict_resolve",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "no_response",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "all_non_configured",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "geo_info",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "codes",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "is_account_level",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "ip_info",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "ips",
+                  "kind": "Set(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "address",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "cidr",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "end",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "start",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "is_account_level",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "rdata",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "all_non_configured",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "geo_info",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "codes",
+                  "kind": "Set(O)",
+                  "type": "set",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "is_account_level",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "host",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "ip_info",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "ips",
+                  "kind": "Set(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "address",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "cidr",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "end",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "start",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "is_account_level",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "name",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "probe_http": {
+      "arguments": [
+        {
+          "word": "agents",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "http_probe",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "total_limits",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "critical",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "fail",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "warning",
+                  "kind": "Int(O)",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "transaction",
+              "kind": "List(O)(B)",
+              "subblock": [
+                {
+                  "word": "follow_redirects",
+                  "kind": "Bool(O)",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "limit",
+                  "kind": "Set(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "critical",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "fail",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "name",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "warning",
+                      "kind": "Int(R)",
+                      "type": "int",
+                      "block": false,
+                      "required": false
+                    }
+                  ],
+                  "type": "set",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "method",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "transmitted_data",
+                  "kind": "String(O)",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "url",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "interval",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "pool_record",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "threshold",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "probe_ping": {
+      "arguments": [
+        {
+          "word": "agents",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "interval",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ping_probe",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "limit",
+              "kind": "Set(O)(B)",
+              "subblock": [
+                {
+                  "word": "critical",
+                  "kind": "Int(R)",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "fail",
+                  "kind": "Int(R)",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "name",
+                  "kind": "String(R)",
+                  "type": "string",
+                  "block": false,
+                  "required": false
+                },
+                {
+                  "word": "warning",
+                  "kind": "Int(R)",
+                  "type": "int",
+                  "block": false,
+                  "required": false
+                }
+              ],
+              "type": "set",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "packet_size",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "packets",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "pool_record",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "threshold",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "rdpool": {
+      "arguments": [
+        {
+          "word": "description",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "order",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "rdata",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "record": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rdata",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ttl",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "type",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "tcpool": {
+      "arguments": [
+        {
+          "word": "act_on_probes",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backup_record_failover_delay",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "backup_record_rdata",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "description",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "max_to_lb",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "rdata",
+          "kind": "Set(R)(B)",
+          "subblock": [
+            {
+              "word": "failover_delay",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "host",
+              "kind": "String(R)",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "priority",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "run_probes",
+              "kind": "Bool(O)",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "state",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "threshold",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "weight",
+              "kind": "Int(O)",
+              "type": "int",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "set",
+          "block": true,
+          "required": false
+        },
+        {
+          "word": "run_probes",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ttl",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "zone",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "hostname",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

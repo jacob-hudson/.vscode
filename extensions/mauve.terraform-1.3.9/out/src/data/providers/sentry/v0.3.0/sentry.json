@@ -1,0 +1,446 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "key": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the key",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "organization",
+          "kind": "String(R)",
+          "info": "The slug of the organization the key should be created for",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project",
+          "kind": "String(R)",
+          "info": "The slug of the project the key should be created for",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "dsn_csp",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dsn_public",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dsn_secret",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_active",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "project_id",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "rate_limit_count",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "rate_limit_window",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "secret",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "organization": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The human readable name for the organization",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "slug",
+          "kind": "String(O)",
+          "info": "The unique URL slug for this organization",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "slug",
+          "kind": "String",
+          "info": "The unique URL slug for this organization",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "plugin": {
+      "arguments": [
+        {
+          "word": "config",
+          "kind": "Map(O)",
+          "info": "Plugin config",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "organization",
+          "kind": "String(R)",
+          "info": "The slug of the organization the project belongs to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "plugin",
+          "kind": "String(R)",
+          "info": "Plugin ID",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project",
+          "kind": "String(R)",
+          "info": "The slug of the project to create the plugin for",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "project": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name for the project",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "organization",
+          "kind": "String(R)",
+          "info": "The slug of the organization the project belongs to",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "slug",
+          "kind": "String(O)",
+          "info": "The optional slug for this project",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "team",
+          "kind": "String(R)",
+          "info": "The slug of the team to create the project for",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "call_sign",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "color",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "digests_max_delay",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "digests_min_delay",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "features",
+          "kind": "List",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "is_bookmarked",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "is_public",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "project_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "slug",
+          "kind": "String",
+          "info": "The optional slug for this project",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "team": {
+      "arguments": [
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "The name of the team",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "organization",
+          "kind": "String(R)",
+          "info": "The slug of the organization the team should be created for",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "slug",
+          "kind": "String(O)",
+          "info": "The optional slug for this team",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "has_access",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "is_member",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "is_pending",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "slug",
+          "kind": "String",
+          "info": "The optional slug for this team",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "team_id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "key": {
+      "arguments": [
+        {
+          "word": "first",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "name",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "organization",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "project",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "dsn_csp",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dsn_public",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "dsn_secret",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "is_active",
+          "kind": "Bool",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "project_id",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "public",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "rate_limit_count",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "rate_limit_window",
+          "kind": "Int",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "secret",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}

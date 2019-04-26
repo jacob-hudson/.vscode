@@ -1,0 +1,296 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "floating_ip": {
+      "arguments": [
+        {
+          "word": "ip_version",
+          "kind": "Int(R)",
+          "type": "int",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "prefix_length",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "reverse_ptr",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "server",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "next_hop",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "reverse_ptr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "server": {
+      "arguments": [
+        {
+          "word": "anti_affinity_uuid",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "bulk_volume_size_gb",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "flavor_slug",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "image_slug",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "ssh_keys",
+          "kind": "Set(R)",
+          "type": "set",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "status",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_ipv6",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_private_network",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "use_public_network",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user_data",
+          "kind": "String(O)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "volume_size_gb",
+          "kind": "Int(O)",
+          "type": "int",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "anti_affinity_with",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "href",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "interfaces",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "addresses",
+              "kind": "List(B)",
+              "subblock": [
+                {
+                  "word": "address",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "gateway",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "prefix_length",
+                  "kind": "Int",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "reverse_ptr",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "version",
+                  "kind": "Int",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "ssh_fingerprints",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "ssh_host_keys",
+          "kind": "Set",
+          "type": "set",
+          "block": false
+        },
+        {
+          "word": "status",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "volumes",
+          "kind": "Set(B)",
+          "subblock": [
+            {
+              "word": "device_path",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "size_gb",
+              "kind": "Int",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "type",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "set",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

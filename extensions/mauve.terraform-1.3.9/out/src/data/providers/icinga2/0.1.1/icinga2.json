@@ -1,0 +1,163 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "checkcommand": {
+      "arguments": [
+        {
+          "word": "arguments",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "command",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "Name",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "templates",
+          "kind": "List(R)",
+          "type": "list",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "host": {
+      "arguments": [
+        {
+          "word": "address",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "check_command",
+          "kind": "String(R)",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "hostname",
+          "kind": "String(R)",
+          "info": "Hostname",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "templates",
+          "kind": "List(O)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "vars",
+          "kind": "Map(O)",
+          "type": "map",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "hostgroup": {
+      "arguments": [
+        {
+          "word": "display_name",
+          "kind": "String(R)",
+          "info": "Display name of Host Group",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "name",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    },
+    "service": {
+      "arguments": [
+        {
+          "word": "check_command",
+          "kind": "String(R)",
+          "info": "CheckCommand",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "hostname",
+          "kind": "String(R)",
+          "info": "Hostname",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "name",
+          "kind": "String(R)",
+          "info": "ServiceName",
+          "type": "string",
+          "block": false,
+          "required": false
+        }
+      ],
+      "attributes": [
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {},
+  "unknowns": {},
+  "__meta": {
+    "type": "provider"
+  }
+}

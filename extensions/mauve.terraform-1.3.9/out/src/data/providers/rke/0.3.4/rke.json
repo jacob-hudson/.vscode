@@ -1,0 +1,3740 @@
+{
+  "provider_arguments": [],
+  "resources": {
+    "cluster": {
+      "arguments": [
+        {
+          "word": "addon_job_timeout",
+          "kind": "Int(O)",
+          "info": "Timeout in seconds for status check on addon deployment jobs",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "addons",
+          "kind": "String(O)",
+          "info": "YAML manifest for user provided addons to be deployed on the cluster",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "addons_include",
+          "kind": "List(O)",
+          "info": "List of urls or paths for addons",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "authentication",
+          "kind": "List(O)(B)",
+          "info": "Authentication configuration used in the cluster",
+          "subblock": [
+            {
+              "word": "options",
+              "kind": "Map(O)",
+              "info": "Authentication options",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "sans",
+              "kind": "List(O)",
+              "info": "List of additional hostnames and IPs to include in the api server PKI cert",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "strategy",
+              "kind": "String(O)",
+              "info": "Authentication strategy that will be used in kubernetes cluster",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "authorization",
+          "kind": "List(O)(B)",
+          "info": "Authorization mode configuration used in the cluster",
+          "subblock": [
+            {
+              "word": "mode",
+              "kind": "String(O)",
+              "info": "Authorization mode used by kubernetes",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "options",
+              "kind": "Map(O)",
+              "info": "Authorization mode options",
+              "type": "map",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "bastion_host",
+          "kind": "List(O)(B)",
+          "info": "Bastion/Jump Host configuration",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "Address of Bastion Host",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "info": "SSH Port of Bastion Host",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_agent_auth",
+              "kind": "Bool(O)",
+              "info": "SSH Agent Auth enable",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_key",
+              "kind": "String(O)",
+              "info": "SSH Private Key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_key_path",
+              "kind": "String(O)",
+              "info": "SSH Private Key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user",
+              "kind": "String(O)",
+              "info": "SSH User to Bastion Host",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "cloud_provider",
+          "kind": "List(O)(B)",
+          "info": "Cloud Provider options",
+          "subblock": [
+            {
+              "word": "aws_cloud_config",
+              "kind": "List(O)(B)",
+              "info": "AWS cloud config file",
+              "subblock": [],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "azure_cloud_config",
+              "kind": "List(O)(B)",
+              "info": "Azure cloud config file",
+              "subblock": [
+                {
+                  "word": "aad_client_cert_password",
+                  "kind": "String(O)",
+                  "info": "The password of the client certificate for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "aad_client_cert_path",
+                  "kind": "String(O)",
+                  "info": "The path of a client certificate for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "aad_client_id",
+                  "kind": "String(O)",
+                  "info": "The ClientID for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "aad_client_secret",
+                  "kind": "String(O)",
+                  "info": "The ClientSecret for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud",
+                  "kind": "String(O)",
+                  "info": "The cloud environment identifier. Takes values from https://github.com/Azure/go-autorest/blob/ec5f4903f77ed9927ac95b19ab8e44ada64c1356/autorest/azure/environments.go#L13",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_backoff",
+                  "kind": "Bool(O)",
+                  "info": "Enable exponential backoff to manage resource request retries",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_backoff_duration",
+                  "kind": "Int(O)",
+                  "info": "Backoff duration",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_backoff_exponent",
+                  "kind": "Int(O)",
+                  "info": "Backoff exponent",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_backoff_jitter",
+                  "kind": "Int(O)",
+                  "info": "Backoff jitter",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_backoff_retries",
+                  "kind": "Int(O)",
+                  "info": "Backoff retry limit",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_rate_limit",
+                  "kind": "Bool(O)",
+                  "info": "Enable rate limiting",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_rate_limit_bucket",
+                  "kind": "Int(O)",
+                  "info": "Rate limit Bucket Size",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "cloud_provider_rate_limit_qps",
+                  "kind": "Int(O)",
+                  "info": "Rate limit QPS",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "location",
+                  "kind": "String(O)",
+                  "info": "The location of the resource group that the cluster is deployed in",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "maximum_load_balancer_rule_count",
+                  "kind": "Int(O)",
+                  "info": "Maximum allowed LoadBalancer Rule Count is the limit enforced by Azure Load balancer",
+                  "type": "int",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "primary_availability_set_name",
+                  "kind": "String(O)",
+                  "info": "The name of the availability set that should be used as the load balancer backendIf this is set, the Azure cloudprovider will only add nodes from that availability set to the loadbalancer backend pool. If this is not set, and multiple agent pools (availability sets) are used, thenthe cloudprovider will try to add all nodes to a single backend pool which is forbidden.In other words, if you use multiple agent pools (availability sets), you MUST set this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "primary_scale_set_name",
+                  "kind": "String(O)",
+                  "info": "The name of the scale set that should be used as the load balancer backend.If this is set, the Azure cloudprovider will only add nodes from that scale set to the loadbalancer backend pool. If this is not set, and multiple agent pools (scale sets) are used, thenthe cloudprovider will try to add all nodes to a single backend pool which is forbidden.In other words, if you use multiple agent pools (scale sets), you MUST set this field.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "resource_group",
+                  "kind": "String(O)",
+                  "info": "The name of the resource group that the cluster is deployed in",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "route_table_name",
+                  "kind": "String(O)",
+                  "info": "(Optional in 1.6) The name of the route table attached to the subnet that the cluster is deployed in",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "subscription_id",
+                  "kind": "String(O)",
+                  "info": "The ID of the Azure Subscription that the cluster is deployed in",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "tenant_id",
+                  "kind": "String(O)",
+                  "info": "The AAD Tenant ID for the Subscription that the cluster is deployed in",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_instance_metadata",
+                  "kind": "Bool(O)",
+                  "info": "Use instance metadata service where possible",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "use_managed_identity_extension",
+                  "kind": "Bool(O)",
+                  "info": "Use managed service identity for the virtual machine to access Azure ARM APIs",
+                  "type": "bool",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vm_type",
+                  "kind": "String(O)",
+                  "info": "The type of azure nodes. Candidate valudes are: vmss and standard. If not set, it will be default to standard.",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vnet_name",
+                  "kind": "String(O)",
+                  "info": "The name of the VNet that the cluster is deployed in",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                },
+                {
+                  "word": "vnet_resource_group",
+                  "kind": "String(O)",
+                  "info": "The name of the resource group that the Vnet is deployed in",
+                  "type": "string",
+                  "block": false,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "custom_cloud_config",
+              "kind": "String(O)",
+              "info": "CustomCloudProvider is a multiline string that represent a custom cloud config file",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "name",
+              "kind": "String(O)",
+              "info": "Name of the Cloud Provider",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "openstack_cloud_config",
+              "kind": "List(O)(B)",
+              "info": "OpenStack cloud config file",
+              "subblock": [
+                {
+                  "word": "block_storage",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "bs_version",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "ignore_volume_az",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "trust_device_path",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "global",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "auth_url",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "ca_file",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "domain_id",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "domain_name",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "password",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "region",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "tenant_id",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "tenant_name",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "trust_id",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "user_id",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "username",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "load_balancer",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "create_monitor",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "floating_network_id",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "lb_method",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "lb_provider",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "lb_version",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "manage_security_groups",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "monitor_delay",
+                      "kind": "Int(O)",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "monitor_max_retries",
+                      "kind": "Int(O)",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "monitor_timeout",
+                      "kind": "Int(O)",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "subnet_id",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "use_octavia",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "metadata",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "request_timeout",
+                      "kind": "Int(O)",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "search_order",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "route",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "router_id",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            },
+            {
+              "word": "vsphere_cloud_config",
+              "kind": "List(O)(B)",
+              "info": "Vsphere cloud config file",
+              "subblock": [
+                {
+                  "word": "disk",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "scsi_controller_type",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "global",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "datacenter",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "datacenters",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "datastore",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "insecure_flag",
+                      "kind": "Bool(O)",
+                      "type": "bool",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "password",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "port",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "server",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "soap_roundtrip_count",
+                      "kind": "Int(O)",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "user",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "vm_name",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "vm_uuid",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "working_dir",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "network",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "public_network",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "virtual_center",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "datacenters",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "password",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "port",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "server",
+                      "kind": "String(R)",
+                      "type": "string",
+                      "block": false,
+                      "required": false
+                    },
+                    {
+                      "word": "soap_roundtrip_count",
+                      "kind": "Int(O)",
+                      "type": "int",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "user",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                },
+                {
+                  "word": "workspace",
+                  "kind": "List(O)(B)",
+                  "subblock": [
+                    {
+                      "word": "datacenter",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "default_datastore",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "folder",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "resourcepool_path",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    },
+                    {
+                      "word": "server",
+                      "kind": "String(O)",
+                      "type": "string",
+                      "block": false,
+                      "required": true
+                    }
+                  ],
+                  "type": "list",
+                  "block": true,
+                  "required": true
+                }
+              ],
+              "type": "list",
+              "block": true,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "cluster_name",
+          "kind": "String(O)",
+          "info": "Cluster Name used in the kube config",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "disable_port_check",
+          "kind": "Bool(O)",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ignore_docker_version",
+          "kind": "Bool(O)",
+          "info": "Enable/Disable strict docker version checking",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ingress",
+          "kind": "List(O)(B)",
+          "info": "Ingress controller used in the cluster",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map(O)",
+              "info": "Ingress controller extra arguments",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node_selector",
+              "kind": "Map(O)",
+              "info": "Ingress controller used in the cluster",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "options",
+              "kind": "Map(O)",
+              "info": "Ingress controller options",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "provider",
+              "kind": "String(O)",
+              "info": "Ingress controller type used by kubernetes",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "kubernetes_version",
+          "kind": "String(O)",
+          "info": "Kubernetes version to use (if kubernetes image is specified, image version takes precedence)",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "network",
+          "kind": "List(O)(B)",
+          "info": "Network configuration used in the kubernetes cluster",
+          "subblock": [
+            {
+              "word": "options",
+              "kind": "Map(O)",
+              "info": "Plugin options to configure network properties",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "plugin",
+              "kind": "String(O)",
+              "info": "Network Plugin That will be used in kubernetes cluster",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "nodes",
+          "kind": "List(O)(B)",
+          "info": "Kubernetes nodes",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String(R)",
+              "info": "IP or FQDN that is fully resolvable and used for SSH communication",
+              "type": "string",
+              "block": false,
+              "required": false
+            },
+            {
+              "word": "docker_socket",
+              "kind": "String(O)",
+              "info": "Docker socket on the node that will be used in tunneling",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "hostname_override",
+              "kind": "String(O)",
+              "info": "HostnameOverride",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "internal_address",
+              "kind": "String(O)",
+              "info": "Internal address that will be used for components communication",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "labels",
+              "kind": "Map(O)",
+              "info": "Node Labels",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "node_name",
+              "kind": "String(O)",
+              "info": "Name of the host provisioned via docker machine",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "port",
+              "kind": "Int(O)",
+              "info": "Port used for SSH communication",
+              "type": "int",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "role",
+              "kind": "List(O)",
+              "info": "Node role in kubernetes cluster [controlplane/worker/etcd])",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "roles",
+              "kind": "String(O)",
+              "info": "Node role in kubernetes cluster [controlplane/worker/etcd], specified by a comma-separated string",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_agent_auth",
+              "kind": "Bool(O)",
+              "info": "SSH Agent Auth enable",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_key",
+              "kind": "String(O)",
+              "info": "SSH Private Key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ssh_key_path",
+              "kind": "String(O)",
+              "info": "SSH Private Key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user",
+              "kind": "String(O)",
+              "info": "SSH user that will be used by RKE",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "nodes_conf",
+          "kind": "List(O)",
+          "info": "Kubernetes nodes(YAML or JSON)",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "prefix_path",
+          "kind": "String(O)",
+          "info": "Kubernetes directory path",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "private_registries",
+          "kind": "List(O)(B)",
+          "info": "List of private registries and their credentials",
+          "subblock": [
+            {
+              "word": "password",
+              "kind": "String(O)",
+              "info": "Password for registry access",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "url",
+              "kind": "String(O)",
+              "info": "URL for the registry",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "user",
+              "kind": "String(O)",
+              "info": "User name for registry access",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "services_etcd",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "ca_cert",
+              "kind": "String(O)",
+              "info": "External CA certificate",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cert",
+              "kind": "String(O)",
+              "info": "External Client certificate",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "creation",
+              "kind": "String(O)",
+              "info": "Etcd snapshot Creation period",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "external_urls",
+              "kind": "List(O)",
+              "info": "List of etcd urls",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_args",
+              "kind": "Map(O)",
+              "info": "Extra arguments that are added to the etcd services",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List(O)",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_env",
+              "kind": "List(O)",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image",
+              "kind": "String(O)",
+              "info": "Docker image of the etcd service",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "key",
+              "kind": "String(O)",
+              "info": "External Client key",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "path",
+              "kind": "String(O)",
+              "info": "External etcd prefix",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "retention",
+              "kind": "String(O)",
+              "info": "Etcd snapshot Retention period",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "snapshot",
+              "kind": "Bool(O)",
+              "info": "Etcd Recurring snapshot Service",
+              "type": "bool",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "services_kube_api",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map(O)",
+              "info": "Extra arguments that are added to the kube-api services",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List(O)",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_env",
+              "kind": "List(O)",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image",
+              "kind": "String(O)",
+              "info": "Docker image of the kube-api service",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "pod_security_policy",
+              "kind": "Bool(O)",
+              "info": "Enabled/Disable PodSecurityPolicy",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_cluster_ip_range",
+              "kind": "String(O)",
+              "info": "Virtual IP range that will be used by Kubernetes services",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_node_port_range",
+              "kind": "String(O)",
+              "info": "Port range for services defined with NodePort type",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "services_kube_controller",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cluster_cidr",
+              "kind": "String(O)",
+              "info": "CIDR Range for Pods in cluster",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_args",
+              "kind": "Map(O)",
+              "info": "Extra arguments that are added to the kube-controller services",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List(O)",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_env",
+              "kind": "List(O)",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image",
+              "kind": "String(O)",
+              "info": "Docker image of the kube-controller service",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "service_cluster_ip_range",
+              "kind": "String(O)",
+              "info": "Virtual IP range that will be used by Kubernetes services",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "services_kubelet",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "cluster_dns_server",
+              "kind": "String(O)",
+              "info": "Cluster DNS service ip",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cluster_domain",
+              "kind": "String(O)",
+              "info": "Domain of the cluster (default: \"cluster.local\")",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_args",
+              "kind": "Map(O)",
+              "info": "Extra arguments that are added to the kubelet services",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List(O)",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_env",
+              "kind": "List(O)",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "fail_swap_on",
+              "kind": "Bool(O)",
+              "info": "Fail if swap is enabled",
+              "type": "bool",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image",
+              "kind": "String(O)",
+              "info": "Docker image of the kubelet service",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "infra_container_image",
+              "kind": "String(O)",
+              "info": "The image whose network/ipc namespaces containers in each pod will use",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "services_kubeproxy",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map(O)",
+              "info": "Extra arguments that are added to the kubeproxy services",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List(O)",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_env",
+              "kind": "List(O)",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image",
+              "kind": "String(O)",
+              "info": "Docker image of the kubeproxy service",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "services_scheduler",
+          "kind": "List(O)(B)",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map(O)",
+              "info": "Extra arguments that are added to the scheduler services",
+              "type": "map",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List(O)",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "extra_env",
+              "kind": "List(O)",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "image",
+              "kind": "String(O)",
+              "info": "Docker image of the scheduler service",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        },
+        {
+          "word": "ssh_agent_auth",
+          "kind": "Bool(O)",
+          "info": "SSH Agent Auth enable",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_path",
+          "kind": "String(O)",
+          "info": "SSH Private Key Path",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "system_images",
+          "kind": "List(O)(B)",
+          "info": "List of images used internally for proxy, cert download ,kubedns and more",
+          "subblock": [
+            {
+              "word": "alpine",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "calico_cni",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "calico_controllers",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "calico_ctl",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "calico_node",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "canal_cni",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "canal_flannel",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "canal_node",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "cert_downloader",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "dnsmasq",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "etcd",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "flannel",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "flannel_cni",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ingress",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "ingress_backend",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "kube_dns",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "kube_dns_autoscaler",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "kube_dns_sidecar",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "kubernetes",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "kubernetes_services_sidecar",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "nginx_proxy",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "pod_infra_container",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "weave_cni",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            },
+            {
+              "word": "weave_node",
+              "kind": "String(O)",
+              "type": "string",
+              "block": false,
+              "required": true
+            }
+          ],
+          "type": "list",
+          "block": true,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "addon_job_timeout",
+          "kind": "Int",
+          "info": "Timeout in seconds for status check on addon deployment jobs",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "addons",
+          "kind": "String",
+          "info": "YAML manifest for user provided addons to be deployed on the cluster",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "addons_include",
+          "kind": "List",
+          "info": "List of urls or paths for addons",
+          "type": "list",
+          "block": false
+        },
+        {
+          "word": "api_server_url",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "authentication",
+          "kind": "List(B)",
+          "info": "Authentication configuration used in the cluster",
+          "subblock": [
+            {
+              "word": "options",
+              "kind": "Map",
+              "info": "Authentication options",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "sans",
+              "kind": "List",
+              "info": "List of additional hostnames and IPs to include in the api server PKI cert",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "strategy",
+              "kind": "String",
+              "info": "Authentication strategy that will be used in kubernetes cluster",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "authorization",
+          "kind": "List(B)",
+          "info": "Authorization mode configuration used in the cluster",
+          "subblock": [
+            {
+              "word": "mode",
+              "kind": "String",
+              "info": "Authorization mode used by kubernetes",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "options",
+              "kind": "Map",
+              "info": "Authorization mode options",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "bastion_host",
+          "kind": "List(B)",
+          "info": "Bastion/Jump Host configuration",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "info": "Address of Bastion Host",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "port",
+              "kind": "Int",
+              "info": "SSH Port of Bastion Host",
+              "type": "int",
+              "block": false
+            },
+            {
+              "word": "ssh_agent_auth",
+              "kind": "Bool",
+              "info": "SSH Agent Auth enable",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "ssh_key",
+              "kind": "String",
+              "info": "SSH Private Key",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ssh_key_path",
+              "kind": "String",
+              "info": "SSH Private Key",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "user",
+              "kind": "String",
+              "info": "SSH User to Bastion Host",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "ca_crt",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "certificates",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "certificate",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "common_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "config",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "config_env_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "config_path",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "env_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "key",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "key_env_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "key_path",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ou_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "path",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "client_cert",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "client_key",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cloud_provider",
+          "kind": "List(B)",
+          "info": "Cloud Provider options",
+          "subblock": [
+            {
+              "word": "aws_cloud_config",
+              "kind": "List(B)",
+              "info": "AWS cloud config file",
+              "subblock": [
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "azure_cloud_config",
+              "kind": "List(B)",
+              "info": "Azure cloud config file",
+              "subblock": [
+                {
+                  "word": "aad_client_cert_password",
+                  "kind": "String",
+                  "info": "The password of the client certificate for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "aad_client_cert_path",
+                  "kind": "String",
+                  "info": "The path of a client certificate for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "aad_client_id",
+                  "kind": "String",
+                  "info": "The ClientID for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "aad_client_secret",
+                  "kind": "String",
+                  "info": "The ClientSecret for an AAD application with RBAC access to talk to Azure RM APIs",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "cloud",
+                  "kind": "String",
+                  "info": "The cloud environment identifier. Takes values from https://github.com/Azure/go-autorest/blob/ec5f4903f77ed9927ac95b19ab8e44ada64c1356/autorest/azure/environments.go#L13",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_backoff",
+                  "kind": "Bool",
+                  "info": "Enable exponential backoff to manage resource request retries",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_backoff_duration",
+                  "kind": "Int",
+                  "info": "Backoff duration",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_backoff_exponent",
+                  "kind": "Int",
+                  "info": "Backoff exponent",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_backoff_jitter",
+                  "kind": "Int",
+                  "info": "Backoff jitter",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_backoff_retries",
+                  "kind": "Int",
+                  "info": "Backoff retry limit",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_rate_limit",
+                  "kind": "Bool",
+                  "info": "Enable rate limiting",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_rate_limit_bucket",
+                  "kind": "Int",
+                  "info": "Rate limit Bucket Size",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "cloud_provider_rate_limit_qps",
+                  "kind": "Int",
+                  "info": "Rate limit QPS",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "location",
+                  "kind": "String",
+                  "info": "The location of the resource group that the cluster is deployed in",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "maximum_load_balancer_rule_count",
+                  "kind": "Int",
+                  "info": "Maximum allowed LoadBalancer Rule Count is the limit enforced by Azure Load balancer",
+                  "type": "int",
+                  "block": false
+                },
+                {
+                  "word": "primary_availability_set_name",
+                  "kind": "String",
+                  "info": "The name of the availability set that should be used as the load balancer backendIf this is set, the Azure cloudprovider will only add nodes from that availability set to the loadbalancer backend pool. If this is not set, and multiple agent pools (availability sets) are used, thenthe cloudprovider will try to add all nodes to a single backend pool which is forbidden.In other words, if you use multiple agent pools (availability sets), you MUST set this field.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "primary_scale_set_name",
+                  "kind": "String",
+                  "info": "The name of the scale set that should be used as the load balancer backend.If this is set, the Azure cloudprovider will only add nodes from that scale set to the loadbalancer backend pool. If this is not set, and multiple agent pools (scale sets) are used, thenthe cloudprovider will try to add all nodes to a single backend pool which is forbidden.In other words, if you use multiple agent pools (scale sets), you MUST set this field.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "resource_group",
+                  "kind": "String",
+                  "info": "The name of the resource group that the cluster is deployed in",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "route_table_name",
+                  "kind": "String",
+                  "info": "(Optional in 1.6) The name of the route table attached to the subnet that the cluster is deployed in",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "subscription_id",
+                  "kind": "String",
+                  "info": "The ID of the Azure Subscription that the cluster is deployed in",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "tenant_id",
+                  "kind": "String",
+                  "info": "The AAD Tenant ID for the Subscription that the cluster is deployed in",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "use_instance_metadata",
+                  "kind": "Bool",
+                  "info": "Use instance metadata service where possible",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "use_managed_identity_extension",
+                  "kind": "Bool",
+                  "info": "Use managed service identity for the virtual machine to access Azure ARM APIs",
+                  "type": "bool",
+                  "block": false
+                },
+                {
+                  "word": "vm_type",
+                  "kind": "String",
+                  "info": "The type of azure nodes. Candidate valudes are: vmss and standard. If not set, it will be default to standard.",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "vnet_name",
+                  "kind": "String",
+                  "info": "The name of the VNet that the cluster is deployed in",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "vnet_resource_group",
+                  "kind": "String",
+                  "info": "The name of the resource group that the Vnet is deployed in",
+                  "type": "string",
+                  "block": false
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "custom_cloud_config",
+              "kind": "String",
+              "info": "CustomCloudProvider is a multiline string that represent a custom cloud config file",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "name",
+              "kind": "String",
+              "info": "Name of the Cloud Provider",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "openstack_cloud_config",
+              "kind": "List(B)",
+              "info": "OpenStack cloud config file",
+              "subblock": [
+                {
+                  "word": "block_storage",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "bs_version",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "ignore_volume_az",
+                      "kind": "Bool",
+                      "type": "bool",
+                      "block": false
+                    },
+                    {
+                      "word": "trust_device_path",
+                      "kind": "Bool",
+                      "type": "bool",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "global",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "auth_url",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "ca_file",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "domain_id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "domain_name",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "password",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "region",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "tenant_id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "tenant_name",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "trust_id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "user_id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "username",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "load_balancer",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "create_monitor",
+                      "kind": "Bool",
+                      "type": "bool",
+                      "block": false
+                    },
+                    {
+                      "word": "floating_network_id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "lb_method",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "lb_provider",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "lb_version",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "manage_security_groups",
+                      "kind": "Bool",
+                      "type": "bool",
+                      "block": false
+                    },
+                    {
+                      "word": "monitor_delay",
+                      "kind": "Int",
+                      "type": "int",
+                      "block": false
+                    },
+                    {
+                      "word": "monitor_max_retries",
+                      "kind": "Int",
+                      "type": "int",
+                      "block": false
+                    },
+                    {
+                      "word": "monitor_timeout",
+                      "kind": "Int",
+                      "type": "int",
+                      "block": false
+                    },
+                    {
+                      "word": "subnet_id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "use_octavia",
+                      "kind": "Bool",
+                      "type": "bool",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "metadata",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "request_timeout",
+                      "kind": "Int",
+                      "type": "int",
+                      "block": false
+                    },
+                    {
+                      "word": "search_order",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "route",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "router_id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "vsphere_cloud_config",
+              "kind": "List(B)",
+              "info": "Vsphere cloud config file",
+              "subblock": [
+                {
+                  "word": "disk",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "scsi_controller_type",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "global",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "datacenter",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "datacenters",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "datastore",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "insecure_flag",
+                      "kind": "Bool",
+                      "type": "bool",
+                      "block": false
+                    },
+                    {
+                      "word": "password",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "port",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "server",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "soap_roundtrip_count",
+                      "kind": "Int",
+                      "type": "int",
+                      "block": false
+                    },
+                    {
+                      "word": "user",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "vm_name",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "vm_uuid",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "working_dir",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "network",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "public_network",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "virtual_center",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "datacenters",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "password",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "port",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "server",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "soap_roundtrip_count",
+                      "kind": "Int",
+                      "type": "int",
+                      "block": false
+                    },
+                    {
+                      "word": "user",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "workspace",
+                  "kind": "List(B)",
+                  "subblock": [
+                    {
+                      "word": "datacenter",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "default_datastore",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "folder",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "resourcepool_path",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "server",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    },
+                    {
+                      "word": "id",
+                      "kind": "String",
+                      "type": "string",
+                      "block": false
+                    }
+                  ],
+                  "type": "list",
+                  "block": true
+                },
+                {
+                  "word": "id",
+                  "kind": "String",
+                  "type": "string",
+                  "block": false
+                }
+              ],
+              "type": "list",
+              "block": true
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "cluster_cidr",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cluster_dns_server",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cluster_domain",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "cluster_name",
+          "kind": "String",
+          "info": "Cluster Name used in the kube config",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "control_plane_hosts",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "etcd_hosts",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "ignore_docker_version",
+          "kind": "Bool",
+          "info": "Enable/Disable strict docker version checking",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "inactive_hosts",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "ingress",
+          "kind": "List(B)",
+          "info": "Ingress controller used in the cluster",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map",
+              "info": "Ingress controller extra arguments",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "node_selector",
+              "kind": "Map",
+              "info": "Ingress controller used in the cluster",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "options",
+              "kind": "Map",
+              "info": "Ingress controller options",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "provider",
+              "kind": "String",
+              "info": "Ingress controller type used by kubernetes",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "kube_admin_user",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kube_config_yaml",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "kubernetes_version",
+          "kind": "String",
+          "info": "Kubernetes version to use (if kubernetes image is specified, image version takes precedence)",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "network",
+          "kind": "List(B)",
+          "info": "Network configuration used in the kubernetes cluster",
+          "subblock": [
+            {
+              "word": "options",
+              "kind": "Map",
+              "info": "Plugin options to configure network properties",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "plugin",
+              "kind": "String",
+              "info": "Network Plugin That will be used in kubernetes cluster",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "prefix_path",
+          "kind": "String",
+          "info": "Kubernetes directory path",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "private_registries",
+          "kind": "List(B)",
+          "info": "List of private registries and their credentials",
+          "subblock": [
+            {
+              "word": "password",
+              "kind": "String",
+              "info": "Password for registry access",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "url",
+              "kind": "String",
+              "info": "URL for the registry",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "user",
+              "kind": "String",
+              "info": "User name for registry access",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "services_etcd",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "ca_cert",
+              "kind": "String",
+              "info": "External CA certificate",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cert",
+              "kind": "String",
+              "info": "External Client certificate",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "creation",
+              "kind": "String",
+              "info": "Etcd snapshot Creation period",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "external_urls",
+              "kind": "List",
+              "info": "List of etcd urls",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "extra_args",
+              "kind": "Map",
+              "info": "Extra arguments that are added to the etcd services",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "extra_env",
+              "kind": "List",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "image",
+              "kind": "String",
+              "info": "Docker image of the etcd service",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "key",
+              "kind": "String",
+              "info": "External Client key",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "path",
+              "kind": "String",
+              "info": "External etcd prefix",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "retention",
+              "kind": "String",
+              "info": "Etcd snapshot Retention period",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "snapshot",
+              "kind": "Bool",
+              "info": "Etcd Recurring snapshot Service",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "services_kube_api",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map",
+              "info": "Extra arguments that are added to the kube-api services",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "extra_env",
+              "kind": "List",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "image",
+              "kind": "String",
+              "info": "Docker image of the kube-api service",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "pod_security_policy",
+              "kind": "Bool",
+              "info": "Enabled/Disable PodSecurityPolicy",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "service_cluster_ip_range",
+              "kind": "String",
+              "info": "Virtual IP range that will be used by Kubernetes services",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "service_node_port_range",
+              "kind": "String",
+              "info": "Port range for services defined with NodePort type",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "services_kube_controller",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "cluster_cidr",
+              "kind": "String",
+              "info": "CIDR Range for Pods in cluster",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "extra_args",
+              "kind": "Map",
+              "info": "Extra arguments that are added to the kube-controller services",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "extra_env",
+              "kind": "List",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "image",
+              "kind": "String",
+              "info": "Docker image of the kube-controller service",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "service_cluster_ip_range",
+              "kind": "String",
+              "info": "Virtual IP range that will be used by Kubernetes services",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "services_kubelet",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "cluster_dns_server",
+              "kind": "String",
+              "info": "Cluster DNS service ip",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cluster_domain",
+              "kind": "String",
+              "info": "Domain of the cluster (default: \"cluster.local\")",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "extra_args",
+              "kind": "Map",
+              "info": "Extra arguments that are added to the kubelet services",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "extra_env",
+              "kind": "List",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "fail_swap_on",
+              "kind": "Bool",
+              "info": "Fail if swap is enabled",
+              "type": "bool",
+              "block": false
+            },
+            {
+              "word": "image",
+              "kind": "String",
+              "info": "Docker image of the kubelet service",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "infra_container_image",
+              "kind": "String",
+              "info": "The image whose network/ipc namespaces containers in each pod will use",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "services_kubeproxy",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map",
+              "info": "Extra arguments that are added to the kubeproxy services",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "extra_env",
+              "kind": "List",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "image",
+              "kind": "String",
+              "info": "Docker image of the kubeproxy service",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "services_scheduler",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "extra_args",
+              "kind": "Map",
+              "info": "Extra arguments that are added to the scheduler services",
+              "type": "map",
+              "block": false
+            },
+            {
+              "word": "extra_binds",
+              "kind": "List",
+              "info": "Extra binds added to the nodes",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "extra_env",
+              "kind": "List",
+              "info": "Extra env is to provide extra env variable to the docker container running kubernetes service",
+              "type": "list",
+              "block": false
+            },
+            {
+              "word": "image",
+              "kind": "String",
+              "info": "Docker image of the scheduler service",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "ssh_agent_auth",
+          "kind": "Bool",
+          "info": "SSH Agent Auth enable",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "ssh_key_path",
+          "kind": "String",
+          "info": "SSH Private Key Path",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "system_images",
+          "kind": "List(B)",
+          "info": "List of images used internally for proxy, cert download ,kubedns and more",
+          "subblock": [
+            {
+              "word": "alpine",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "calico_cni",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "calico_controllers",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "calico_ctl",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "calico_node",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "canal_cni",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "canal_flannel",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "canal_node",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "cert_downloader",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "dnsmasq",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "etcd",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "flannel",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "flannel_cni",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ingress",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "ingress_backend",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "kube_dns",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "kube_dns_autoscaler",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "kube_dns_sidecar",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "kubernetes",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "kubernetes_services_sidecar",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "nginx_proxy",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "pod_infra_container",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "weave_cni",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "weave_node",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "worker_hosts",
+          "kind": "List(B)",
+          "subblock": [
+            {
+              "word": "address",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "node_name",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            },
+            {
+              "word": "id",
+              "kind": "String",
+              "type": "string",
+              "block": false
+            }
+          ],
+          "type": "list",
+          "block": true
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "datas": {
+    "node_parameter": {
+      "arguments": [
+        {
+          "word": "address",
+          "kind": "String(R)",
+          "info": "IP or FQDN that is fully resolvable and used for SSH communication",
+          "type": "string",
+          "block": false,
+          "required": false
+        },
+        {
+          "word": "docker_socket",
+          "kind": "String(O)",
+          "info": "Docker socket on the node that will be used in tunneling",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "hostname_override",
+          "kind": "String(O)",
+          "info": "HostnameOverride",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "internal_address",
+          "kind": "String(O)",
+          "info": "Internal address that will be used for components communication",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "labels",
+          "kind": "Map(O)",
+          "info": "Node Labels",
+          "type": "map",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "node_name",
+          "kind": "String(O)",
+          "info": "Name of the host provisioned via docker machine",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "port",
+          "kind": "Int(O)",
+          "info": "Port used for SSH communication",
+          "type": "int",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "role",
+          "kind": "List(O)",
+          "info": "Node role in kubernetes cluster [controlplane/worker/etcd])",
+          "type": "list",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "roles",
+          "kind": "String(O)",
+          "info": "Node role in kubernetes cluster [controlplane/worker/etcd], specified by a comma-separated string",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_agent_auth",
+          "kind": "Bool(O)",
+          "info": "SSH Agent Auth enable",
+          "type": "bool",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key",
+          "kind": "String(O)",
+          "info": "SSH Private Key",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "ssh_key_path",
+          "kind": "String(O)",
+          "info": "SSH Private Key",
+          "type": "string",
+          "block": false,
+          "required": true
+        },
+        {
+          "word": "user",
+          "kind": "String(O)",
+          "info": "SSH user that will be used by RKE",
+          "type": "string",
+          "block": false,
+          "required": true
+        }
+      ],
+      "attributes": [
+        {
+          "word": "docker_socket",
+          "kind": "String",
+          "info": "Docker socket on the node that will be used in tunneling",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "hostname_override",
+          "kind": "String",
+          "info": "HostnameOverride",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "internal_address",
+          "kind": "String",
+          "info": "Internal address that will be used for components communication",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "json",
+          "kind": "String",
+          "info": "RKE Node JSON",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "labels",
+          "kind": "Map",
+          "info": "Node Labels",
+          "type": "map",
+          "block": false
+        },
+        {
+          "word": "node_name",
+          "kind": "String",
+          "info": "Name of the host provisioned via docker machine",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "port",
+          "kind": "Int",
+          "info": "Port used for SSH communication",
+          "type": "int",
+          "block": false
+        },
+        {
+          "word": "ssh_agent_auth",
+          "kind": "Bool",
+          "info": "SSH Agent Auth enable",
+          "type": "bool",
+          "block": false
+        },
+        {
+          "word": "ssh_key",
+          "kind": "String",
+          "info": "SSH Private Key",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "ssh_key_path",
+          "kind": "String",
+          "info": "SSH Private Key",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "user",
+          "kind": "String",
+          "info": "SSH user that will be used by RKE",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "yaml",
+          "kind": "String",
+          "info": "RKE Node YAML",
+          "type": "string",
+          "block": false
+        },
+        {
+          "word": "id",
+          "kind": "String",
+          "type": "string",
+          "block": false
+        }
+      ]
+    }
+  },
+  "unknowns": {},
+  "__meta": {
+    "type": "community_provider"
+  }
+}
